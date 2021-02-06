@@ -15,6 +15,10 @@ Firebase
 Arquitectura-Patron utilizado
 MVC(modelo-vista-controlador)
 
+## Bases de aplicaciones
+https://github.com/themaaz32/provider_todo
+https://github.com/akshayejh/what_todo
+
 
 
 ## Getting Started
