@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:task_app/views/TaskCreation/taskLevel2.dart';
+import 'package:task_app/views/TaskCreation/levelMaterial.dart';
 
-class TaskLevel1 extends StatefulWidget {
+class FenceGate extends StatefulWidget {
   @override
-  _TaskLevel1 createState() => _TaskLevel1();
+  _fenceGate createState() => _fenceGate();
 }
 
-class _TaskLevel1 extends State<TaskLevel1> {
+class _fenceGate extends State<FenceGate> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
@@ -36,7 +36,7 @@ class _TaskLevel1 extends State<TaskLevel1> {
             //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
             onPressed: () {
               Navigator.push(context,
-                  new MaterialPageRoute(builder: (context) => TaskLevel2()));
+                  new MaterialPageRoute(builder: (context) => LevelMaterial()));
             },
             padding: EdgeInsets.symmetric(horizontal: 50),
             color: Colors.blue[700],
@@ -45,7 +45,7 @@ class _TaskLevel1 extends State<TaskLevel1> {
             //  "assets/images/cerebroAzul.png",
             // height: size.height * 0.25,
             //  ),
-            child: Text("Iron ", style: TextStyle(fontSize: 15)),
+            child: Text("Fence", style: TextStyle(fontSize: 15)),
           ),
         ),
         SizedBox(
@@ -60,6 +60,8 @@ class _TaskLevel1 extends State<TaskLevel1> {
             //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
             onPressed: () {
               // RoutesGeneral().toRegister(context);
+              Navigator.push(context,
+                  new MaterialPageRoute(builder: (context) => Material()));
             },
             padding: EdgeInsets.symmetric(horizontal: 50),
             color: Colors.blue[700],
@@ -68,7 +70,7 @@ class _TaskLevel1 extends State<TaskLevel1> {
             //  "assets/images/cerebroAzul.png",
             // height: size.height * 0.25,
             //  ),
-            child: Text("otra opcion ", style: TextStyle(fontSize: 15)),
+            child: Text("Gates ", style: TextStyle(fontSize: 15)),
           ),
         ),
       ]),

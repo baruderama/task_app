@@ -1,10 +1,16 @@
 import 'dart:io';
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:task_app/controller/services/taskCrud.dart';
+import 'package:task_app/controller/services/FenceCrud/fenceCrud.dart';
+import 'package:task_app/controller/services/GateCrud/gateCrud.dart';
+
 import 'package:task_app/models/Iron.dart';
-import 'package:task_app/models/IronStyle.dart';
+import 'package:task_app/models/Iron/IronFence.dart';
+import 'package:task_app/models/Iron/IronGates.dart';
+
 import 'package:task_app/models/Task.dart';
+import 'package:task_app/models/montage/MontageFence.dart';
+import 'package:task_app/models/montage/MontageGates.dart';
 import 'package:task_app/views/TaskCreation/features/feature1.dart';
 import 'package:task_app/views/TaskCreation/features/feature2.dart';
 
@@ -60,16 +66,25 @@ class _finalFeatures extends State<FinalFeatures> {
             //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
             onPressed: () async {
               // addUsers('jorge', '1234');
-              IronStyle newStyle =
-                  new IronStyle("1", "1", "1", "1", "1", "1", "1");
+              //IronFence newStyle =
+              new IronFence("1", "1", "1", "1", "1", "1", "1");
+
+              //IronGates newGate = new IronGates("1", "1", "1", "1", "1", "1");
+              MontageGates newGate = new MontageGates("1", "1", "1", "1", "1");
+              MontageFence newFence = new MontageFence("1", "1", "1", "1", "1");
+              /*
               Iron newIron = new Iron(newStyle);
               List<Iron> list = new List<Iron>();
               list.add(newIron);
 
               Task newTask = new Task("", list);
+              */
 
               debugPrint('aqui');
-              TaskCrud().addTask(newStyle);
+              GateCrud().addMontageTask(newGate);
+              FenceCrud().addMontageTask(newFence);
+              // TaskCrud().addTask(newStyle);
+              //GateCrud().addIronTask(newGate);
             },
             padding: EdgeInsets.symmetric(horizontal: 50),
             color: Color.fromRGBO(0, 160, 227, 1),

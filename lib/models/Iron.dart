@@ -1,8 +1,8 @@
 import 'package:firebase_database/firebase_database.dart';
-import 'package:task_app/models/IronStyle.dart';
+import 'package:task_app/models/Iron/IronFence.dart';
 
 class Iron {
-  IronStyle _styleIron;
+  IronFence _styleIron;
   //IronGates _gatesIron;
 
   Iron(this._styleIron);
@@ -11,7 +11,7 @@ class Iron {
     this._styleIron = obj['styleIron'];
   }
 
-  IronStyle get status => _styleIron;
+  IronFence get status => _styleIron;
 
   Iron.fromSnapShot(DataSnapshot snapshot) {
     _styleIron = snapshot.value['styleIron'];
