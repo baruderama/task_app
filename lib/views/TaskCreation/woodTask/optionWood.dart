@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:task_app/views/TaskCreation/finalFeaures.dart';
 import 'package:task_app/views/TaskCreation/levelMaterial.dart';
 
-class FenceGate extends StatefulWidget {
+class OptionWood extends StatefulWidget {
   @override
-  _fenceGate createState() => _fenceGate();
+  _optionWood createState() => _optionWood();
 }
 
-class _fenceGate extends State<FenceGate> {
+class _optionWood extends State<OptionWood> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
@@ -36,7 +37,7 @@ class _fenceGate extends State<FenceGate> {
             //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
             onPressed: () {
               Navigator.push(context,
-                  new MaterialPageRoute(builder: (context) => LevelMaterial()));
+                  new MaterialPageRoute(builder: (context) => FinalFeatures()));
             },
             padding: EdgeInsets.symmetric(horizontal: 50),
             color: Colors.blue[700],
@@ -45,7 +46,7 @@ class _fenceGate extends State<FenceGate> {
             //  "assets/images/cerebroAzul.png",
             // height: size.height * 0.25,
             //  ),
-            child: Text("Fence", style: TextStyle(fontSize: 15)),
+            child: Text("T&G", style: TextStyle(fontSize: 15)),
           ),
         ),
         SizedBox(
@@ -61,7 +62,7 @@ class _fenceGate extends State<FenceGate> {
             onPressed: () {
               // RoutesGeneral().toRegister(context);
               Navigator.push(context,
-                  new MaterialPageRoute(builder: (context) => LevelMaterial()));
+                  new MaterialPageRoute(builder: (context) => FinalFeatures()));
             },
             padding: EdgeInsets.symmetric(horizontal: 50),
             color: Colors.blue[700],
@@ -70,7 +71,7 @@ class _fenceGate extends State<FenceGate> {
             //  "assets/images/cerebroAzul.png",
             // height: size.height * 0.25,
             //  ),
-            child: Text("Gates ", style: TextStyle(fontSize: 15)),
+            child: Text("Normal", style: TextStyle(fontSize: 15)),
           ),
         ),
       ]),

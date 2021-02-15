@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:task_app/views/TaskCreation/finalFeaures.dart';
+import 'package:task_app/views/TaskCreation/woodTask/optionWood.dart';
 
 class LevelMaterial extends StatefulWidget {
   @override
@@ -60,6 +61,8 @@ class _levelMaterial extends State<LevelMaterial> {
             //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
             onPressed: () {
               // RoutesGeneral().toRegister(context);
+              Navigator.push(context,
+                  new MaterialPageRoute(builder: (context) => FinalFeatures()));
             },
             padding: EdgeInsets.symmetric(horizontal: 50),
             color: Colors.blue[700],
@@ -83,7 +86,7 @@ class _levelMaterial extends State<LevelMaterial> {
             //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
             onPressed: () {
               Navigator.push(context,
-                  new MaterialPageRoute(builder: (context) => FinalFeatures()));
+                  new MaterialPageRoute(builder: (context) => OptionWood()));
             },
             padding: EdgeInsets.symmetric(horizontal: 50),
             color: Colors.blue[700],

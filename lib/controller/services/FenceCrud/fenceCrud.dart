@@ -6,6 +6,8 @@ import 'package:task_app/models/Iron/IronFence.dart';
 import 'package:task_app/models/Iron/IronGates.dart';
 import 'package:task_app/models/Task.dart';
 import 'package:task_app/models/montage/MontageFence.dart';
+import 'package:task_app/models/wood/WoodFence.dart';
+import 'package:task_app/models/wood/WoodT&G.dart';
 
 FirebaseDatabase db = new FirebaseDatabase();
 DatabaseReference taskReference = db.reference().child('task');
@@ -41,6 +43,34 @@ class FenceCrud {
     var fenceKey = taskReference.child('Fence').push();
 
     fenceKey.child('montage').set(montageFenceTask);
+
+    debugPrint(fenceKey.key);
+  }
+
+  void addWoodTask(WoodFence woodFence) async {
+    var ironStyleTask = <String, dynamic>{
+      'height': '' + woodFence.heigth,
+      'type_fence': '' + woodFence.tapeFence,
+      'post_size': '' + woodFence.postSize,
+      'top_finish': '' + woodFence.topFinish,
+    };
+
+    var fenceKey = taskReference.child('Fence').push();
+
+    fenceKey.child('wood').set(ironStyleTask);
+
+    debugPrint(fenceKey.key);
+  }
+
+  void addWoodTyGTask(WoodTyG woodTyG) async {
+    var ironStyleTask = <String, dynamic>{
+      'iron_wood': '' + woodTyG.ironWood,
+      'vertical_horizontal': '' + woodTyG.verticalHorizontal,
+    };
+
+    var fenceKey = taskReference.child('Fence').push();
+
+    fenceKey.child('wood').set(ironStyleTask);
 
     debugPrint(fenceKey.key);
   }

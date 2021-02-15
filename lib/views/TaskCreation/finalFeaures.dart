@@ -11,6 +11,9 @@ import 'package:task_app/models/Iron/IronGates.dart';
 import 'package:task_app/models/Task.dart';
 import 'package:task_app/models/montage/MontageFence.dart';
 import 'package:task_app/models/montage/MontageGates.dart';
+import 'package:task_app/models/wood/WoodFence.dart';
+import 'package:task_app/models/wood/WoodGates.dart';
+import 'package:task_app/models/wood/WoodT&G.dart';
 import 'package:task_app/views/TaskCreation/features/feature1.dart';
 import 'package:task_app/views/TaskCreation/features/feature2.dart';
 
@@ -70,8 +73,12 @@ class _finalFeatures extends State<FinalFeatures> {
               new IronFence("1", "1", "1", "1", "1", "1", "1");
 
               //IronGates newGate = new IronGates("1", "1", "1", "1", "1", "1");
-              MontageGates newGate = new MontageGates("1", "1", "1", "1", "1");
-              MontageFence newFence = new MontageFence("1", "1", "1", "1", "1");
+              //MontageGates newGate = new MontageGates("1", "1", "1", "1", "1");
+              //MontageFence newFence = new MontageFence("1", "1", "1", "1", "1");
+
+              WoodFence newFence = new WoodFence("1", "1", "1", "1");
+              WoodGates newGate = new WoodGates("1", "1", "1", "1", "1", "1");
+              WoodTyG newTyG = new WoodTyG("1", "1");
               /*
               Iron newIron = new Iron(newStyle);
               List<Iron> list = new List<Iron>();
@@ -81,8 +88,12 @@ class _finalFeatures extends State<FinalFeatures> {
               */
 
               debugPrint('aqui');
-              GateCrud().addMontageTask(newGate);
-              FenceCrud().addMontageTask(newFence);
+              //GateCrud().addMontageTask(newGate);
+              //FenceCrud().addMontageTask(newFence);
+
+              GateCrud().addWoodTask(newGate);
+              FenceCrud().addWoodTask(newFence);
+              FenceCrud().addWoodTyGTask(newTyG);
               // TaskCrud().addTask(newStyle);
               //GateCrud().addIronTask(newGate);
             },

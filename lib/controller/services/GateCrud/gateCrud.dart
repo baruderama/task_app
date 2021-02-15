@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:task_app/models/Iron/IronFence.dart';
 import 'package:task_app/models/Iron/IronGates.dart';
 import 'package:task_app/models/montage/MontageGates.dart';
+import 'package:task_app/models/wood/WoodGates.dart';
 
 FirebaseDatabase db = new FirebaseDatabase();
 DatabaseReference taskReference = db.reference().child('task');
@@ -38,6 +39,23 @@ class GateCrud {
     var gateKey = taskReference.child('Gates').push();
 
     gateKey.child('montage').set(montageGateTask);
+
+    debugPrint(gateKey.key);
+  }
+
+  void addWoodTask(WoodGates woodGates) async {
+    var woodGateTask = <String, dynamic>{
+      'WoodGates': '' + woodGates.woodGates,
+      'typeLocks': '' + woodGates.typeLocks,
+      'typeHinges': '' + woodGates.typeHinges,
+      'mesh': '' + woodGates.harbor,
+      'opening_end_swing': '' + woodGates.openingEndSwing,
+      'ironFrame': '' + woodGates.ironFrame,
+    };
+
+    var gateKey = taskReference.child('Gates').push();
+
+    gateKey.child('wood').set(woodGateTask);
 
     debugPrint(gateKey.key);
   }
