@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 
 import 'package:task_app/models/Iron/IronFence.dart';
 import 'package:task_app/models/Iron/IronGates.dart';
+import 'package:task_app/models/chainLink/ChainLinkGates.dart';
 import 'package:task_app/models/montage/MontageGates.dart';
+import 'package:task_app/models/vinyl/VinylGates.dart';
 import 'package:task_app/models/wood/WoodGates.dart';
 
 FirebaseDatabase db = new FirebaseDatabase();
@@ -59,6 +61,37 @@ class GateCrud {
 
     debugPrint(gateKey.key);
   }
+
+  void addVinylTask(VinylGates vinylGates) async {
+    var vinylGateTask = <String, dynamic>{
+      'typeLocks': '' + vinylGates.typeLocks,
+      'typeHinges': '' + vinylGates.typeHinges,
+      'opening_end_swing': '' + vinylGates.openingEndSwing,
+    };
+
+    var gateKey = taskReference.child('Gates').push();
+
+    gateKey.child('vinyl').set(vinylGateTask);
+
+    debugPrint(gateKey.key);
+  }
+
+  void addChainLinkTask(ChainLinkGates chainLinkGates) async {
+    var chainLinkGateTask = <String, dynamic>{
+      'single_doble': '' + chainLinkGates.singleDoble,
+      'typeLocks': '' + chainLinkGates.typeLocks,
+      'typeHinges': '' + chainLinkGates.typeHinges,
+      'size_post': '' + chainLinkGates.sizePost,
+      'opening_swing': '' + chainLinkGates.openingSwing,
+    };
+
+    var gateKey = taskReference.child('Gates').push();
+
+    gateKey.child('chain_link').set(chainLinkGateTask);
+
+    debugPrint(gateKey.key);
+  }
+
   /*
 
   void deleteProduct(Task product) async {

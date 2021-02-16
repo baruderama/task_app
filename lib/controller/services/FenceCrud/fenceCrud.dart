@@ -6,6 +6,7 @@ import 'package:task_app/models/Iron/IronFence.dart';
 import 'package:task_app/models/Iron/IronGates.dart';
 import 'package:task_app/models/Task.dart';
 import 'package:task_app/models/montage/MontageFence.dart';
+import 'package:task_app/models/vinyl/VinylFence.dart';
 import 'package:task_app/models/wood/WoodFence.dart';
 import 'package:task_app/models/wood/WoodT&G.dart';
 
@@ -71,6 +72,22 @@ class FenceCrud {
     var fenceKey = taskReference.child('Fence').push();
 
     fenceKey.child('wood').set(ironStyleTask);
+
+    debugPrint(fenceKey.key);
+  }
+
+  void addVinylTask(VinylFence vinylFence) async {
+    var vinylTask = <String, dynamic>{
+      'height': '' + vinylFence.heigth,
+      'type_style': '' + vinylFence.style,
+      'post_caps': '' + vinylFence.postCaps,
+      'top_finish': '' + vinylFence.topFinish,
+      'color': '' + vinylFence.color,
+    };
+
+    var fenceKey = taskReference.child('Fence').push();
+
+    fenceKey.child('Vinyl').set(vinylTask);
 
     debugPrint(fenceKey.key);
   }
