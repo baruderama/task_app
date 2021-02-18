@@ -9,9 +9,11 @@ import 'package:task_app/models/Iron/IronFence.dart';
 import 'package:task_app/models/Iron/IronGates.dart';
 
 import 'package:task_app/models/Task.dart';
+import 'package:task_app/models/chainLink/ChainLinkFence.dart';
 import 'package:task_app/models/chainLink/ChainLinkGates.dart';
 import 'package:task_app/models/montage/MontageFence.dart';
 import 'package:task_app/models/montage/MontageGates.dart';
+import 'package:task_app/models/railing/RailingFence.dart';
 import 'package:task_app/models/vinyl/VinylFence.dart';
 import 'package:task_app/models/vinyl/VinylGates.dart';
 import 'package:task_app/models/wood/WoodFence.dart';
@@ -83,10 +85,16 @@ class _finalFeatures extends State<FinalFeatures> {
               //WoodGates newGate = new WoodGates("1", "1", "1", "1", "1", "1");
               //WoodTyG newTyG = new WoodTyG("1", "1");
 
-              VinylFence newFence = new VinylFence("1", "1", "1", "1", "1");
-              VinylGates newGate = new VinylGates("1", "1", "1");
+              //VinylFence newFence = new VinylFence("1", "1", "1", "1", "1");
+              //VinylGates newGate = new VinylGates("1", "1", "1");
+
               ChainLinkGates newGatelink =
                   new ChainLinkGates("1", "1", "1", "1", "1");
+
+              ChainLinkFence newFenceink = new ChainLinkFence(
+                  "1", "1", "1", "1", "1", "1", "1", "1", "1");
+
+              RailingFence newFenceRailing = new RailingFence("1", "1", "1");
               /*
               Iron newIron = new Iron(newStyle);
               List<Iron> list = new List<Iron>();
@@ -102,9 +110,14 @@ class _finalFeatures extends State<FinalFeatures> {
               //GateCrud().addWoodTask(newGate);
               //FenceCrud().addWoodTask(newFence);
               //FenceCrud().addWoodTyGTask(newTyG);
+
               GateCrud().addChainLinkTask(newGatelink);
-              GateCrud().addVinylTask(newGate);
-              FenceCrud().addVinylTask(newFence);
+              //GateCrud().addVinylTask(newGate);
+              // FenceCrud().addVinylTask(newFence);
+
+              FenceCrud().addChainLinkTask(newFenceink);
+
+              FenceCrud().addRailingTask(newFenceRailing);
 
               // TaskCrud().addTask(newStyle);
               //GateCrud().addIronTask(newGate);

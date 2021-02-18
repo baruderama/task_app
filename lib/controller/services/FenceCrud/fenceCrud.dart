@@ -5,7 +5,9 @@ import 'package:task_app/models/Iron.dart';
 import 'package:task_app/models/Iron/IronFence.dart';
 import 'package:task_app/models/Iron/IronGates.dart';
 import 'package:task_app/models/Task.dart';
+import 'package:task_app/models/chainLink/ChainLinkFence.dart';
 import 'package:task_app/models/montage/MontageFence.dart';
+import 'package:task_app/models/railing/RailingFence.dart';
 import 'package:task_app/models/vinyl/VinylFence.dart';
 import 'package:task_app/models/wood/WoodFence.dart';
 import 'package:task_app/models/wood/WoodT&G.dart';
@@ -88,6 +90,39 @@ class FenceCrud {
     var fenceKey = taskReference.child('Fence').push();
 
     fenceKey.child('Vinyl').set(vinylTask);
+
+    debugPrint(fenceKey.key);
+  }
+
+  void addChainLinkTask(ChainLinkFence chainLinkFence) async {
+    var chainTask = <String, dynamic>{
+      'height': '' + chainLinkFence.heigth,
+      'color': '' + chainLinkFence.color,
+      'line_post': '' + chainLinkFence.linePost,
+      'top_finish': '' + chainLinkFence.topFinish,
+      'privacy': '' + chainLinkFence.privacy,
+      'security': '' + chainLinkFence.security,
+      'terminale_post': '' + chainLinkFence.terminalePost,
+      'top_rails': '' + chainLinkFence.topRails,
+    };
+
+    var fenceKey = taskReference.child('Fence').push();
+
+    fenceKey.child('chain_link').set(chainTask);
+
+    debugPrint(fenceKey.key);
+  }
+
+  void addRailingTask(RailingFence railingFence) async {
+    var railingTask = <String, dynamic>{
+      'height': '' + railingFence.heigth,
+      'size_pickets': '' + railingFence.sizePIckets,
+      'color': '' + railingFence.color,
+    };
+
+    var fenceKey = taskReference.child('Fence').push();
+
+    fenceKey.child('railing').set(railingTask);
 
     debugPrint(fenceKey.key);
   }
