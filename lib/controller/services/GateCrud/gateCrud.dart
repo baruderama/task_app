@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:task_app/models/Iron/IronFence.dart';
 import 'package:task_app/models/Iron/IronGates.dart';
+import 'package:task_app/models/cantileverGates/cantileverGates.dart';
 import 'package:task_app/models/chainLink/ChainLinkGates.dart';
 import 'package:task_app/models/montage/MontageGates.dart';
 import 'package:task_app/models/vinyl/VinylGates.dart';
@@ -88,6 +89,21 @@ class GateCrud {
     var gateKey = taskReference.child('Gates').push();
 
     gateKey.child('chain_link').set(chainLinkGateTask);
+
+    debugPrint(gateKey.key);
+  }
+
+  void addCantileverTask(CantileverGates cantileverGates) async {
+    var cantileverGateTask = <String, dynamic>{
+      'style': '' + cantileverGates.style,
+      'typeLocks': '' + cantileverGates.typeLocks,
+      'motor': '' + cantileverGates.motor,
+      'size_post': '' + cantileverGates.sizePost,
+    };
+
+    var gateKey = taskReference.child('Gates').push();
+
+    gateKey.child('cantilever_gates').set(cantileverGateTask);
 
     debugPrint(gateKey.key);
   }

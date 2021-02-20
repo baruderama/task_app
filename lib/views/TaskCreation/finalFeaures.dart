@@ -1,16 +1,23 @@
 import 'dart:io';
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:task_app/controller/services/CameraIntercomCrud.dart/CameraCrud.dart';
+import 'package:task_app/controller/services/CameraIntercomCrud.dart/Intercom.dart';
 import 'package:task_app/controller/services/FenceCrud/fenceCrud.dart';
 import 'package:task_app/controller/services/GateCrud/gateCrud.dart';
+import 'package:task_app/controller/services/Miscelenium/MisceleniumCrud.dart';
 
 import 'package:task_app/models/Iron.dart';
 import 'package:task_app/models/Iron/IronFence.dart';
 import 'package:task_app/models/Iron/IronGates.dart';
 
 import 'package:task_app/models/Task.dart';
+import 'package:task_app/models/camerasIntercom/Cameras.dart';
+import 'package:task_app/models/camerasIntercom/Intercom.dart';
+import 'package:task_app/models/cantileverGates/cantileverGates.dart';
 import 'package:task_app/models/chainLink/ChainLinkFence.dart';
 import 'package:task_app/models/chainLink/ChainLinkGates.dart';
+import 'package:task_app/models/miscellaneo/Miscellaneous.dart';
 import 'package:task_app/models/montage/MontageFence.dart';
 import 'package:task_app/models/montage/MontageGates.dart';
 import 'package:task_app/models/railing/RailingFence.dart';
@@ -95,6 +102,16 @@ class _finalFeatures extends State<FinalFeatures> {
                   "1", "1", "1", "1", "1", "1", "1", "1", "1");
 
               RailingFence newFenceRailing = new RailingFence("1", "1", "1");
+
+              Cameras newCamera =
+                  new Cameras("1", "1", "1", "1", "1", "1", "1");
+              Intercom newIntercom = new Intercom("1");
+
+              CantileverGates newCantelever =
+                  new CantileverGates("1", "1", "1", "1");
+
+              Miscellaneous newMisce = new Miscellaneous("1", "1", "1", "1");
+
               /*
               Iron newIron = new Iron(newStyle);
               List<Iron> list = new List<Iron>();
@@ -111,13 +128,18 @@ class _finalFeatures extends State<FinalFeatures> {
               //FenceCrud().addWoodTask(newFence);
               //FenceCrud().addWoodTyGTask(newTyG);
 
-              GateCrud().addChainLinkTask(newGatelink);
+              //GateCrud().addChainLinkTask(newGatelink);
               //GateCrud().addVinylTask(newGate);
               // FenceCrud().addVinylTask(newFence);
 
-              FenceCrud().addChainLinkTask(newFenceink);
+              //FenceCrud().addChainLinkTask(newFenceink);
 
-              FenceCrud().addRailingTask(newFenceRailing);
+              //FenceCrud().addRailingTask(newFenceRailing);
+
+              //CamaraCrud().addCamaraTask(newCamera);
+              //IntercomCrud().addIntercomTask(newIntercom);
+              //GateCrud().addCantileverTask(newCantelever);
+              MisceleniumCrud().addMisceleniumTask(newMisce);
 
               // TaskCrud().addTask(newStyle);
               //GateCrud().addIronTask(newGate);
