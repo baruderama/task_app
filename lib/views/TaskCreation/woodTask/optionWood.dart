@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:task_app/views/FenceFeatures/wood/TyG/TyGFeatures.dart';
+import 'package:task_app/views/FenceFeatures/wood/woodFeatures.dart';
 import 'package:task_app/views/TaskCreation/finalFeaures.dart';
 import 'package:task_app/views/TaskCreation/levelMaterial.dart';
 
@@ -37,7 +39,7 @@ class _optionWood extends State<OptionWood> {
             //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
             onPressed: () {
               Navigator.push(context,
-                  new MaterialPageRoute(builder: (context) => FinalFeatures()));
+                  new MaterialPageRoute(builder: (context) => TyGFeatures()));
             },
             padding: EdgeInsets.symmetric(horizontal: 50),
             color: Colors.blue[700],
@@ -62,7 +64,7 @@ class _optionWood extends State<OptionWood> {
             onPressed: () {
               // RoutesGeneral().toRegister(context);
               Navigator.push(context,
-                  new MaterialPageRoute(builder: (context) => FinalFeatures()));
+                  new MaterialPageRoute(builder: (context) => WoodFeatures()));
             },
             padding: EdgeInsets.symmetric(horizontal: 50),
             color: Colors.blue[700],
