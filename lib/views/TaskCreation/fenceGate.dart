@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:task_app/models/miscellaneo/Miscellaneous.dart';
 import 'package:task_app/views/CameraIntercom/camaraIntercomScreen.dart';
+
 import 'package:task_app/views/TaskCreation/finalFeaures.dart';
 import 'package:task_app/views/TaskCreation/levelMaterial.dart';
 import 'package:task_app/views/TaskCreation/levelMaterialGates.dart';
+import 'package:task_app/views/miscellaneou/miscellaneous.dart';
 
 class FenceGate extends StatefulWidget {
   @override
@@ -120,8 +123,10 @@ class _fenceGate extends State<FenceGate> {
             //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
             onPressed: () {
               // RoutesGeneral().toRegister(context);
-              Navigator.push(context,
-                  new MaterialPageRoute(builder: (context) => FinalFeatures()));
+              Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                      builder: (context) => MiscellaneousScreen()));
             },
             padding: EdgeInsets.symmetric(horizontal: 50),
             color: Colors.blue[700],

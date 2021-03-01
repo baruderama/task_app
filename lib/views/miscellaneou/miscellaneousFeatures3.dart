@@ -2,12 +2,12 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:task_app/views/FenceFeatures/Iron/ironFeature3.dart';
 
-class WoodGatesFeatures4 extends StatefulWidget {
+class MiscellaneousFeatures3 extends StatefulWidget {
   @override
   _feature1 createState() => _feature1();
 }
 
-String selectedStateWoodGatesQ4 = null;
+String selectedStateMiscellaneousQ3 = null;
 
 List<String> todos2 = List<String>();
 var co2;
@@ -31,7 +31,7 @@ enum SigningCharacter {
 SigningCharacter _character = SigningCharacter.Normal;
 String selectedStateRadioQ1 = null;
 
-class _feature1 extends State<WoodGatesFeatures4> {
+class _feature1 extends State<MiscellaneousFeatures3> {
   @override
   void initState() {
     super.initState();
@@ -53,7 +53,7 @@ class _feature1 extends State<WoodGatesFeatures4> {
               padding: EdgeInsets.all(15.0),
               alignment: Alignment.center,
               child: Text(
-                "Type of hinges:",
+                "Window guards:",
                 style: TextStyle(
                   fontSize: 22.0,
                   fontFamily: "Ralewaybold",
@@ -98,7 +98,7 @@ class _feature1 extends State<WoodGatesFeatures4> {
                       print('presionado' + todos2[index]);
                       this.setState(() {
                         co2 = Colors.green[300];
-                        selectedStateWoodGatesQ4 = todos2[index];
+                        selectedStateMiscellaneousQ3 = todos2[index];
                       });
                     },
                   );
@@ -160,8 +160,8 @@ class ItemCard extends StatelessWidget {
   }
 }
 
-class BringAnswerWoodGates4 {
+class BringAnswerMiscellaneous3 {
   String send() {
-    return selectedStateWoodGatesQ4;
+    return selectedStateMiscellaneousQ3;
   }
 }

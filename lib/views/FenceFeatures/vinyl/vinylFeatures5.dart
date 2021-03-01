@@ -1,12 +1,12 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 
-class WoodGatesFeature5 extends StatefulWidget {
+class VinylFeatures5 extends StatefulWidget {
   @override
   _feature1 createState() => _feature1();
 }
 
-String selectedStateMontageGatesQ5 = null;
+String selectedStateVinylQ5 = null;
 
 enum SigningCharacter {
   Normal,
@@ -27,7 +27,7 @@ enum SigningCharacter {
 SigningCharacter _character = SigningCharacter.Normal;
 String selectedStateRadioQ1 = null;
 
-class _feature1 extends State<WoodGatesFeature5> {
+class _feature1 extends State<VinylFeatures5> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +40,7 @@ class _feature1 extends State<WoodGatesFeature5> {
               padding: EdgeInsets.all(15.0),
               alignment: Alignment.center,
               child: Text(
-                "Harbor:",
+                "Top finish:",
                 style: TextStyle(
                   fontSize: 22.0,
                   fontFamily: "Ralewaybold",
@@ -53,13 +53,13 @@ class _feature1 extends State<WoodGatesFeature5> {
             child: Column(
               children: <Widget>[
                 RadioListTile<SigningCharacter>(
-                  title: const Text('Yes'),
-                  value: SigningCharacter.Inches15,
+                  title: const Text('Following Ground'),
+                  value: SigningCharacter.Inches8,
                   groupValue: _character,
                   onChanged: (SigningCharacter value) {
                     setState(() {
                       _character = value;
-                      selectedStateMontageGatesQ5 = 'Yes';
+                      selectedStateVinylQ5 = 'Following Ground';
                     });
                   },
                 ),
@@ -67,13 +67,13 @@ class _feature1 extends State<WoodGatesFeature5> {
                   height: 10,
                 ),
                 RadioListTile<SigningCharacter>(
-                  title: const Text('No'),
+                  title: const Text('Straight'),
                   value: SigningCharacter.Inches24,
                   groupValue: _character,
                   onChanged: (SigningCharacter value) {
                     setState(() {
                       _character = value;
-                      selectedStateMontageGatesQ5 = 'No';
+                      selectedStateVinylQ5 = 'Straight';
                     });
                   },
                 ),
@@ -89,8 +89,8 @@ class _feature1 extends State<WoodGatesFeature5> {
   }
 }
 
-class BringAnswerWoodGates5 {
+class BringAnswerVinyl5 {
   String send() {
-    return selectedStateMontageGatesQ5;
+    return selectedStateVinylQ5;
   }
 }

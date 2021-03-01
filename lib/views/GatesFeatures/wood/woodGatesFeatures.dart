@@ -44,6 +44,11 @@ import 'package:task_app/views/GatesFeatures/montage/montageGatesFeatures2.dart'
 import 'package:task_app/views/GatesFeatures/montage/montageGatesFeatures3.dart';
 import 'package:task_app/views/GatesFeatures/montage/montageGatesFeatures4.dart';
 import 'package:task_app/views/GatesFeatures/montage/montageGatesFeatures5.dart';
+import 'package:task_app/views/GatesFeatures/wood/woodGatesFeatures1.dart';
+import 'package:task_app/views/GatesFeatures/wood/woodGatesFeatures2.dart';
+import 'package:task_app/views/GatesFeatures/wood/woodGatesFeatures3.dart';
+import 'package:task_app/views/GatesFeatures/wood/woodGatesFeatures4.dart';
+import 'package:task_app/views/GatesFeatures/wood/woodGatesFeatures5.dart';
 import 'package:task_app/views/TaskCreation/features/feature1.dart';
 import 'package:task_app/views/TaskCreation/features/feature2.dart';
 
@@ -91,11 +96,11 @@ class _finalFeatures extends State<WoodGatesFeatures> {
         controller: controller,
         scrollDirection: Axis.vertical,
         children: [
-          MontageGatesFeatures1(),
-          MontageGatesFeatures2(),
-          MontageGatesFeature3(),
-          MontageGatesFeatures4(),
-          MontageGatesFeature5(),
+          WoodGatesFeature1(),
+          WoodGatesFeatures2(),
+          WoodGatesFeatures3(),
+          WoodGatesFeatures4(),
+          WoodGatesFeature5(),
           RaisedButton(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(18.0)),
@@ -122,16 +127,25 @@ class _finalFeatures extends State<WoodGatesFeatures> {
                   BringAnswerIronGates5().send(),
                   BringAnswerIronGates6().send());
                   */
+
+              /*
               MontageGates newGate = new MontageGates(
                   BringAnswerMontageGates1().send(),
                   BringAnswerMontageGates2().send(),
                   BringAnswerMontageGates3().send(),
                   BringAnswerMontageGates4().send(),
                   BringAnswerMontageGates5().send());
+                  */
               //MontageFence newFence = new MontageFence("1", "1", "1", "1", "1");
 
               //WoodFence newFence = new WoodFence("1", "1", "1", "1");
-              //WoodGates newGate = new WoodGates("1", "1", "1", "1", "1", "1");
+              WoodGates newGate = new WoodGates(
+                  BringAnswerWoodGates1().send(),
+                  BringAnswerWoodGates2().send(),
+                  BringAnswerWoodGates1().send(),
+                  BringAnswerWoodGates3().send(),
+                  BringAnswerWoodGates4().send(),
+                  BringAnswerWoodGates5().send());
               //WoodTyG newTyG = new WoodTyG("1", "1");
 
               //VinylFence newFence = new VinylFence("1", "1", "1", "1", "1");
@@ -165,10 +179,10 @@ class _finalFeatures extends State<WoodGatesFeatures> {
               debugPrint('aqui');
               //FenceCrud().addIronTask(newStyle);
               //GateCrud().addIronTask(newGate);
-              GateCrud().addMontageTask(newGate);
+              //GateCrud().addMontageTask(newGate);
               //FenceCrud().addMontageTask(newFence);
 
-              //GateCrud().addWoodTask(newGate);
+              GateCrud().addWoodTask(newGate);
               //FenceCrud().addWoodTask(newFence);
               //FenceCrud().addWoodTyGTask(newTyG);
 

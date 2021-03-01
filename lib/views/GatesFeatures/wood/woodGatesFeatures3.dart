@@ -220,7 +220,7 @@ class _feature1 extends State<WoodGatesFeatures3> {
   }
 }
 
-class BringAnswerIronGates6 {
+class BringAnswerWoodGates3 {
   String send() {
     return swingType + ":" + _inchesFieldControllerWoods.text;
   }

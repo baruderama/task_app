@@ -53,7 +53,7 @@ class _feature1 extends State<WoodGatesFeatures2> {
               padding: EdgeInsets.all(15.0),
               alignment: Alignment.center,
               child: Text(
-                "Spears & Designs:",
+                "type of locks:",
                 style: TextStyle(
                   fontSize: 22.0,
                   fontFamily: "Ralewaybold",
@@ -160,7 +160,7 @@ class ItemCard extends StatelessWidget {
   }
 }
 
-class BringAnswerIron2 {
+class BringAnswerWoodGates2 {
   String send() {
     return selectedStateWoodGatesQ2;
   }

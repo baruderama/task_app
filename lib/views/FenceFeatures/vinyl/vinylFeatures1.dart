@@ -1,13 +1,14 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 
-class WoodGatesFeature1 extends StatefulWidget {
+class VinylFeature1 extends StatefulWidget {
   @override
   _feature1 createState() => _feature1();
 }
 
-TextEditingController _inchesFieldControllerWood = TextEditingController();
-String frameType = "";
+TextEditingController _inchesFieldControllerVinyl1 = TextEditingController();
+String swingTypeVinyl1 = "";
+String selectedStateVinylGatesQ1 = null;
 
 enum SigningCharacter {
   Normal,
@@ -28,7 +29,7 @@ enum SigningCharacter {
 SigningCharacter _character = SigningCharacter.Normal;
 String selectedStateRadioQ1 = null;
 
-class _feature1 extends State<WoodGatesFeature1> {
+class _feature1 extends State<VinylFeature1> {
   @override
   void initState() {
     super.initState();
@@ -48,7 +49,7 @@ class _feature1 extends State<WoodGatesFeature1> {
               padding: EdgeInsets.all(15.0),
               alignment: Alignment.center,
               child: Text(
-                "type gate:",
+                "Opening end Swing:",
                 style: TextStyle(
                   fontSize: 22.0,
                   fontFamily: "Ralewaybold",
@@ -61,58 +62,44 @@ class _feature1 extends State<WoodGatesFeature1> {
               child: Column(
                 //mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Card(
-                    child: ListTile(
-                      title: Text('Wood Frame'),
-                      onTap: () {
-                        showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return AlertDialog(
-                                title: Text("Inches:"),
-                                content: Form(
-                                    child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                      TextFormField(
-                                        controller: _inchesFieldControllerWood,
-                                        validator: (value) {
-                                          return value.isNotEmpty
-                                              ? null
-                                              : "Invalido";
-                                        },
-                                        decoration: InputDecoration(
-                                            hintText: "Ex: 5', 15', etc"),
-                                      ),
-                                    ])),
-                                actions: <Widget>[
-                                  FlatButton(
-                                      onPressed: () {
-                                        frameType = 'Inside';
-                                        Navigator.pop(context);
-                                      },
-                                      child: Text("Add"))
-                                ],
-                              );
-                            });
-                      },
-                    ),
+                  RadioListTile<SigningCharacter>(
+                    title: const Text('white'),
+                    value: SigningCharacter.Inches8,
+                    groupValue: _character,
+                    onChanged: (SigningCharacter value) {
+                      setState(() {
+                        _character = value;
+                        selectedStateVinylGatesQ1 = 'white';
+                      });
+                    },
+                  ),
+                  RadioListTile<SigningCharacter>(
+                    title: const Text('Almond'),
+                    value: SigningCharacter.Inches24,
+                    groupValue: _character,
+                    onChanged: (SigningCharacter value) {
+                      setState(() {
+                        _character = value;
+                        selectedStateVinylGatesQ1 = 'almond';
+                      });
+                    },
                   ),
                   Card(
                     child: ListTile(
-                      title: Text('iron Frame:'),
+                      title: Text('Other'),
                       onTap: () {
                         showDialog(
                             context: context,
                             builder: (BuildContext context) {
                               return AlertDialog(
-                                title: Text("Inches:"),
+                                title: Text("color:"),
                                 content: Form(
                                     child: Column(
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                       TextFormField(
-                                        controller: _inchesFieldControllerWood,
+                                        controller:
+                                            _inchesFieldControllerVinyl1,
                                         validator: (value) {
                                           return value.isNotEmpty
                                               ? null
@@ -125,7 +112,7 @@ class _feature1 extends State<WoodGatesFeature1> {
                                 actions: <Widget>[
                                   FlatButton(
                                       onPressed: () {
-                                        frameType = 'Outside';
+                                        swingTypeVinyl1 = 'Inside';
                                         Navigator.pop(context);
                                       },
                                       child: Text("Add"))
@@ -146,8 +133,8 @@ class _feature1 extends State<WoodGatesFeature1> {
   }
 }
 
-class BringAnswerWoodGates1 {
+class BringAnswerVinyl1 {
   String send() {
-    return frameType + ":" + _inchesFieldControllerWood.text;
+    return swingTypeVinyl1 + ":" + _inchesFieldControllerVinyl1.text;
   }
 }

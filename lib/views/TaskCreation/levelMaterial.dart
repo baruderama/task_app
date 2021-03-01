@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:task_app/views/FenceFeatures/Iron/ironFeatures.dart';
 import 'package:task_app/views/FenceFeatures/Montage/montageFeatures.dart';
+import 'package:task_app/views/FenceFeatures/railing/railingFeatures.dart';
+import 'package:task_app/views/FenceFeatures/vinyl/vinylFeatures.dart';
 import 'package:task_app/views/TaskCreation/finalFeaures.dart';
 import 'package:task_app/views/TaskCreation/woodTask/optionWood.dart';
 
@@ -114,7 +116,7 @@ class _levelMaterial extends State<LevelMaterial> {
             //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
             onPressed: () {
               Navigator.push(context,
-                  new MaterialPageRoute(builder: (context) => FinalFeatures()));
+                  new MaterialPageRoute(builder: (context) => VinylFeatures()));
             },
             padding: EdgeInsets.symmetric(horizontal: 50),
             color: Colors.blue[700],
@@ -161,8 +163,10 @@ class _levelMaterial extends State<LevelMaterial> {
                 borderRadius: BorderRadius.circular(18.0)),
             //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
             onPressed: () {
-              Navigator.push(context,
-                  new MaterialPageRoute(builder: (context) => FinalFeatures()));
+              Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                      builder: (context) => RailingFeatures()));
             },
             padding: EdgeInsets.symmetric(horizontal: 50),
             color: Colors.blue[700],

@@ -1,13 +1,13 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 
-class WoodGatesFeature1 extends StatefulWidget {
+class VinylGatesFeature1 extends StatefulWidget {
   @override
   _feature1 createState() => _feature1();
 }
 
-TextEditingController _inchesFieldControllerWood = TextEditingController();
-String frameType = "";
+TextEditingController _inchesFieldControllerVinyl = TextEditingController();
+String swingTypeVinyl = "";
 
 enum SigningCharacter {
   Normal,
@@ -28,7 +28,7 @@ enum SigningCharacter {
 SigningCharacter _character = SigningCharacter.Normal;
 String selectedStateRadioQ1 = null;
 
-class _feature1 extends State<WoodGatesFeature1> {
+class _feature1 extends State<VinylGatesFeature1> {
   @override
   void initState() {
     super.initState();
@@ -48,7 +48,7 @@ class _feature1 extends State<WoodGatesFeature1> {
               padding: EdgeInsets.all(15.0),
               alignment: Alignment.center,
               child: Text(
-                "type gate:",
+                "Opening end Swing:",
                 style: TextStyle(
                   fontSize: 22.0,
                   fontFamily: "Ralewaybold",
@@ -63,7 +63,7 @@ class _feature1 extends State<WoodGatesFeature1> {
                 children: <Widget>[
                   Card(
                     child: ListTile(
-                      title: Text('Wood Frame'),
+                      title: Text('Inside'),
                       onTap: () {
                         showDialog(
                             context: context,
@@ -75,7 +75,7 @@ class _feature1 extends State<WoodGatesFeature1> {
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                       TextFormField(
-                                        controller: _inchesFieldControllerWood,
+                                        controller: _inchesFieldControllerVinyl,
                                         validator: (value) {
                                           return value.isNotEmpty
                                               ? null
@@ -88,7 +88,7 @@ class _feature1 extends State<WoodGatesFeature1> {
                                 actions: <Widget>[
                                   FlatButton(
                                       onPressed: () {
-                                        frameType = 'Inside';
+                                        swingTypeVinyl = 'Inside';
                                         Navigator.pop(context);
                                       },
                                       child: Text("Add"))
@@ -100,7 +100,7 @@ class _feature1 extends State<WoodGatesFeature1> {
                   ),
                   Card(
                     child: ListTile(
-                      title: Text('iron Frame:'),
+                      title: Text('Outside:'),
                       onTap: () {
                         showDialog(
                             context: context,
@@ -112,7 +112,7 @@ class _feature1 extends State<WoodGatesFeature1> {
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                       TextFormField(
-                                        controller: _inchesFieldControllerWood,
+                                        controller: _inchesFieldControllerVinyl,
                                         validator: (value) {
                                           return value.isNotEmpty
                                               ? null
@@ -125,7 +125,81 @@ class _feature1 extends State<WoodGatesFeature1> {
                                 actions: <Widget>[
                                   FlatButton(
                                       onPressed: () {
-                                        frameType = 'Outside';
+                                        swingTypeVinyl = 'Outside';
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text("Add"))
+                                ],
+                              );
+                            });
+                      },
+                    ),
+                  ),
+                  Card(
+                    child: ListTile(
+                      title: Text('left:'),
+                      onTap: () {
+                        showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                title: Text("Inches:"),
+                                content: Form(
+                                    child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                      TextFormField(
+                                        controller: _inchesFieldControllerVinyl,
+                                        validator: (value) {
+                                          return value.isNotEmpty
+                                              ? null
+                                              : "Invalido";
+                                        },
+                                        decoration: InputDecoration(
+                                            hintText: "Ex: 5', 15', etc"),
+                                      ),
+                                    ])),
+                                actions: <Widget>[
+                                  FlatButton(
+                                      onPressed: () {
+                                        swingTypeVinyl = 'left';
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text("Add"))
+                                ],
+                              );
+                            });
+                      },
+                    ),
+                  ),
+                  Card(
+                    child: ListTile(
+                      title: Text('right:'),
+                      onTap: () {
+                        showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                title: Text("Inches:"),
+                                content: Form(
+                                    child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                      TextFormField(
+                                        controller: _inchesFieldControllerVinyl,
+                                        validator: (value) {
+                                          return value.isNotEmpty
+                                              ? null
+                                              : "Invalido";
+                                        },
+                                        decoration: InputDecoration(
+                                            hintText: "Ex: 5', 15', etc"),
+                                      ),
+                                    ])),
+                                actions: <Widget>[
+                                  FlatButton(
+                                      onPressed: () {
+                                        swingTypeVinyl = 'right';
                                         Navigator.pop(context);
                                       },
                                       child: Text("Add"))
@@ -146,8 +220,8 @@ class _feature1 extends State<WoodGatesFeature1> {
   }
 }
 
-class BringAnswerWoodGates1 {
+class BringAnswerVinylGates1 {
   String send() {
-    return frameType + ":" + _inchesFieldControllerWood.text;
+    return swingTypeVinyl + ":" + _inchesFieldControllerVinyl.text;
   }
 }

@@ -1,13 +1,13 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 
-class WoodGatesFeature1 extends StatefulWidget {
+class RailingFeature4 extends StatefulWidget {
   @override
   _feature1 createState() => _feature1();
 }
 
-TextEditingController _inchesFieldControllerWood = TextEditingController();
-String frameType = "";
+TextEditingController _colorFieldControllerRai = TextEditingController();
+String colorTypeRai = "";
 
 enum SigningCharacter {
   Normal,
@@ -28,7 +28,7 @@ enum SigningCharacter {
 SigningCharacter _character = SigningCharacter.Normal;
 String selectedStateRadioQ1 = null;
 
-class _feature1 extends State<WoodGatesFeature1> {
+class _feature1 extends State<RailingFeature4> {
   @override
   void initState() {
     super.initState();
@@ -48,7 +48,7 @@ class _feature1 extends State<WoodGatesFeature1> {
               padding: EdgeInsets.all(15.0),
               alignment: Alignment.center,
               child: Text(
-                "type gate:",
+                "Color:",
                 style: TextStyle(
                   fontSize: 22.0,
                   fontFamily: "Ralewaybold",
@@ -63,32 +63,32 @@ class _feature1 extends State<WoodGatesFeature1> {
                 children: <Widget>[
                   Card(
                     child: ListTile(
-                      title: Text('Wood Frame'),
+                      title: Text('Power coating'),
                       onTap: () {
                         showDialog(
                             context: context,
                             builder: (BuildContext context) {
                               return AlertDialog(
-                                title: Text("Inches:"),
+                                title: Text("Color:"),
                                 content: Form(
                                     child: Column(
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                       TextFormField(
-                                        controller: _inchesFieldControllerWood,
+                                        controller: _colorFieldControllerRai,
                                         validator: (value) {
                                           return value.isNotEmpty
                                               ? null
                                               : "Invalido";
                                         },
                                         decoration: InputDecoration(
-                                            hintText: "Ex: 5', 15', etc"),
+                                            hintText: "Ex: blue, red, etc"),
                                       ),
                                     ])),
                                 actions: <Widget>[
                                   FlatButton(
                                       onPressed: () {
-                                        frameType = 'Inside';
+                                        colorTypeRai = 'Power coating';
                                         Navigator.pop(context);
                                       },
                                       child: Text("Add"))
@@ -100,32 +100,32 @@ class _feature1 extends State<WoodGatesFeature1> {
                   ),
                   Card(
                     child: ListTile(
-                      title: Text('iron Frame:'),
+                      title: Text('Regular Colors'),
                       onTap: () {
                         showDialog(
                             context: context,
                             builder: (BuildContext context) {
                               return AlertDialog(
-                                title: Text("Inches:"),
+                                title: Text("Color:"),
                                 content: Form(
                                     child: Column(
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                       TextFormField(
-                                        controller: _inchesFieldControllerWood,
+                                        controller: _colorFieldControllerRai,
                                         validator: (value) {
                                           return value.isNotEmpty
                                               ? null
                                               : "Invalido";
                                         },
                                         decoration: InputDecoration(
-                                            hintText: "Ex: 5', 15', etc"),
+                                            hintText: "Ex: blue, red, etc"),
                                       ),
                                     ])),
                                 actions: <Widget>[
                                   FlatButton(
                                       onPressed: () {
-                                        frameType = 'Outside';
+                                        colorTypeRai = 'Regular colors';
                                         Navigator.pop(context);
                                       },
                                       child: Text("Add"))
@@ -146,8 +146,8 @@ class _feature1 extends State<WoodGatesFeature1> {
   }
 }
 
-class BringAnswerWoodGates1 {
+class BringAnswerRailing4 {
   String send() {
-    return frameType + ":" + _inchesFieldControllerWood.text;
+    return colorTypeRai + ":" + _colorFieldControllerRai.text;
   }
 }

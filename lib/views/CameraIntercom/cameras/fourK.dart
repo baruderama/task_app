@@ -1,12 +1,12 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 
-class WoodGatesFeature5 extends StatefulWidget {
+class FourK extends StatefulWidget {
   @override
   _feature1 createState() => _feature1();
 }
 
-String selectedStateMontageGatesQ5 = null;
+String fourK = null;
 
 enum SigningCharacter {
   Normal,
@@ -27,7 +27,7 @@ enum SigningCharacter {
 SigningCharacter _character = SigningCharacter.Normal;
 String selectedStateRadioQ1 = null;
 
-class _feature1 extends State<WoodGatesFeature5> {
+class _feature1 extends State<FourK> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +40,7 @@ class _feature1 extends State<WoodGatesFeature5> {
               padding: EdgeInsets.all(15.0),
               alignment: Alignment.center,
               child: Text(
-                "Harbor:",
+                "4k:",
                 style: TextStyle(
                   fontSize: 22.0,
                   fontFamily: "Ralewaybold",
@@ -59,7 +59,7 @@ class _feature1 extends State<WoodGatesFeature5> {
                   onChanged: (SigningCharacter value) {
                     setState(() {
                       _character = value;
-                      selectedStateMontageGatesQ5 = 'Yes';
+                      fourK = 'Yes';
                     });
                   },
                 ),
@@ -73,7 +73,7 @@ class _feature1 extends State<WoodGatesFeature5> {
                   onChanged: (SigningCharacter value) {
                     setState(() {
                       _character = value;
-                      selectedStateMontageGatesQ5 = 'No';
+                      fourK = 'No';
                     });
                   },
                 ),
@@ -89,8 +89,8 @@ class _feature1 extends State<WoodGatesFeature5> {
   }
 }
 
-class BringAnswerWoodGates5 {
+class BringAnswerFourK {
   String send() {
-    return selectedStateMontageGatesQ5;
+    return fourK;
   }
 }

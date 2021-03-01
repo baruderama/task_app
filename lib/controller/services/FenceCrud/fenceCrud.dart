@@ -118,6 +118,7 @@ class FenceCrud {
       'height': '' + railingFence.heigth,
       'size_pickets': '' + railingFence.sizePIckets,
       'color': '' + railingFence.color,
+      'style': '' + railingFence.style
     };
 
     var fenceKey = taskReference.child('Fence').push();

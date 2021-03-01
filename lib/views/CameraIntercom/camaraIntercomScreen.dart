@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:task_app/views/CameraIntercom/camaraIntercomScreen.dart';
+import 'package:task_app/views/CameraIntercom/cameras/camerasScreen.dart';
+import 'package:task_app/views/CameraIntercom/intercom/intercomScreen.dart';
+
 import 'package:task_app/views/TaskCreation/finalFeaures.dart';
 import 'package:task_app/views/TaskCreation/levelMaterial.dart';
+import 'package:task_app/views/TaskCreation/levelMaterialGates.dart';
 
 class CamaraIntercomScreen extends StatefulWidget {
   @override
@@ -37,7 +42,7 @@ class _fenceGate extends State<CamaraIntercomScreen> {
             //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
             onPressed: () {
               Navigator.push(context,
-                  new MaterialPageRoute(builder: (context) => FinalFeatures()));
+                  new MaterialPageRoute(builder: (context) => CameraScreen()));
             },
             padding: EdgeInsets.symmetric(horizontal: 50),
             color: Colors.blue[700],
@@ -60,9 +65,10 @@ class _fenceGate extends State<CamaraIntercomScreen> {
                 borderRadius: BorderRadius.circular(18.0)),
             //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
             onPressed: () {
-              // RoutesGeneral().toRegister(context);
-              Navigator.push(context,
-                  new MaterialPageRoute(builder: (context) => FinalFeatures()));
+              Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                      builder: (context) => IntercomScreen()));
             },
             padding: EdgeInsets.symmetric(horizontal: 50),
             color: Colors.blue[700],
@@ -71,12 +77,9 @@ class _fenceGate extends State<CamaraIntercomScreen> {
             //  "assets/images/cerebroAzul.png",
             // height: size.height * 0.25,
             //  ),
-            child: Text("Intercom ", style: TextStyle(fontSize: 15)),
+            child: Text("intercom", style: TextStyle(fontSize: 15)),
           ),
-        ),
-        SizedBox(
-          height: 20,
-        ),
+        )
       ]),
     ));
   }

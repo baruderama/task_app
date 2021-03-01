@@ -26,15 +26,42 @@ import 'package:task_app/models/vinyl/VinylGates.dart';
 import 'package:task_app/models/wood/WoodFence.dart';
 import 'package:task_app/models/wood/WoodGates.dart';
 import 'package:task_app/models/wood/WoodT&G.dart';
+import 'package:task_app/views/FenceFeatures/Iron/ironFeature1.dart';
+import 'package:task_app/views/FenceFeatures/Iron/ironFeature2.dart';
+import 'package:task_app/views/FenceFeatures/Iron/ironFeature3.dart';
+import 'package:task_app/views/FenceFeatures/Iron/ironFeature4.dart';
+import 'package:task_app/views/FenceFeatures/Iron/ironFeature5.dart';
+import 'package:task_app/views/FenceFeatures/Iron/ironFeature6.dart';
+import 'package:task_app/views/FenceFeatures/Iron/ironFeature7.dart';
+import 'package:task_app/views/FenceFeatures/railing/railingFeatures1.dart';
+import 'package:task_app/views/FenceFeatures/railing/railingFeatures2.dart';
+import 'package:task_app/views/FenceFeatures/railing/railingFeatures3.dart';
+import 'package:task_app/views/FenceFeatures/railing/railingFeatures4.dart';
+import 'package:task_app/views/GatesFeatures/iron/ironGatesFeatures1.dart';
+import 'package:task_app/views/GatesFeatures/iron/ironGatesFeatures2.dart';
+import 'package:task_app/views/GatesFeatures/iron/ironGatesFeatures3.dart';
+import 'package:task_app/views/GatesFeatures/iron/ironGatesFeatures4.dart';
+import 'package:task_app/views/GatesFeatures/iron/ironGatesFeatures5.dart';
+import 'package:task_app/views/GatesFeatures/iron/ironGatesFeatures6.dart';
+import 'package:task_app/views/GatesFeatures/montage/montageGatesFeatures1.dart';
+import 'package:task_app/views/GatesFeatures/montage/montageGatesFeatures2.dart';
+import 'package:task_app/views/GatesFeatures/montage/montageGatesFeatures3.dart';
+import 'package:task_app/views/GatesFeatures/montage/montageGatesFeatures4.dart';
+import 'package:task_app/views/GatesFeatures/montage/montageGatesFeatures5.dart';
+import 'package:task_app/views/GatesFeatures/wood/woodGatesFeatures1.dart';
+import 'package:task_app/views/GatesFeatures/wood/woodGatesFeatures2.dart';
+import 'package:task_app/views/GatesFeatures/wood/woodGatesFeatures3.dart';
+import 'package:task_app/views/GatesFeatures/wood/woodGatesFeatures4.dart';
+import 'package:task_app/views/GatesFeatures/wood/woodGatesFeatures5.dart';
 import 'package:task_app/views/TaskCreation/features/feature1.dart';
 import 'package:task_app/views/TaskCreation/features/feature2.dart';
 
-class FinalFeatures extends StatefulWidget {
+class RailingFeatures extends StatefulWidget {
   @override
   _finalFeatures createState() => _finalFeatures();
 }
 
-class _finalFeatures extends State<FinalFeatures> {
+class _finalFeatures extends State<RailingFeatures> {
   final controller = PageController(
     initialPage: 0,
   );
@@ -60,7 +87,7 @@ class _finalFeatures extends State<FinalFeatures> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Formulario de síntomas",
+          "Railing Fence Features",
         ),
         backgroundColor: Colors.blue,
         actions: <Widget>[
@@ -73,37 +100,76 @@ class _finalFeatures extends State<FinalFeatures> {
         controller: controller,
         scrollDirection: Axis.vertical,
         children: [
-          Feature1(),
-          Feature2(),
+          RailingFeatures1(),
+          RailingFeatures2(),
+          RailingFeatures3(),
+          RailingFeature4(),
+
           RaisedButton(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(18.0)),
             //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
             onPressed: () async {
               // addUsers('jorge', '1234');
-              //IronFence newStyle =
-              new IronFence("1", "1", "1", "1", "1", "1", "1");
+              /*
+              IronFence newStyle = new IronFence(
+                  BringAnswerIron1().send(),
+                  BringAnswerIron2().send(),
+                  BringAnswerIron3().send(),
+                  BringAnswerIron4().send(),
+                  BringAnswerIron5().send(),
+                  BringAnswerIron6().send(),
+                  BringAnswerIron7().send());
+              print(BringAnswerIron1().send());
+              */
+              /*
+              IronGates newGate = new IronGates(
+                  BringAnswerIronGates1().send(),
+                  BringAnswerIronGates2().send(),
+                  BringAnswerIronGates3().send(),
+                  BringAnswerIronGates4().send(),
+                  BringAnswerIronGates5().send(),
+                  BringAnswerIronGates6().send());
+                  */
 
-              //IronGates newGate = new IronGates("1", "1", "1", "1", "1", "1");
-              //MontageGates newGate = new MontageGates("1", "1", "1", "1", "1");
+              /*
+              MontageGates newGate = new MontageGates(
+                  BringAnswerMontageGates1().send(),
+                  BringAnswerMontageGates2().send(),
+                  BringAnswerMontageGates3().send(),
+                  BringAnswerMontageGates4().send(),
+                  BringAnswerMontageGates5().send());
+                  */
               //MontageFence newFence = new MontageFence("1", "1", "1", "1", "1");
 
               //WoodFence newFence = new WoodFence("1", "1", "1", "1");
-              //WoodGates newGate = new WoodGates("1", "1", "1", "1", "1", "1");
+              /*
+              WoodGates newGate = new WoodGates(
+                  BringAnswerWoodGates1().send(),
+                  BringAnswerWoodGates2().send(),
+                  BringAnswerWoodGates1().send(),
+                  BringAnswerWoodGates3().send(),
+                  BringAnswerWoodGates4().send(),
+                  BringAnswerWoodGates5().send());
+                  */
               //WoodTyG newTyG = new WoodTyG("1", "1");
 
               //VinylFence newFence = new VinylFence("1", "1", "1", "1", "1");
               //VinylGates newGate = new VinylGates("1", "1", "1");
-
+              /*
               ChainLinkGates newGatelink =
                   new ChainLinkGates("1", "1", "1", "1", "1");
 
               ChainLinkFence newFenceink = new ChainLinkFence(
                   "1", "1", "1", "1", "1", "1", "1", "1", "1");
+                  */
 
-              RailingFence newFenceRailing =
-                  new RailingFence("1", "1", "1", '1');
-
+              RailingFence newFenceRailing = new RailingFence(
+                  BringAnswerRailing4().send(),
+                  BringAnswerRailing2().send(),
+                  BringAnswerRailing3().send(),
+                  BringAnswerRailing1().send());
+              /*
               Cameras newCamera =
                   new Cameras("1", "1", "1", "1", "1", "1", "1");
               Intercom newIntercom = new Intercom("1");
@@ -112,7 +178,7 @@ class _finalFeatures extends State<FinalFeatures> {
                   new CantileverGates("1", "1", "1", "1");
 
               Miscellaneous newMisce = new Miscellaneous("1", "1", "1", "1");
-
+                */
               /*
               Iron newIron = new Iron(newStyle);
               List<Iron> list = new List<Iron>();
@@ -122,6 +188,8 @@ class _finalFeatures extends State<FinalFeatures> {
               */
 
               debugPrint('aqui');
+              //FenceCrud().addIronTask(newStyle);
+              //GateCrud().addIronTask(newGate);
               //GateCrud().addMontageTask(newGate);
               //FenceCrud().addMontageTask(newFence);
 
@@ -135,12 +203,12 @@ class _finalFeatures extends State<FinalFeatures> {
 
               //FenceCrud().addChainLinkTask(newFenceink);
 
-              //FenceCrud().addRailingTask(newFenceRailing);
+              FenceCrud().addRailingTask(newFenceRailing);
 
               //CamaraCrud().addCamaraTask(newCamera);
               //IntercomCrud().addIntercomTask(newIntercom);
               //GateCrud().addCantileverTask(newCantelever);
-              MisceleniumCrud().addMisceleniumTask(newMisce);
+              //MisceleniumCrud().addMisceleniumTask(newMisce);
 
               // TaskCrud().addTask(newStyle);
               //GateCrud().addIronTask(newGate);

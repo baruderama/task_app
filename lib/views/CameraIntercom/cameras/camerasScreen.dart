@@ -26,15 +26,30 @@ import 'package:task_app/models/vinyl/VinylGates.dart';
 import 'package:task_app/models/wood/WoodFence.dart';
 import 'package:task_app/models/wood/WoodGates.dart';
 import 'package:task_app/models/wood/WoodT&G.dart';
+import 'package:task_app/views/CameraIntercom/cameras/HDsize.dart';
+import 'package:task_app/views/CameraIntercom/cameras/dvr.dart';
+import 'package:task_app/views/CameraIntercom/cameras/fourK.dart';
+import 'package:task_app/views/CameraIntercom/cameras/hd.dart';
+import 'package:task_app/views/CameraIntercom/cameras/lp.dart';
+import 'package:task_app/views/CameraIntercom/cameras/numberOfCameras.dart';
+import 'package:task_app/views/CameraIntercom/cameras/sizeTv.dart';
+import 'package:task_app/views/CameraIntercom/intercom/intercomFeature1.dart';
+import 'package:task_app/views/FenceFeatures/Iron/ironFeature1.dart';
+import 'package:task_app/views/FenceFeatures/Iron/ironFeature2.dart';
+import 'package:task_app/views/FenceFeatures/Iron/ironFeature3.dart';
+import 'package:task_app/views/FenceFeatures/Iron/ironFeature4.dart';
+import 'package:task_app/views/FenceFeatures/Iron/ironFeature5.dart';
+import 'package:task_app/views/FenceFeatures/Iron/ironFeature6.dart';
+import 'package:task_app/views/FenceFeatures/Iron/ironFeature7.dart';
 import 'package:task_app/views/TaskCreation/features/feature1.dart';
 import 'package:task_app/views/TaskCreation/features/feature2.dart';
 
-class FinalFeatures extends StatefulWidget {
+class CameraScreen extends StatefulWidget {
   @override
   _finalFeatures createState() => _finalFeatures();
 }
 
-class _finalFeatures extends State<FinalFeatures> {
+class _finalFeatures extends State<CameraScreen> {
   final controller = PageController(
     initialPage: 0,
   );
@@ -60,7 +75,7 @@ class _finalFeatures extends State<FinalFeatures> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Formulario de síntomas",
+          "Camera Features",
         ),
         backgroundColor: Colors.blue,
         actions: <Widget>[
@@ -73,16 +88,20 @@ class _finalFeatures extends State<FinalFeatures> {
         controller: controller,
         scrollDirection: Axis.vertical,
         children: [
-          Feature1(),
-          Feature2(),
+          Dvr(),
+          FourK(),
+          HdSize(),
+          Hd(),
+          Lp(),
+          NumberOfCameras(),
+          SizeTv(),
+
           RaisedButton(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(18.0)),
             //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
             onPressed: () async {
               // addUsers('jorge', '1234');
-              //IronFence newStyle =
-              new IronFence("1", "1", "1", "1", "1", "1", "1");
 
               //IronGates newGate = new IronGates("1", "1", "1", "1", "1", "1");
               //MontageGates newGate = new MontageGates("1", "1", "1", "1", "1");
@@ -94,19 +113,26 @@ class _finalFeatures extends State<FinalFeatures> {
 
               //VinylFence newFence = new VinylFence("1", "1", "1", "1", "1");
               //VinylGates newGate = new VinylGates("1", "1", "1");
-
+              /*
               ChainLinkGates newGatelink =
                   new ChainLinkGates("1", "1", "1", "1", "1");
 
               ChainLinkFence newFenceink = new ChainLinkFence(
                   "1", "1", "1", "1", "1", "1", "1", "1", "1");
 
-              RailingFence newFenceRailing =
-                  new RailingFence("1", "1", "1", '1');
+              RailingFence newFenceRailing = new RailingFence("1", "1", "1");
+              */
+              Cameras newCamera = new Cameras(
+                  BringAnswerDvr().send(),
+                  BringAnswerFourK().send(),
+                  BringAnswerHD().send(),
+                  BringAnswerHdSize().send(),
+                  BringAnswerLp().send(),
+                  BringAnswerSizeTv().send(),
+                  BringAnswerNumcameras().send());
 
-              Cameras newCamera =
-                  new Cameras("1", "1", "1", "1", "1", "1", "1");
-              Intercom newIntercom = new Intercom("1");
+              Intercom newIntercom =
+                  new Intercom(BringAnswerIntercom1().send());
 
               CantileverGates newCantelever =
                   new CantileverGates("1", "1", "1", "1");
@@ -122,6 +148,7 @@ class _finalFeatures extends State<FinalFeatures> {
               */
 
               debugPrint('aqui');
+              //FenceCrud().addIronTask(newStyle);
               //GateCrud().addMontageTask(newGate);
               //FenceCrud().addMontageTask(newFence);
 
@@ -137,10 +164,10 @@ class _finalFeatures extends State<FinalFeatures> {
 
               //FenceCrud().addRailingTask(newFenceRailing);
 
-              //CamaraCrud().addCamaraTask(newCamera);
+              CamaraCrud().addCamaraTask(newCamera);
               //IntercomCrud().addIntercomTask(newIntercom);
               //GateCrud().addCantileverTask(newCantelever);
-              MisceleniumCrud().addMisceleniumTask(newMisce);
+              //MisceleniumCrud().addMisceleniumTask(newMisce);
 
               // TaskCrud().addTask(newStyle);
               //GateCrud().addIronTask(newGate);
