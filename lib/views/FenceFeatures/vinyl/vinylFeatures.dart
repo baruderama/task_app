@@ -156,6 +156,8 @@ class _finalFeatures extends State<VinylFeatures> {
               //WoodTyG newTyG = new WoodTyG("1", "1");
 
               VinylFence newFence = new VinylFence(
+                  "",
+                  'vinyl',
                   BringAnswerVinyl5().send(),
                   BringAnswerVinyl2().send(),
                   BringAnswerVinyl3().send(),

@@ -112,6 +112,8 @@ class _finalFeatures extends State<MontageFeatures> {
               //IronGates newGate = new IronGates("1", "1", "1", "1", "1", "1");
               //MontageGates newGate = new MontageGates("1", "1", "1", "1", "1");
               MontageFence newFence = new MontageFence(
+                  "",
+                  'montage',
                   BringAnswerMontage1().send(),
                   BringAnswerMontage2().send(),
                   BringAnswerMontage3().send(),

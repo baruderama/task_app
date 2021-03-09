@@ -124,6 +124,8 @@ class _finalFeatures extends State<WoodFeatures> {
                   */
 
               WoodFence newFence = new WoodFence(
+                  "",
+                  'wood',
                   BringAnswerWood2().send(),
                   BringAnswerWood1().send(),
                   BringAnswerWood3().send(),

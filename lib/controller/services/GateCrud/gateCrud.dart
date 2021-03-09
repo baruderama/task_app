@@ -15,6 +15,7 @@ DatabaseReference taskReference = db.reference().child('task');
 class GateCrud {
   void addIronTask(IronGates ironGates) async {
     var ironGateTask = <String, dynamic>{
+      'tipo': '' + ironGates.t,
       'style': '' + ironGates.style,
       'typeLocks': '' + ironGates.typeLocks,
       'typeHinges': '' + ironGates.typeHinges,
@@ -32,6 +33,7 @@ class GateCrud {
 
   void addMontageTask(MontageGates montageGates) async {
     var montageGateTask = <String, dynamic>{
+      'tipo': '' + montageGates.t,
       'style': '' + montageGates.style,
       'typeLocks': '' + montageGates.typeLocks,
       'typeHinges': '' + montageGates.typeHinges,
@@ -48,6 +50,7 @@ class GateCrud {
 
   void addWoodTask(WoodGates woodGates) async {
     var woodGateTask = <String, dynamic>{
+      'tipo': '' + woodGates.t,
       'WoodGates': '' + woodGates.woodGates,
       'typeLocks': '' + woodGates.typeLocks,
       'typeHinges': '' + woodGates.typeHinges,
@@ -65,6 +68,7 @@ class GateCrud {
 
   void addVinylTask(VinylGates vinylGates) async {
     var vinylGateTask = <String, dynamic>{
+      'tipo': '' + vinylGates.t,
       'typeLocks': '' + vinylGates.typeLocks,
       'typeHinges': '' + vinylGates.typeHinges,
       'opening_end_swing': '' + vinylGates.openingEndSwing,
@@ -79,6 +83,7 @@ class GateCrud {
 
   void addChainLinkTask(ChainLinkGates chainLinkGates) async {
     var chainLinkGateTask = <String, dynamic>{
+      'tipo': '' + chainLinkGates.t,
       'single_doble': '' + chainLinkGates.singleDoble,
       'typeLocks': '' + chainLinkGates.typeLocks,
       'typeHinges': '' + chainLinkGates.typeHinges,
@@ -95,6 +100,7 @@ class GateCrud {
 
   void addCantileverTask(CantileverGates cantileverGates) async {
     var cantileverGateTask = <String, dynamic>{
+      'tipo': '' + cantileverGates.t,
       'style': '' + cantileverGates.style,
       'typeLocks': '' + cantileverGates.typeLocks,
       'motor': '' + cantileverGates.motor,

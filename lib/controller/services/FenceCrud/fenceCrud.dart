@@ -16,8 +16,9 @@ FirebaseDatabase db = new FirebaseDatabase();
 DatabaseReference taskReference = db.reference().child('task');
 
 class FenceCrud {
-  void addIronTask(IronFence ironFence) async {
+  Future<String> addIronTask(IronFence ironFence) async {
     var ironStyleTask = <String, dynamic>{
+      'tipo': '' + ironFence.t,
       'height': '' + ironFence.heigth,
       'spears_designs': '' + ironFence.spearsDesigns,
       'pickets': '' + ironFence.pickets,
@@ -32,10 +33,12 @@ class FenceCrud {
     fenceKey.child('iron').set(ironStyleTask);
 
     debugPrint(fenceKey.key);
+    return fenceKey.key;
   }
 
   void addMontageTask(MontageFence montageFence) async {
     var montageFenceTask = <String, dynamic>{
+      'tipo': '' + montageFence.t,
       'height': '' + montageFence.heigth,
       'spears_designs': '' + montageFence.spearsDesigns,
       'style': '' + montageFence.style,
@@ -52,6 +55,7 @@ class FenceCrud {
 
   void addWoodTask(WoodFence woodFence) async {
     var ironStyleTask = <String, dynamic>{
+      'tipo': '' + woodFence.t,
       'height': '' + woodFence.heigth,
       'type_fence': '' + woodFence.tapeFence,
       'post_size': '' + woodFence.postSize,
@@ -67,6 +71,7 @@ class FenceCrud {
 
   void addWoodTyGTask(WoodTyG woodTyG) async {
     var ironStyleTask = <String, dynamic>{
+      'tipo': '' + woodTyG.t,
       'iron_wood': '' + woodTyG.ironWood,
       'vertical_horizontal': '' + woodTyG.verticalHorizontal,
     };
@@ -80,6 +85,7 @@ class FenceCrud {
 
   void addVinylTask(VinylFence vinylFence) async {
     var vinylTask = <String, dynamic>{
+      't': '' + vinylFence.t,
       'height': '' + vinylFence.heigth,
       'type_style': '' + vinylFence.style,
       'post_caps': '' + vinylFence.postCaps,
@@ -96,6 +102,7 @@ class FenceCrud {
 
   void addChainLinkTask(ChainLinkFence chainLinkFence) async {
     var chainTask = <String, dynamic>{
+      'tipo': '' + chainLinkFence.t,
       'height': '' + chainLinkFence.heigth,
       'color': '' + chainLinkFence.color,
       'line_post': '' + chainLinkFence.linePost,
@@ -115,6 +122,7 @@ class FenceCrud {
 
   void addRailingTask(RailingFence railingFence) async {
     var railingTask = <String, dynamic>{
+      'tipo': '' + railingFence.t,
       'height': '' + railingFence.heigth,
       'size_pickets': '' + railingFence.sizePIckets,
       'color': '' + railingFence.color,

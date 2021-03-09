@@ -158,10 +158,9 @@ class _finalFeatures extends State<ChainLinkFeatures> {
               //VinylFence newFence = new VinylFence("1", "1", "1", "1", "1");
               //VinylGates newGate = new VinylGates("1", "1", "1");
 
-              ChainLinkGates newGatelink =
-                  new ChainLinkGates("1", "1", "1", "1", "1");
-
               ChainLinkFence newFenceink = new ChainLinkFence(
+                  "",
+                  'chain_link',
                   BringAnswerFenceChainLink1().send(),
                   BringAnswerFenceChainLink2().send(),
                   BringAnswerFenceChainLink3().send(),

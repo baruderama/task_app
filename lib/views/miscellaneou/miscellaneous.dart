@@ -164,6 +164,8 @@ class _finalFeatures extends State<MiscellaneousScreen> {
                   new CantileverGates("1", "1", "1", "1");
               */
               Miscellaneous newMisce = new Miscellaneous(
+                  "",
+                  //'',
                   BringAnswerMiscellaneous1().send(),
                   BringAnswerMiscellaneous2().send(),
                   BringAnswerMiscellaneous3().send(),

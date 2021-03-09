@@ -130,8 +130,8 @@ class _finalFeatures extends State<TyGFeatures> {
                   BringAnswerWood4().send());
                   */
               //WoodGates newGate = new WoodGates("1", "1", "1", "1", "1", "1");
-              WoodTyG newTyG = new WoodTyG(
-                  BringAnswerTyGs1().send(), BringAnswerTyG2().send());
+              WoodTyG newTyG = new WoodTyG("", 'tyg', BringAnswerTyGs1().send(),
+                  BringAnswerTyG2().send());
 
               //VinylFence newFence = new VinylFence("1", "1", "1", "1", "1");
               //VinylGates newGate = new VinylGates("1", "1", "1");

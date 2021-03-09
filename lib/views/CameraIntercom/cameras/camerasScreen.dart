@@ -123,6 +123,8 @@ class _finalFeatures extends State<CameraScreen> {
               RailingFence newFenceRailing = new RailingFence("1", "1", "1");
               */
               Cameras newCamera = new Cameras(
+                  "",
+                  //'camara',
                   BringAnswerDvr().send(),
                   BringAnswerFourK().send(),
                   BringAnswerHD().send(),
@@ -130,14 +132,6 @@ class _finalFeatures extends State<CameraScreen> {
                   BringAnswerLp().send(),
                   BringAnswerSizeTv().send(),
                   BringAnswerNumcameras().send());
-
-              Intercom newIntercom =
-                  new Intercom(BringAnswerIntercom1().send());
-
-              CantileverGates newCantelever =
-                  new CantileverGates("1", "1", "1", "1");
-
-              Miscellaneous newMisce = new Miscellaneous("1", "1", "1", "1");
 
               /*
               Iron newIron = new Iron(newStyle);

@@ -126,6 +126,8 @@ class _finalFeatures extends State<ChainLinkGatesFeatures> {
               //VinylGates newGate = new VinylGates("1", "1", "1");
 
               ChainLinkGates newGatelink = new ChainLinkGates(
+                  "",
+                  'chain_link',
                   BringAnswerChainLink1().send(),
                   BringAnswerChainLink2().send(),
                   BringAnswerChainLink3().send(),

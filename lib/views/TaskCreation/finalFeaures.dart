@@ -82,7 +82,7 @@ class _finalFeatures extends State<FinalFeatures> {
             onPressed: () async {
               // addUsers('jorge', '1234');
               //IronFence newStyle =
-              new IronFence("1", "1", "1", "1", "1", "1", "1");
+              //new IronFence("1", "1", "1", "1", "1", "1", "1");
 
               //IronGates newGate = new IronGates("1", "1", "1", "1", "1", "1");
               //MontageGates newGate = new MontageGates("1", "1", "1", "1", "1");
@@ -95,6 +95,7 @@ class _finalFeatures extends State<FinalFeatures> {
               //VinylFence newFence = new VinylFence("1", "1", "1", "1", "1");
               //VinylGates newGate = new VinylGates("1", "1", "1");
 
+/*
               ChainLinkGates newGatelink =
                   new ChainLinkGates("1", "1", "1", "1", "1");
 
@@ -112,7 +113,7 @@ class _finalFeatures extends State<FinalFeatures> {
                   new CantileverGates("1", "1", "1", "1");
 
               Miscellaneous newMisce = new Miscellaneous("1", "1", "1", "1");
-
+              */
               /*
               Iron newIron = new Iron(newStyle);
               List<Iron> list = new List<Iron>();
@@ -140,7 +141,7 @@ class _finalFeatures extends State<FinalFeatures> {
               //CamaraCrud().addCamaraTask(newCamera);
               //IntercomCrud().addIntercomTask(newIntercom);
               //GateCrud().addCantileverTask(newCantelever);
-              MisceleniumCrud().addMisceleniumTask(newMisce);
+              // MisceleniumCrud().addMisceleniumTask(newMisce);
 
               // TaskCrud().addTask(newStyle);
               //GateCrud().addIronTask(newGate);

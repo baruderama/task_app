@@ -165,6 +165,8 @@ class _finalFeatures extends State<RailingFeatures> {
                   */
 
               RailingFence newFenceRailing = new RailingFence(
+                  "",
+                  'railing',
                   BringAnswerRailing4().send(),
                   BringAnswerRailing2().send(),
                   BringAnswerRailing3().send(),

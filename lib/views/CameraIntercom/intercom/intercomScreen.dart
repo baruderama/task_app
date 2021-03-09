@@ -113,12 +113,7 @@ class _finalFeatures extends State<IntercomScreen> {
                   new Cameras("1", "1", "1", "1", "1", "1", "1");
                   */
               Intercom newIntercom =
-                  new Intercom(BringAnswerIntercom1().send());
-
-              CantileverGates newCantelever =
-                  new CantileverGates("1", "1", "1", "1");
-
-              Miscellaneous newMisce = new Miscellaneous("1", "1", "1", "1");
+                  new Intercom("", BringAnswerIntercom1().send());
 
               /*
               Iron newIron = new Iron(newStyle);

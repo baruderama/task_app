@@ -1,6 +1,7 @@
 import 'package:firebase_database/firebase_database.dart';
 
 class Cameras {
+  String _id;
   String _lp;
   String _4k;
   String _hd;
@@ -10,7 +11,7 @@ class Cameras {
   String _sizeTv;
   //String _topFinish;
 
-  Cameras(this._lp, this._4k, this._hd, this._dvr, this._hdSize,
+  Cameras(this._id, this._lp, this._4k, this._hd, this._dvr, this._hdSize,
       this._numberCameras, this._sizeTv);
 
   Cameras.map(dynamic obj) {
@@ -23,6 +24,7 @@ class Cameras {
     this._sizeTv = obj['size_tv'];
   }
 
+  String get id => _id;
   String get lp => _lp;
   String get cuatrok => _4k;
   String get hd => _hd;
@@ -32,6 +34,7 @@ class Cameras {
   String get sizeTv => _sizeTv;
 
   Cameras.fromSnapShot(DataSnapshot snapshot) {
+    _id = snapshot.key;
     _lp = snapshot.value['lp'];
     _4k = snapshot.value['4k'];
     _hd = snapshot.value['hd'];

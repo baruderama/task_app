@@ -140,6 +140,8 @@ class _finalFeatures extends State<WoodGatesFeatures> {
 
               //WoodFence newFence = new WoodFence("1", "1", "1", "1");
               WoodGates newGate = new WoodGates(
+                  "",
+                  'wood',
                   BringAnswerWoodGates1().send(),
                   BringAnswerWoodGates2().send(),
                   BringAnswerWoodGates1().send(),

@@ -1,11 +1,17 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:task_app/controller/services/clientCrud/clientCrud.dart';
+import 'package:task_app/models/clientModel/Client.dart';
 import 'package:task_app/views/TaskCreation/fenceGate.dart';
 
 class HomePage extends StatefulWidget {
   @override
   _HomePage createState() => _HomePage();
 }
+
+int globalCount = 0;
+String lastkey;
 
 class _HomePage extends State<HomePage> {
   @override
@@ -36,6 +42,21 @@ class _HomePage extends State<HomePage> {
                 borderRadius: BorderRadius.circular(18.0)),
             //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
             onPressed: () {
+              if (globalCount == 0) {
+                globalCount = 1;
+                Client newClient = new Client("", "pendiente", "nada");
+                ClientCrud().addClient(newClient);
+                productReferenceClient.once().then((DataSnapshot snapshot) {
+                  Map<dynamic, dynamic> values = snapshot.value;
+
+                  values.forEach((key, values) {
+                    if (values["status"] == 'pending') {
+                      debugPrint(key);
+                      lastkey = key;
+                    }
+                  });
+                });
+              }
               Navigator.push(context,
                   new MaterialPageRoute(builder: (context) => FenceGate()));
             },

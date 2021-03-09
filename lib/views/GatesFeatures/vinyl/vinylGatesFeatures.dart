@@ -153,6 +153,8 @@ class _finalFeatures extends State<VinylGatesFeatures> {
 
               //VinylFence newFence = new VinylFence("1", "1", "1", "1", "1");
               VinylGates newGate = new VinylGates(
+                  "",
+                  'vinyl',
                   BringAnswerVinylGates3().send(),
                   BringAnswerVinylGates2().send(),
                   BringAnswerVinylGates1().send());
