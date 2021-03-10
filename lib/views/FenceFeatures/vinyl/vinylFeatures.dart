@@ -6,6 +6,8 @@ import 'package:task_app/controller/services/CameraIntercomCrud.dart/Intercom.da
 import 'package:task_app/controller/services/FenceCrud/fenceCrud.dart';
 import 'package:task_app/controller/services/GateCrud/gateCrud.dart';
 import 'package:task_app/controller/services/Miscelenium/MisceleniumCrud.dart';
+import 'package:task_app/controller/services/clientCrud/clientCrud.dart';
+import 'package:task_app/controller/services/clientTaskCrud/clientTaskCrud.dart';
 
 import 'package:task_app/models/Iron.dart';
 import 'package:task_app/models/Iron/IronFence.dart';
@@ -17,6 +19,7 @@ import 'package:task_app/models/camerasIntercom/Intercom.dart';
 import 'package:task_app/models/cantileverGates/cantileverGates.dart';
 import 'package:task_app/models/chainLink/ChainLinkFence.dart';
 import 'package:task_app/models/chainLink/ChainLinkGates.dart';
+import 'package:task_app/models/clientTask/ClientTask.dart';
 import 'package:task_app/models/miscellaneo/Miscellaneous.dart';
 import 'package:task_app/models/montage/MontageFence.dart';
 import 'package:task_app/models/montage/MontageGates.dart';
@@ -56,11 +59,33 @@ import 'package:task_app/views/GatesFeatures/wood/woodGatesFeatures4.dart';
 import 'package:task_app/views/GatesFeatures/wood/woodGatesFeatures5.dart';
 import 'package:task_app/views/TaskCreation/features/feature1.dart';
 import 'package:task_app/views/TaskCreation/features/feature2.dart';
+import 'package:task_app/views/continueFinish.dart';
+import 'package:task_app/views/homeScreen/homePage.dart';
 
 class VinylFeatures extends StatefulWidget {
   @override
   _finalFeatures createState() => _finalFeatures();
 }
+
+String selectedAcceptVinyl = null;
+
+enum SigningCharacter {
+  Normal,
+  PerdidaDeExpresion,
+  Monotono,
+  Alterado,
+  Ininteligible,
+  Inches15,
+  Inches24,
+  Inches36,
+  Inches42,
+  Inches48,
+  Inches5,
+  Inches6,
+  Inches7,
+  Inches8,
+}
+SigningCharacter _characterVinyl = SigningCharacter.Normal;
 
 class _finalFeatures extends State<VinylFeatures> {
   final controller = PageController(
@@ -111,6 +136,58 @@ class _finalFeatures extends State<VinylFeatures> {
                 borderRadius: BorderRadius.circular(18.0)),
             //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
             onPressed: () async {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: Text("Read"),
+                      content: Form(
+                          child:
+                              Column(mainAxisSize: MainAxisSize.min, children: [
+                        Text("TERMS & CONDITIONS"),
+                        RadioListTile<SigningCharacter>(
+                          title: const Text('accept'),
+                          value: SigningCharacter.Inches15,
+                          groupValue: _characterVinyl,
+                          onChanged: (SigningCharacter value) {
+                            setState(() {
+                              _characterVinyl = value;
+                              selectedAcceptVinyl = 'accept';
+                            });
+                          },
+                        ),
+                      ])),
+                      actions: <Widget>[
+                        FlatButton(
+                            onPressed: () async {
+                              VinylFence newFence = new VinylFence(
+                                  "",
+                                  'vinyl',
+                                  BringAnswerVinyl5().send(),
+                                  BringAnswerVinyl2().send(),
+                                  BringAnswerVinyl3().send(),
+                                  BringAnswerVinyl4().send(),
+                                  BringAnswerVinyl1().send());
+                              //print(BringAnswerIron1().send());
+                              String key =
+                                  await FenceCrud().addVinylTask(newFence);
+                              print("hola");
+                              print(lastkey);
+                              ClientTask newClientTask =
+                                  ClientTask("", key, lastkey, "none");
+                              ClientTaskCrud().addClientTask(newClientTask);
+                              //ClientCrud().updateClient(lastkey);
+
+                              //Navigator.pop(context);
+                              Navigator.push(
+                                  context,
+                                  new MaterialPageRoute(
+                                      builder: (context) => ContinueFinish()));
+                            },
+                            child: Text("ACEPT"))
+                      ],
+                    );
+                  });
               // addUsers('jorge', '1234');
               /*
               IronFence newStyle = new IronFence(
@@ -155,14 +232,6 @@ class _finalFeatures extends State<VinylFeatures> {
                   */
               //WoodTyG newTyG = new WoodTyG("1", "1");
 
-              VinylFence newFence = new VinylFence(
-                  "",
-                  'vinyl',
-                  BringAnswerVinyl5().send(),
-                  BringAnswerVinyl2().send(),
-                  BringAnswerVinyl3().send(),
-                  BringAnswerVinyl4().send(),
-                  BringAnswerVinyl1().send());
               //VinylGates newGate = new VinylGates("1", "1", "1");
               /*
               ChainLinkGates newGatelink =
@@ -202,7 +271,6 @@ class _finalFeatures extends State<VinylFeatures> {
 
               //GateCrud().addChainLinkTask(newGatelink);
               //GateCrud().addVinylTask(newGate);
-              FenceCrud().addVinylTask(newFence);
 
               //FenceCrud().addChainLinkTask(newFenceink);
 

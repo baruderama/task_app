@@ -7,8 +7,15 @@ import 'package:task_app/controller/services/clientCrud/clientCrud.dart';
 import 'package:task_app/controller/services/clientTaskCrud/clientTaskCrud.dart';
 import 'package:task_app/models/Iron.dart';
 import 'package:task_app/models/Iron/IronFence.dart';
+import 'package:task_app/models/chainLink/ChainLinkFence.dart';
 import 'package:task_app/models/clientModel/Client.dart';
 import 'package:task_app/models/clientTask/ClientTask.dart';
+import 'package:task_app/models/montage/MontageFence.dart';
+import 'package:task_app/models/railing/RailingFence.dart';
+import 'package:task_app/models/vinyl/VinylFence.dart';
+import 'package:task_app/models/wood/WoodFence.dart';
+import 'package:task_app/models/wood/WoodT&G.dart';
+import 'package:task_app/views/bossScreen/listClientsScreen.dart';
 
 class ListInfoClient extends StatefulWidget {
   @override
@@ -52,112 +59,712 @@ class _ShopScreen extends State<ListInfoClient> {
   }
 
   Widget showUser(DataSnapshot res) {
-    IronFence client = IronFence.fromSnapShot(res);
+    var client = MontageFence.fromSnapShot(res);
+    var item;
+    bool confirm = false;
+    for (var i in listTask) {
+      if (i == client.id) {
+        confirm = true;
+      }
+    }
 
-    var item = new Card(
-      child: new Container(
-          child: new Center(
-            child: new Row(
-              children: <Widget>[
-                new CircleAvatar(
-                  radius: 40.0,
-                  child: Image.asset("assets/images/giftbox.png"),
-                  backgroundColor: const Color(0xFF20283e),
-                ),
-                new Expanded(
-                  child: new Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: new Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+    if (confirm) {
+      if (client.t == 'iron') {
+        IronFence clientiron = IronFence.fromSnapShot(res);
+        item = new Card(
+          child: new Container(
+              child: new Center(
+                child: new Row(
+                  children: <Widget>[
+                    new CircleAvatar(
+                      radius: 40.0,
+                      child: Image.asset("assets/images/giftbox.png"),
+                      backgroundColor: const Color(0xFF20283e),
+                    ),
+                    new Expanded(
+                      child: new Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: new Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            new Text(
+                              "task with code: " + clientiron.id,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 30.0, color: Colors.blue),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    new Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        new Text(
-                          "task with code: " + client.id,
-                          // set some style to text
-                          style:
-                              new TextStyle(fontSize: 30.0, color: Colors.blue),
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.remove_red_eye_outlined,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido añadido al carrito"),
+                                  );
+                                });
+
+                            productReference
+                                .once()
+                                .then((DataSnapshot snapshot) {
+                              Map<dynamic, dynamic> values = snapshot.value;
+
+                              values.forEach((key, values) {
+                                if (values["idClient"] == client.id) {
+                                  //listTask.add(values["idTask"]);
+                                  //debugPrint(key);
+                                  //lastkey = key;
+                                }
+                              });
+                            });
+
+                            setState(() {
+                              //productList.add(client);
+                            });
+                          },
+                        ),
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.delete_forever,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () async {
+                            // ProductCrud().deleteProduct(product);
+
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido eliminado"),
+                                  );
+                                });
+                          },
                         ),
                       ],
                     ),
-                  ),
+                  ],
                 ),
-                new Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              ),
+              padding: const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0)),
+        );
+      }
+
+      if (client.t == 'chain_link') {
+        ChainLinkFence clientChain = ChainLinkFence.fromSnapShot(res);
+        item = new Card(
+          child: new Container(
+              child: new Center(
+                child: new Row(
                   children: <Widget>[
-                    new IconButton(
-                      iconSize: 30,
-                      icon: const Icon(
-                        Icons.remove_red_eye_outlined,
-                        color: const Color(0xFF167F67),
-                      ),
-                      onPressed: () {
-                        showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              Future.delayed(Duration(seconds: 1), () {
-                                Navigator.of(context).pop(true);
-                              });
-                              return AlertDialog(
-                                title: Text("ha sido añadido al carrito"),
-                              );
-                            });
-
-                        productReference.once().then((DataSnapshot snapshot) {
-                          Map<dynamic, dynamic> values = snapshot.value;
-
-                          values.forEach((key, values) {
-                            if (values["idClient"] == client.id) {
-                              //listTask.add(values["idTask"]);
-                              //debugPrint(key);
-                              //lastkey = key;
-                            }
-                          });
-                        });
-
-                        setState(() {
-                          //productList.add(client);
-                        });
-                      },
+                    new CircleAvatar(
+                      radius: 40.0,
+                      child: Image.asset("assets/images/giftbox.png"),
+                      backgroundColor: const Color(0xFF20283e),
                     ),
-                    new IconButton(
-                      iconSize: 30,
-                      icon: const Icon(
-                        Icons.delete_forever,
-                        color: const Color(0xFF167F67),
+                    new Expanded(
+                      child: new Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: new Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            new Text(
+                              "task with code: " + clientChain.color,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 30.0, color: Colors.blue),
+                            ),
+                          ],
+                        ),
                       ),
-                      onPressed: () async {
-                        // ProductCrud().deleteProduct(product);
+                    ),
+                    new Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.remove_red_eye_outlined,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido añadido al carrito"),
+                                  );
+                                });
 
-                        showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              Future.delayed(Duration(seconds: 1), () {
-                                Navigator.of(context).pop(true);
+                            productReference
+                                .once()
+                                .then((DataSnapshot snapshot) {
+                              Map<dynamic, dynamic> values = snapshot.value;
+
+                              values.forEach((key, values) {
+                                if (values["idClient"] == client.id) {
+                                  //listTask.add(values["idTask"]);
+                                  //debugPrint(key);
+                                  //lastkey = key;
+                                }
                               });
-                              return AlertDialog(
-                                title: Text("ha sido eliminado"),
-                              );
                             });
-                      },
+
+                            setState(() {
+                              //productList.add(client);
+                            });
+                          },
+                        ),
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.delete_forever,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () async {
+                            // ProductCrud().deleteProduct(product);
+
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido eliminado"),
+                                  );
+                                });
+                          },
+                        ),
+                      ],
                     ),
                   ],
                 ),
-              ],
-            ),
-          ),
-          padding: const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0)),
-    );
+              ),
+              padding: const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0)),
+        );
+      }
+      if (client.t == 'montage') {
+        MontageFence clientMontage = MontageFence.fromSnapShot(res);
+        item = new Card(
+          child: new Container(
+              child: new Center(
+                child: new Row(
+                  children: <Widget>[
+                    new CircleAvatar(
+                      radius: 40.0,
+                      child: Image.asset("assets/images/giftbox.png"),
+                      backgroundColor: const Color(0xFF20283e),
+                    ),
+                    new Expanded(
+                      child: new Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: new Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            new Text(
+                              "task with code: " + clientMontage.style,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 30.0, color: Colors.blue),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    new Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.remove_red_eye_outlined,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido añadido al carrito"),
+                                  );
+                                });
+
+                            productReference
+                                .once()
+                                .then((DataSnapshot snapshot) {
+                              Map<dynamic, dynamic> values = snapshot.value;
+
+                              values.forEach((key, values) {
+                                if (values["idClient"] == client.id) {
+                                  //listTask.add(values["idTask"]);
+                                  //debugPrint(key);
+                                  //lastkey = key;
+                                }
+                              });
+                            });
+
+                            setState(() {
+                              //productList.add(client);
+                            });
+                          },
+                        ),
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.delete_forever,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () async {
+                            // ProductCrud().deleteProduct(product);
+
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido eliminado"),
+                                  );
+                                });
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              padding: const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0)),
+        );
+      }
+      if (client.t == 'railing') {
+        RailingFence clientRailing = RailingFence.fromSnapShot(res);
+        item = new Card(
+          child: new Container(
+              child: new Center(
+                child: new Row(
+                  children: <Widget>[
+                    new CircleAvatar(
+                      radius: 40.0,
+                      child: Image.asset("assets/images/giftbox.png"),
+                      backgroundColor: const Color(0xFF20283e),
+                    ),
+                    new Expanded(
+                      child: new Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: new Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            new Text(
+                              "task with code: " + clientRailing.color,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 30.0, color: Colors.blue),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    new Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.remove_red_eye_outlined,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido añadido al carrito"),
+                                  );
+                                });
+
+                            productReference
+                                .once()
+                                .then((DataSnapshot snapshot) {
+                              Map<dynamic, dynamic> values = snapshot.value;
+
+                              values.forEach((key, values) {
+                                if (values["idClient"] == client.id) {
+                                  //listTask.add(values["idTask"]);
+                                  //debugPrint(key);
+                                  //lastkey = key;
+                                }
+                              });
+                            });
+
+                            setState(() {
+                              //productList.add(client);
+                            });
+                          },
+                        ),
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.delete_forever,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () async {
+                            // ProductCrud().deleteProduct(product);
+
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido eliminado"),
+                                  );
+                                });
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              padding: const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0)),
+        );
+      }
+      if (client.t == 'vinyl') {
+        VinylFence clientVinyl = VinylFence.fromSnapShot(res);
+        item = new Card(
+          child: new Container(
+              child: new Center(
+                child: new Row(
+                  children: <Widget>[
+                    new CircleAvatar(
+                      radius: 40.0,
+                      child: Image.asset("assets/images/giftbox.png"),
+                      backgroundColor: const Color(0xFF20283e),
+                    ),
+                    new Expanded(
+                      child: new Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: new Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            new Text(
+                              "task with code: " + clientVinyl.color,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 30.0, color: Colors.blue),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    new Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.remove_red_eye_outlined,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido añadido al carrito"),
+                                  );
+                                });
+
+                            productReference
+                                .once()
+                                .then((DataSnapshot snapshot) {
+                              Map<dynamic, dynamic> values = snapshot.value;
+
+                              values.forEach((key, values) {
+                                if (values["idClient"] == client.id) {
+                                  //listTask.add(values["idTask"]);
+                                  //debugPrint(key);
+                                  //lastkey = key;
+                                }
+                              });
+                            });
+
+                            setState(() {
+                              //productList.add(client);
+                            });
+                          },
+                        ),
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.delete_forever,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () async {
+                            // ProductCrud().deleteProduct(product);
+
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido eliminado"),
+                                  );
+                                });
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              padding: const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0)),
+        );
+      }
+      if (client.t == 'tyg') {
+        WoodTyG clientTyg = WoodTyG.fromSnapShot(res);
+        item = new Card(
+          child: new Container(
+              child: new Center(
+                child: new Row(
+                  children: <Widget>[
+                    new CircleAvatar(
+                      radius: 40.0,
+                      child: Image.asset("assets/images/giftbox.png"),
+                      backgroundColor: const Color(0xFF20283e),
+                    ),
+                    new Expanded(
+                      child: new Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: new Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            new Text(
+                              "task with code: " + clientTyg.ironWood,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 30.0, color: Colors.blue),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    new Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.remove_red_eye_outlined,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido añadido al carrito"),
+                                  );
+                                });
+
+                            productReference
+                                .once()
+                                .then((DataSnapshot snapshot) {
+                              Map<dynamic, dynamic> values = snapshot.value;
+
+                              values.forEach((key, values) {
+                                if (values["idClient"] == client.id) {
+                                  //listTask.add(values["idTask"]);
+                                  //debugPrint(key);
+                                  //lastkey = key;
+                                }
+                              });
+                            });
+
+                            setState(() {
+                              //productList.add(client);
+                            });
+                          },
+                        ),
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.delete_forever,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () async {
+                            // ProductCrud().deleteProduct(product);
+
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido eliminado"),
+                                  );
+                                });
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              padding: const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0)),
+        );
+      }
+      if (client.t == 'wood') {
+        WoodFence clientWood = WoodFence.fromSnapShot(res);
+        item = new Card(
+          child: new Container(
+              child: new Center(
+                child: new Row(
+                  children: <Widget>[
+                    new CircleAvatar(
+                      radius: 40.0,
+                      child: Image.asset("assets/images/giftbox.png"),
+                      backgroundColor: const Color(0xFF20283e),
+                    ),
+                    new Expanded(
+                      child: new Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: new Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            new Text(
+                              "task with code: " + clientWood.postSize,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 30.0, color: Colors.blue),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    new Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.remove_red_eye_outlined,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido añadido al carrito"),
+                                  );
+                                });
+
+                            productReference
+                                .once()
+                                .then((DataSnapshot snapshot) {
+                              Map<dynamic, dynamic> values = snapshot.value;
+
+                              values.forEach((key, values) {
+                                if (values["idClient"] == client.id) {
+                                  //listTask.add(values["idTask"]);
+                                  //debugPrint(key);
+                                  //lastkey = key;
+                                }
+                              });
+                            });
+
+                            setState(() {
+                              //productList.add(client);
+                            });
+                          },
+                        ),
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.delete_forever,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () async {
+                            // ProductCrud().deleteProduct(product);
+
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido eliminado"),
+                                  );
+                                });
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              padding: const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0)),
+        );
+      }
+    }
 
     return item;
   }
 
   AppBar buildAppBar() {
     return AppBar(
-      title: Text('Tienda'),
+      title: Text('Task'),
       backgroundColor: Colors.teal[100],
       elevation: 0,
       leading: IconButton(
-        icon: SvgPicture.asset("assets/icons/back.svg"),
-        onPressed: () async {},
+        icon: SvgPicture.asset("assets/icons/back.svg", color: Colors.white),
+        onPressed: () async {
+          listTask = List<String>();
+          Navigator.pop(context);
+        },
       ),
       actions: <Widget>[
         /*

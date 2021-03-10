@@ -13,7 +13,7 @@ FirebaseDatabase db = new FirebaseDatabase();
 DatabaseReference taskReference = db.reference().child('task');
 
 class GateCrud {
-  void addIronTask(IronGates ironGates) async {
+  Future<String> addIronTask(IronGates ironGates) async {
     var ironGateTask = <String, dynamic>{
       'tipo': '' + ironGates.t,
       'style': '' + ironGates.style,
@@ -26,12 +26,13 @@ class GateCrud {
 
     var gateKey = taskReference.child('Gates').push();
 
-    gateKey.child('iron').set(ironGateTask);
+    gateKey.set(ironGateTask);
 
     debugPrint(gateKey.key);
+    return gateKey.key;
   }
 
-  void addMontageTask(MontageGates montageGates) async {
+  Future<String> addMontageTask(MontageGates montageGates) async {
     var montageGateTask = <String, dynamic>{
       'tipo': '' + montageGates.t,
       'style': '' + montageGates.style,
@@ -43,12 +44,13 @@ class GateCrud {
 
     var gateKey = taskReference.child('Gates').push();
 
-    gateKey.child('montage').set(montageGateTask);
+    gateKey.set(montageGateTask);
 
     debugPrint(gateKey.key);
+    return gateKey.key;
   }
 
-  void addWoodTask(WoodGates woodGates) async {
+  Future<String> addWoodTask(WoodGates woodGates) async {
     var woodGateTask = <String, dynamic>{
       'tipo': '' + woodGates.t,
       'WoodGates': '' + woodGates.woodGates,
@@ -61,12 +63,13 @@ class GateCrud {
 
     var gateKey = taskReference.child('Gates').push();
 
-    gateKey.child('wood').set(woodGateTask);
+    gateKey.set(woodGateTask);
 
     debugPrint(gateKey.key);
+    return gateKey.key;
   }
 
-  void addVinylTask(VinylGates vinylGates) async {
+  Future<String> addVinylTask(VinylGates vinylGates) async {
     var vinylGateTask = <String, dynamic>{
       'tipo': '' + vinylGates.t,
       'typeLocks': '' + vinylGates.typeLocks,
@@ -76,12 +79,13 @@ class GateCrud {
 
     var gateKey = taskReference.child('Gates').push();
 
-    gateKey.child('vinyl').set(vinylGateTask);
+    gateKey.set(vinylGateTask);
 
     debugPrint(gateKey.key);
+    return gateKey.key;
   }
 
-  void addChainLinkTask(ChainLinkGates chainLinkGates) async {
+  Future<String> addChainLinkTask(ChainLinkGates chainLinkGates) async {
     var chainLinkGateTask = <String, dynamic>{
       'tipo': '' + chainLinkGates.t,
       'single_doble': '' + chainLinkGates.singleDoble,
@@ -93,12 +97,13 @@ class GateCrud {
 
     var gateKey = taskReference.child('Gates').push();
 
-    gateKey.child('chain_link').set(chainLinkGateTask);
+    gateKey.set(chainLinkGateTask);
 
     debugPrint(gateKey.key);
+    return gateKey.key;
   }
 
-  void addCantileverTask(CantileverGates cantileverGates) async {
+  Future<String> addCantileverTask(CantileverGates cantileverGates) async {
     var cantileverGateTask = <String, dynamic>{
       'tipo': '' + cantileverGates.t,
       'style': '' + cantileverGates.style,
@@ -109,9 +114,10 @@ class GateCrud {
 
     var gateKey = taskReference.child('Gates').push();
 
-    gateKey.child('cantilever_gates').set(cantileverGateTask);
+    gateKey.set(cantileverGateTask);
 
     debugPrint(gateKey.key);
+    return gateKey.key;
   }
 
   /*

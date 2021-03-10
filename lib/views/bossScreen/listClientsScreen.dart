@@ -7,6 +7,7 @@ import 'package:task_app/controller/services/clientCrud/clientCrud.dart';
 import 'package:task_app/controller/services/clientTaskCrud/clientTaskCrud.dart';
 import 'package:task_app/models/clientModel/Client.dart';
 import 'package:task_app/models/clientTask/ClientTask.dart';
+import 'package:task_app/views/bossScreen/listInfoClient.dart';
 
 class ListClientsScreen extends StatefulWidget {
   @override
@@ -22,6 +23,14 @@ List<String> listTask = List<String>();
 //String lastkey;
 
 class _ShopScreen extends State<ListClientsScreen> {
+  @override
+  void initState() {
+    super.initState();
+    listTask = List<String>();
+    //todos.add("Regular Colors");
+    //todos.add("Power Coating");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +55,7 @@ class _ShopScreen extends State<ListClientsScreen> {
   }
 
   Widget showUser(DataSnapshot res) {
-    ClientTask client = ClientTask.fromSnapShot(res);
+    Client client = Client.fromSnapShot(res);
 
     var item = new Card(
       child: new Container(
@@ -84,6 +93,7 @@ class _ShopScreen extends State<ListClientsScreen> {
                         color: const Color(0xFF167F67),
                       ),
                       onPressed: () {
+                        /*
                         showDialog(
                             context: context,
                             builder: (BuildContext context) {
@@ -93,14 +103,18 @@ class _ShopScreen extends State<ListClientsScreen> {
                               return AlertDialog(
                                 title: Text("ha sido añadido al carrito"),
                               );
-                            });
+                            });*/
 
                         productReference.once().then((DataSnapshot snapshot) {
                           Map<dynamic, dynamic> values = snapshot.value;
 
                           values.forEach((key, values) {
+                            print('hey bro' + client.id);
+                            print('hey bro2' + values["idClient"]);
+
                             if (values["idClient"] == client.id) {
                               listTask.add(values["idTask"]);
+                              print(listTask);
                               //debugPrint(key);
                               //lastkey = key;
                             }
@@ -110,6 +124,10 @@ class _ShopScreen extends State<ListClientsScreen> {
                         setState(() {
                           //productList.add(client);
                         });
+                        Navigator.push(
+                            context,
+                            new MaterialPageRoute(
+                                builder: (context) => ListInfoClient()));
                       },
                     ),
                     new IconButton(
@@ -146,7 +164,7 @@ class _ShopScreen extends State<ListClientsScreen> {
 
   AppBar buildAppBar() {
     return AppBar(
-      title: Text('Tienda'),
+      title: Text('Client'),
       backgroundColor: Colors.teal[100],
       elevation: 0,
       leading: IconButton(

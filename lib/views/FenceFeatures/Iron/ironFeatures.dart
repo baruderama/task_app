@@ -119,60 +119,28 @@ class _finalFeatures extends State<IronFeatures> {
                 borderRadius: BorderRadius.circular(18.0)),
             //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
             onPressed: () async {
-              showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return AlertDialog(
-                      title: Text("Read"),
-                      content: Form(
-                          child:
-                              Column(mainAxisSize: MainAxisSize.min, children: [
-                        Text("TERMS & CONDITIONS"),
-                        RadioListTile<SigningCharacter>(
-                          title: const Text('accept'),
-                          value: SigningCharacter.Inches15,
-                          groupValue: _characterIron,
-                          onChanged: (SigningCharacter value) {
-                            setState(() {
-                              _characterIron = value;
-                              selectedAcceptIron = 'accept';
-                            });
-                          },
-                        ),
-                      ])),
-                      actions: <Widget>[
-                        FlatButton(
-                            onPressed: () async {
-                              IronFence newStyle = new IronFence(
-                                  "",
-                                  'iron',
-                                  BringAnswerIron1().send(),
-                                  BringAnswerIron2().send(),
-                                  BringAnswerIron3().send(),
-                                  BringAnswerIron4().send(),
-                                  BringAnswerIron5().send(),
-                                  BringAnswerIron6().send(),
-                                  BringAnswerIron7().send());
-                              print(BringAnswerIron1().send());
-                              String key =
-                                  await FenceCrud().addIronTask(newStyle);
-                              print(key);
-                              print(lastkey);
-                              ClientTask newClientTask =
-                                  ClientTask("", key, lastkey, "none");
-                              ClientTaskCrud().addClientTask(newClientTask);
-                              ClientCrud().updateClient(lastkey);
+              IronFence newStyle = new IronFence(
+                  "",
+                  'iron',
+                  BringAnswerIron1().send(),
+                  BringAnswerIron2().send(),
+                  BringAnswerIron3().send(),
+                  BringAnswerIron4().send(),
+                  BringAnswerIron5().send(),
+                  BringAnswerIron6().send(),
+                  BringAnswerIron7().send());
+              print(BringAnswerIron1().send());
+              String key = await FenceCrud().addIronTask(newStyle);
+              print("hola");
+              print(lastkey);
+              ClientTask newClientTask = ClientTask("", key, lastkey, "none");
+              ClientTaskCrud().addClientTask(newClientTask);
 
-                              //Navigator.pop(context);
-                              Navigator.push(
-                                  context,
-                                  new MaterialPageRoute(
-                                      builder: (context) => ContinueFinish()));
-                            },
-                            child: Text("ACEPT"))
-                      ],
-                    );
-                  });
+              //Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                      builder: (context) => ContinueFinish()));
               // addUsers('jorge', '1234');
 
               /*

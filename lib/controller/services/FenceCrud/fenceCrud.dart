@@ -30,30 +30,31 @@ class FenceCrud {
 
     var fenceKey = taskReference.child('Fence').push();
 
-    fenceKey.child('iron').set(ironStyleTask);
+    fenceKey.set(ironStyleTask);
 
     debugPrint(fenceKey.key);
     return fenceKey.key;
   }
 
-  void addMontageTask(MontageFence montageFence) async {
+  Future<String> addMontageTask(MontageFence montageFence) async {
     var montageFenceTask = <String, dynamic>{
       'tipo': '' + montageFence.t,
       'height': '' + montageFence.heigth,
       'spears_designs': '' + montageFence.spearsDesigns,
       'style': '' + montageFence.style,
       'post_size': '' + montageFence.postSize,
-      'top_finish': '' + montageFence.topFinish,
+      'topFinish': '' + montageFence.topFinish,
     };
 
     var fenceKey = taskReference.child('Fence').push();
 
-    fenceKey.child('montage').set(montageFenceTask);
+    fenceKey.set(montageFenceTask);
 
     debugPrint(fenceKey.key);
+    return fenceKey.key;
   }
 
-  void addWoodTask(WoodFence woodFence) async {
+  Future<String> addWoodTask(WoodFence woodFence) async {
     var ironStyleTask = <String, dynamic>{
       'tipo': '' + woodFence.t,
       'height': '' + woodFence.heigth,
@@ -64,12 +65,13 @@ class FenceCrud {
 
     var fenceKey = taskReference.child('Fence').push();
 
-    fenceKey.child('wood').set(ironStyleTask);
+    fenceKey.set(ironStyleTask);
 
     debugPrint(fenceKey.key);
+    return fenceKey.key;
   }
 
-  void addWoodTyGTask(WoodTyG woodTyG) async {
+  Future<String> addWoodTyGTask(WoodTyG woodTyG) async {
     var ironStyleTask = <String, dynamic>{
       'tipo': '' + woodTyG.t,
       'iron_wood': '' + woodTyG.ironWood,
@@ -78,12 +80,13 @@ class FenceCrud {
 
     var fenceKey = taskReference.child('Fence').push();
 
-    fenceKey.child('wood').set(ironStyleTask);
+    fenceKey.set(ironStyleTask);
 
     debugPrint(fenceKey.key);
+    return fenceKey.key;
   }
 
-  void addVinylTask(VinylFence vinylFence) async {
+  Future<String> addVinylTask(VinylFence vinylFence) async {
     var vinylTask = <String, dynamic>{
       't': '' + vinylFence.t,
       'height': '' + vinylFence.heigth,
@@ -95,12 +98,13 @@ class FenceCrud {
 
     var fenceKey = taskReference.child('Fence').push();
 
-    fenceKey.child('Vinyl').set(vinylTask);
+    fenceKey.set(vinylTask);
 
     debugPrint(fenceKey.key);
+    return fenceKey.key;
   }
 
-  void addChainLinkTask(ChainLinkFence chainLinkFence) async {
+  Future<String> addChainLinkTask(ChainLinkFence chainLinkFence) async {
     var chainTask = <String, dynamic>{
       'tipo': '' + chainLinkFence.t,
       'height': '' + chainLinkFence.heigth,
@@ -115,12 +119,13 @@ class FenceCrud {
 
     var fenceKey = taskReference.child('Fence').push();
 
-    fenceKey.child('chain_link').set(chainTask);
+    fenceKey.set(chainTask);
 
     debugPrint(fenceKey.key);
+    return fenceKey.key;
   }
 
-  void addRailingTask(RailingFence railingFence) async {
+  Future<String> addRailingTask(RailingFence railingFence) async {
     var railingTask = <String, dynamic>{
       'tipo': '' + railingFence.t,
       'height': '' + railingFence.heigth,
@@ -131,9 +136,10 @@ class FenceCrud {
 
     var fenceKey = taskReference.child('Fence').push();
 
-    fenceKey.child('railing').set(railingTask);
+    fenceKey.set(railingTask);
 
     debugPrint(fenceKey.key);
+    return fenceKey.key;
   }
 
   /*

@@ -72,7 +72,7 @@ class __FormInputFieldLogin extends State<AutenticationScreen> {
                   Navigator.push(
                       context,
                       new MaterialPageRoute(
-                          builder: (context) => ListInfoClient()));
+                          builder: (context) => ListClientsScreen()));
                   // builder: (context) => ListClientsScreen()));
                 }
                 // RoutesGeneral().toRegister(context);

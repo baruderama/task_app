@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:task_app/controller/services/clientCrud/clientCrud.dart';
 import 'package:task_app/models/miscellaneo/Miscellaneous.dart';
 import 'package:task_app/views/CameraIntercom/camaraIntercomScreen.dart';
 
@@ -15,6 +16,28 @@ class ContinueFinish extends StatefulWidget {
   @override
   _fenceGate createState() => _fenceGate();
 }
+
+String selectedAcceptTerms = null;
+bool checkedValue = false;
+
+enum SigningCharacter {
+  Normal,
+  PerdidaDeExpresion,
+  Monotono,
+  Alterado,
+  Ininteligible,
+  Inches15,
+  Inches24,
+  Inches36,
+  Inches42,
+  Inches48,
+  Inches5,
+  Inches6,
+  Inches7,
+  Inches8,
+}
+SigningCharacter _characterTerm = SigningCharacter.Normal;
+String selectedStateRadioQ1Term = null;
 
 class _fenceGate extends State<ContinueFinish> {
   @override
@@ -69,11 +92,52 @@ class _fenceGate extends State<ContinueFinish> {
             //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
             onPressed: () {
               // RoutesGeneral().toRegister(context);\
-              globalCount = 0;
-              Navigator.push(
-                  context,
-                  new MaterialPageRoute(
-                      builder: (context) => PrincipalScreen()));
+
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return StatefulBuilder(builder: (context, setState) {
+                      return AlertDialog(
+                        title: Text("Read"),
+                        content: Form(
+                            child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                              Text("TERMS & CONDITIONS"),
+                              CheckboxListTile(
+                                title: Text("Accept Terms & Conditions"),
+                                value: checkedValue,
+                                onChanged: (newValue) {
+                                  setState(() {
+                                    checkedValue = newValue;
+                                    print(checkedValue);
+                                  });
+                                },
+                                controlAffinity: ListTileControlAffinity
+                                    .leading, //  <-- leading Checkbox
+                              )
+                            ])),
+                        actions: <Widget>[
+                          FlatButton(
+                              onPressed: () async {
+                                ClientCrud().updateClient(lastkey);
+                                if (checkedValue) {
+                                  globalCount = 0;
+                                  ClientCrud().updateClient(lastkey);
+                                  Navigator.push(
+                                      context,
+                                      new MaterialPageRoute(
+                                          builder: (context) =>
+                                              PrincipalScreen()));
+                                } else {
+                                  Navigator.pop(context);
+                                }
+                              },
+                              child: Text("ACCEPT"))
+                        ],
+                      );
+                    });
+                  });
             },
             padding: EdgeInsets.symmetric(horizontal: 50),
             color: Colors.blue[700],
