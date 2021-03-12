@@ -17,7 +17,7 @@ FirebaseDatabase db = new FirebaseDatabase();
 DatabaseReference taskReference = db.reference().child('task');
 
 class CamaraCrud {
-  void addCamaraTask(Cameras camara) async {
+  Future<String> addCamaraTask(Cameras camara) async {
     var camaraTask = <String, dynamic>{
       'lp': '' + camara.lp,
       '4k': '' + camara.cuatrok,
@@ -33,5 +33,6 @@ class CamaraCrud {
     fenceKey.set(camaraTask);
 
     debugPrint(fenceKey.key);
+    return fenceKey.key;
   }
 }

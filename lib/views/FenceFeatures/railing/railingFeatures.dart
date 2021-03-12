@@ -135,58 +135,28 @@ class _finalFeatures extends State<RailingFeatures> {
                 borderRadius: BorderRadius.circular(18.0)),
             //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
             onPressed: () async {
-              showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return AlertDialog(
-                      title: Text("Read"),
-                      content: Form(
-                          child:
-                              Column(mainAxisSize: MainAxisSize.min, children: [
-                        Text("TERMS & CONDITIONS"),
-                        RadioListTile<SigningCharacter>(
-                          title: const Text('accept'),
-                          value: SigningCharacter.Inches15,
-                          groupValue: _characterRailing,
-                          onChanged: (SigningCharacter value) {
-                            setState(() {
-                              _characterRailing = value;
-                              selectedAcceptRailing = 'accept';
-                            });
-                          },
-                        ),
-                      ])),
-                      actions: <Widget>[
-                        FlatButton(
-                            onPressed: () async {
-                              RailingFence newFenceRailing = new RailingFence(
-                                  "",
-                                  'railing',
-                                  BringAnswerRailing4().send(),
-                                  BringAnswerRailing2().send(),
-                                  BringAnswerRailing3().send(),
-                                  BringAnswerRailing1().send());
-                              //print(BringAnswerIron1().send());
-                              String key = await FenceCrud()
-                                  .addRailingTask(newFenceRailing);
-                              print("hola");
-                              print(lastkey);
-                              ClientTask newClientTask =
-                                  ClientTask("", key, lastkey, "none");
-                              ClientTaskCrud().addClientTask(newClientTask);
-                              //ClientCrud().updateClient(lastkey);
-
-                              //Navigator.pop(context);
-                              Navigator.push(
-                                  context,
-                                  new MaterialPageRoute(
-                                      builder: (context) => ContinueFinish()));
-                            },
-                            child: Text("ACEPT"))
-                      ],
-                    );
-                  });
               // addUsers('jorge', '1234');
+
+              RailingFence newFenceRailing = new RailingFence(
+                  "",
+                  'railing',
+                  BringAnswerRailing4().send(),
+                  BringAnswerRailing2().send(),
+                  BringAnswerRailing3().send(),
+                  BringAnswerRailing1().send());
+              //print(BringAnswerIron1().send());
+              String key = await FenceCrud().addRailingTask(newFenceRailing);
+              print("hola");
+              print(lastkey);
+              ClientTask newClientTask = ClientTask("", key, lastkey, "none");
+              ClientTaskCrud().addClientTask(newClientTask);
+              //ClientCrud().updateClient(lastkey);
+
+              //Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                      builder: (context) => ContinueFinish()));
               /*
               IronFence newStyle = new IronFence(
                   BringAnswerIron1().send(),

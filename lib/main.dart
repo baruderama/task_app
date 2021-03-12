@@ -3,10 +3,34 @@ import 'dart:math';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:task_app/views/homeScreen/homePage.dart';
 import 'package:task_app/views/principalScreen.dart';
 
-Future<void> main() {
+final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+    FlutterLocalNotificationsPlugin();
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  var initializationSettingAndroid = AndroidInitializationSettings('hey1_');
+  //var initializationSettingsIOS = IOSInitializationSettings();
+
+  var initializationSettingsIOS = IOSInitializationSettings(
+      requestAlertPermission: true,
+      requestBadgePermission: true,
+      requestSoundPermission: true,
+      onDidReceiveLocalNotification:
+          (int id, String title, String body, String payload) async {});
+
+  var initializationSettings = InitializationSettings(
+      android: initializationSettingAndroid, iOS: initializationSettingsIOS);
+  await flutterLocalNotificationsPlugin.initialize(initializationSettings,
+      onSelectNotification: (String payload) async {
+    if (payload != null) {
+      debugPrint('notification payload:' + payload);
+    }
+  });
+
   runApp(MyApp());
 }
 

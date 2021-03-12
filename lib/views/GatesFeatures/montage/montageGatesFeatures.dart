@@ -6,6 +6,7 @@ import 'package:task_app/controller/services/CameraIntercomCrud.dart/Intercom.da
 import 'package:task_app/controller/services/FenceCrud/fenceCrud.dart';
 import 'package:task_app/controller/services/GateCrud/gateCrud.dart';
 import 'package:task_app/controller/services/Miscelenium/MisceleniumCrud.dart';
+import 'package:task_app/controller/services/clientTaskCrud/clientTaskCrud.dart';
 
 import 'package:task_app/models/Iron.dart';
 import 'package:task_app/models/Iron/IronFence.dart';
@@ -17,6 +18,7 @@ import 'package:task_app/models/camerasIntercom/Intercom.dart';
 import 'package:task_app/models/cantileverGates/cantileverGates.dart';
 import 'package:task_app/models/chainLink/ChainLinkFence.dart';
 import 'package:task_app/models/chainLink/ChainLinkGates.dart';
+import 'package:task_app/models/clientTask/ClientTask.dart';
 import 'package:task_app/models/miscellaneo/Miscellaneous.dart';
 import 'package:task_app/models/montage/MontageFence.dart';
 import 'package:task_app/models/montage/MontageGates.dart';
@@ -46,6 +48,8 @@ import 'package:task_app/views/GatesFeatures/montage/montageGatesFeatures4.dart'
 import 'package:task_app/views/GatesFeatures/montage/montageGatesFeatures5.dart';
 import 'package:task_app/views/TaskCreation/features/feature1.dart';
 import 'package:task_app/views/TaskCreation/features/feature2.dart';
+import 'package:task_app/views/continueFinish.dart';
+import 'package:task_app/views/homeScreen/homePage.dart';
 
 class MontageGatesFeatures extends StatefulWidget {
   @override
@@ -167,7 +171,19 @@ class _finalFeatures extends State<MontageGatesFeatures> {
               debugPrint('aqui');
               //FenceCrud().addIronTask(newStyle);
               //GateCrud().addIronTask(newGate);
-              GateCrud().addMontageTask(newGate);
+
+              String key = await GateCrud().addMontageTask(newGate);
+              print("hola");
+              print(lastkey);
+              ClientTask newClientTask = ClientTask("", key, lastkey, "none");
+              ClientTaskCrud().addClientTask(newClientTask);
+              //ClientCrud().updateClient(lastkey);
+
+              //Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                      builder: (context) => ContinueFinish()));
               //FenceCrud().addMontageTask(newFence);
 
               //GateCrud().addWoodTask(newGate);

@@ -136,59 +136,29 @@ class _finalFeatures extends State<VinylFeatures> {
                 borderRadius: BorderRadius.circular(18.0)),
             //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
             onPressed: () async {
-              showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return AlertDialog(
-                      title: Text("Read"),
-                      content: Form(
-                          child:
-                              Column(mainAxisSize: MainAxisSize.min, children: [
-                        Text("TERMS & CONDITIONS"),
-                        RadioListTile<SigningCharacter>(
-                          title: const Text('accept'),
-                          value: SigningCharacter.Inches15,
-                          groupValue: _characterVinyl,
-                          onChanged: (SigningCharacter value) {
-                            setState(() {
-                              _characterVinyl = value;
-                              selectedAcceptVinyl = 'accept';
-                            });
-                          },
-                        ),
-                      ])),
-                      actions: <Widget>[
-                        FlatButton(
-                            onPressed: () async {
-                              VinylFence newFence = new VinylFence(
-                                  "",
-                                  'vinyl',
-                                  BringAnswerVinyl5().send(),
-                                  BringAnswerVinyl2().send(),
-                                  BringAnswerVinyl3().send(),
-                                  BringAnswerVinyl4().send(),
-                                  BringAnswerVinyl1().send());
-                              //print(BringAnswerIron1().send());
-                              String key =
-                                  await FenceCrud().addVinylTask(newFence);
-                              print("hola");
-                              print(lastkey);
-                              ClientTask newClientTask =
-                                  ClientTask("", key, lastkey, "none");
-                              ClientTaskCrud().addClientTask(newClientTask);
-                              //ClientCrud().updateClient(lastkey);
-
-                              //Navigator.pop(context);
-                              Navigator.push(
-                                  context,
-                                  new MaterialPageRoute(
-                                      builder: (context) => ContinueFinish()));
-                            },
-                            child: Text("ACEPT"))
-                      ],
-                    );
-                  });
               // addUsers('jorge', '1234');
+
+              VinylFence newFence = new VinylFence(
+                  "",
+                  'vinyl',
+                  BringAnswerVinyl5().send(),
+                  BringAnswerVinyl2().send(),
+                  BringAnswerVinyl3().send(),
+                  BringAnswerVinyl4().send(),
+                  BringAnswerVinyl1().send());
+              //print(BringAnswerIron1().send());
+              String key = await FenceCrud().addVinylTask(newFence);
+              print("hola");
+              print(lastkey);
+              ClientTask newClientTask = ClientTask("", key, lastkey, "none");
+              ClientTaskCrud().addClientTask(newClientTask);
+              //ClientCrud().updateClient(lastkey);
+
+              //Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                      builder: (context) => ContinueFinish()));
               /*
               IronFence newStyle = new IronFence(
                   BringAnswerIron1().send(),

@@ -123,58 +123,28 @@ class _finalFeatures extends State<WoodFeatures> {
                 borderRadius: BorderRadius.circular(18.0)),
             //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
             onPressed: () async {
-              showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return AlertDialog(
-                      title: Text("Read"),
-                      content: Form(
-                          child:
-                              Column(mainAxisSize: MainAxisSize.min, children: [
-                        Text("TERMS & CONDITIONS"),
-                        RadioListTile<SigningCharacter>(
-                          title: const Text('accept'),
-                          value: SigningCharacter.Inches15,
-                          groupValue: _characterwood,
-                          onChanged: (SigningCharacter value) {
-                            setState(() {
-                              _characterwood = value;
-                              selectedAcceptWoods = 'accept';
-                            });
-                          },
-                        ),
-                      ])),
-                      actions: <Widget>[
-                        FlatButton(
-                            onPressed: () async {
-                              WoodFence newFence = new WoodFence(
-                                  "",
-                                  'wood',
-                                  BringAnswerWood2().send(),
-                                  BringAnswerWood1().send(),
-                                  BringAnswerWood3().send(),
-                                  BringAnswerWood4().send());
-                              //print(BringAnswerIron1().send());
-                              String key =
-                                  await FenceCrud().addWoodTask(newFence);
-                              print("hola");
-                              print(lastkey);
-                              ClientTask newClientTask =
-                                  ClientTask("", key, lastkey, "none");
-                              ClientTaskCrud().addClientTask(newClientTask);
-                              //ClientCrud().updateClient(lastkey);
-
-                              //Navigator.pop(context);
-                              Navigator.push(
-                                  context,
-                                  new MaterialPageRoute(
-                                      builder: (context) => ContinueFinish()));
-                            },
-                            child: Text("ACEPT"))
-                      ],
-                    );
-                  });
               // addUsers('jorge', '1234');
+
+              WoodFence newFence = new WoodFence(
+                  "",
+                  'wood',
+                  BringAnswerWood2().send(),
+                  BringAnswerWood1().send(),
+                  BringAnswerWood3().send(),
+                  BringAnswerWood4().send());
+              //print(BringAnswerIron1().send());
+              String key = await FenceCrud().addWoodTask(newFence);
+              print("hola");
+              print(lastkey);
+              ClientTask newClientTask = ClientTask("", key, lastkey, "none");
+              ClientTaskCrud().addClientTask(newClientTask);
+              //ClientCrud().updateClient(lastkey);
+
+              //Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                      builder: (context) => ContinueFinish()));
 
               /*
               IronFence newStyle = new IronFence(

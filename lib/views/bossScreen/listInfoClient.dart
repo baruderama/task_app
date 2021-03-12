@@ -16,6 +16,7 @@ import 'package:task_app/models/vinyl/VinylFence.dart';
 import 'package:task_app/models/wood/WoodFence.dart';
 import 'package:task_app/models/wood/WoodT&G.dart';
 import 'package:task_app/views/bossScreen/listClientsScreen.dart';
+import 'package:task_app/views/calendar/calendar.dart';
 
 class ListInfoClient extends StatefulWidget {
   @override
@@ -140,22 +141,16 @@ class _ShopScreen extends State<ListInfoClient> {
                         new IconButton(
                           iconSize: 30,
                           icon: const Icon(
-                            Icons.delete_forever,
+                            Icons.calendar_today,
                             color: const Color(0xFF167F67),
                           ),
                           onPressed: () async {
                             // ProductCrud().deleteProduct(product);
 
-                            showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  Future.delayed(Duration(seconds: 1), () {
-                                    Navigator.of(context).pop(true);
-                                  });
-                                  return AlertDialog(
-                                    title: Text("ha sido eliminado"),
-                                  );
-                                });
+                            Navigator.push(
+                                context,
+                                new MaterialPageRoute(
+                                    builder: (context) => CalendarScreen()));
                           },
                         ),
                       ],

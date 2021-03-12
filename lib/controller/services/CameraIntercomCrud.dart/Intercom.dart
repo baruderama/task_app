@@ -18,7 +18,7 @@ FirebaseDatabase db = new FirebaseDatabase();
 DatabaseReference taskReference = db.reference().child('task');
 
 class IntercomCrud {
-  void addIntercomTask(Intercom intercom) async {
+  Future<String> addIntercomTask(Intercom intercom) async {
     var intercomTask = <String, dynamic>{
       'tipe': '' + intercom.tipe,
     };
@@ -28,5 +28,6 @@ class IntercomCrud {
     fenceKey.set(intercomTask);
 
     debugPrint(fenceKey.key);
+    return fenceKey.key;
   }
 }

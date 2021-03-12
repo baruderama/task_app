@@ -18,7 +18,7 @@ FirebaseDatabase db = new FirebaseDatabase();
 DatabaseReference taskReference = db.reference().child('task');
 
 class MisceleniumCrud {
-  void addMisceleniumTask(Miscellaneous miscellaneous) async {
+  Future<String> addMisceleniumTask(Miscellaneous miscellaneous) async {
     var miscellaneousTask = <String, dynamic>{
       'bumper_post': '' + miscellaneous.bumperPost,
       'guard_rail': '' + miscellaneous.guardRail,
@@ -31,5 +31,6 @@ class MisceleniumCrud {
     fenceKey.set(miscellaneousTask);
 
     debugPrint(fenceKey.key);
+    return fenceKey.key;
   }
 }
