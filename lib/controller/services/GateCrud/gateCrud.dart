@@ -39,7 +39,7 @@ class GateCrud {
       'typeLocks': '' + montageGates.typeLocks,
       'typeHinges': '' + montageGates.typeHinges,
       'mesh': '' + montageGates.mesh,
-      'opening_end_swing': '' + montageGates.openingEndSwing,
+      'openingEndSwing': '' + montageGates.openingEndSwing,
     };
 
     var gateKey = taskReference.child('Gates').push();
@@ -92,7 +92,7 @@ class GateCrud {
       'typeLocks': '' + chainLinkGates.typeLocks,
       'typeHinges': '' + chainLinkGates.typeHinges,
       'size_post': '' + chainLinkGates.sizePost,
-      'opening_swing': '' + chainLinkGates.openingSwing,
+      'swingOpening': '' + chainLinkGates.openingSwing,
     };
 
     var gateKey = taskReference.child('Gates').push();

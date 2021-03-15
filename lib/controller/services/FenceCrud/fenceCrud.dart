@@ -40,9 +40,9 @@ class FenceCrud {
     var montageFenceTask = <String, dynamic>{
       'tipo': '' + montageFence.t,
       'height': '' + montageFence.heigth,
-      'spears_designs': '' + montageFence.spearsDesigns,
+      'spearsDesigns': '' + montageFence.spearsDesigns,
       'style': '' + montageFence.style,
-      'post_size': '' + montageFence.postSize,
+      'postSize': '' + montageFence.postSize,
       'topFinish': '' + montageFence.topFinish,
     };
 
@@ -88,10 +88,10 @@ class FenceCrud {
 
   Future<String> addVinylTask(VinylFence vinylFence) async {
     var vinylTask = <String, dynamic>{
-      't': '' + vinylFence.t,
+      'tipo': '' + vinylFence.t,
       'height': '' + vinylFence.heigth,
       'type_style': '' + vinylFence.style,
-      'post_caps': '' + vinylFence.postCaps,
+      'postCaps': '' + vinylFence.postCaps,
       'top_finish': '' + vinylFence.topFinish,
       'color': '' + vinylFence.color,
     };
