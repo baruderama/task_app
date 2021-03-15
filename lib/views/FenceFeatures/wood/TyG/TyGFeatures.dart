@@ -125,8 +125,8 @@ class _finalFeatures extends State<TyGFeatures> {
             onPressed: () async {
               // addUsers('jorge', '1234');
 
-              WoodTyG newTyG = new WoodTyG("", 'tyg', BringAnswerTyGs1().send(),
-                  BringAnswerTyG2().send());
+              WoodTyG newTyG = new WoodTyG("", 'tyg', BringAnswerTyG2().send(),
+                  BringAnswerTyGs1().send());
               //print(BringAnswerIron1().send());
               String key = await FenceCrud().addWoodTyGTask(newTyG);
               print("hola");

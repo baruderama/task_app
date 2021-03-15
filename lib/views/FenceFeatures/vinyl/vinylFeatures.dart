@@ -141,11 +141,11 @@ class _finalFeatures extends State<VinylFeatures> {
               VinylFence newFence = new VinylFence(
                   "",
                   'vinyl',
-                  BringAnswerVinyl5().send(),
                   BringAnswerVinyl2().send(),
                   BringAnswerVinyl3().send(),
+                  BringAnswerVinyl1().send(),
                   BringAnswerVinyl4().send(),
-                  BringAnswerVinyl1().send());
+                  BringAnswerVinyl5().send());
               //print(BringAnswerIron1().send());
               String key = await FenceCrud().addVinylTask(newFence);
               print("hola");

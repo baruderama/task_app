@@ -33,6 +33,9 @@ class _feature1 extends State<VinylFeature1> {
   @override
   void initState() {
     super.initState();
+    _inchesFieldControllerVinyl1 = new TextEditingController();
+    _character = SigningCharacter.Normal;
+
     //todos.add("Regular Colors");
     //todos.add("Power Coating");
   }
@@ -49,7 +52,7 @@ class _feature1 extends State<VinylFeature1> {
               padding: EdgeInsets.all(15.0),
               alignment: Alignment.center,
               child: Text(
-                "Opening end Swing:",
+                "Color:",
                 style: TextStyle(
                   fontSize: 22.0,
                   fontFamily: "Ralewaybold",
@@ -112,7 +115,7 @@ class _feature1 extends State<VinylFeature1> {
                                 actions: <Widget>[
                                   FlatButton(
                                       onPressed: () {
-                                        swingTypeVinyl1 = 'Inside';
+                                        //swingTypeVinyl1 = 'Color';
                                         Navigator.pop(context);
                                       },
                                       child: Text("Add"))
@@ -135,6 +138,11 @@ class _feature1 extends State<VinylFeature1> {
 
 class BringAnswerVinyl1 {
   String send() {
-    return swingTypeVinyl1 + ":" + _inchesFieldControllerVinyl1.text;
+    if (_inchesFieldControllerVinyl1.text != "") {
+      print(_inchesFieldControllerVinyl1.text + 'holis');
+      return _inchesFieldControllerVinyl1.text;
+    } else {
+      return selectedStateVinylGatesQ1;
+    }
   }
 }

@@ -1,13 +1,16 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:intl/intl.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:task_app/controller/services/clientTaskCrud/clientTaskCrud.dart';
 import 'package:task_app/main.dart';
 
 DateTime tempDate;
 TimeOfDay _time = TimeOfDay.now();
+String currentClient;
 
 class CalendarScreen extends StatefulWidget {
   @override
@@ -189,7 +192,22 @@ class _CalendarState extends State<CalendarScreen> {
           tempDate = new DateFormat("yyyy-MM-dd").parse(date);
           debugPrint(_calendarController.selectedDay.toString());
           debugPrint(tempDate.toString());
-          scheduleAlarm();
+          productReference.once().then((DataSnapshot snapshot) {
+            Map<dynamic, dynamic> values = snapshot.value;
+
+            values.forEach((key, values) {
+              if (values["idClient"] == currentClient) {
+                print('hey bro2' + values["idClient"]);
+                ClientTaskCrud().updateClientTask(key, onlyDate);
+                //print('hey bro2' + values["id"]);
+                //currentClient = values["idClient"];
+                // print('hey bro' + key.toString());
+                //debugPrint(key);
+                //lastkey = key;
+              }
+            });
+          });
+          scheduleAlarm(onlyDate.toString());
 
           Navigator.pop(context);
 
@@ -204,8 +222,9 @@ class _CalendarState extends State<CalendarScreen> {
     );
   }
 
-  void scheduleAlarm() async {
-    var scheduledNotificationDateTime = DateTime.now().add(Duration(hours: 1));
+  void scheduleAlarm(String dueDate) async {
+    var scheduledNotificationDateTime =
+        DateTime.now().add(Duration(seconds: 5));
     var androidPlatformChannelSpecifics = AndroidNotificationDetails(
       'alarm_notif',
       'alarm_notif',
@@ -224,7 +243,11 @@ class _CalendarState extends State<CalendarScreen> {
         android: androidPlatformChannelSpecifics,
         iOS: iOSPlatformChannelSpecifics);
 
-    await flutterLocalNotificationsPlugin.schedule(0, 'Office', "Task",
-        scheduledNotificationDateTime, platformChannelSpecifics);
+    await flutterLocalNotificationsPlugin.schedule(
+        0,
+        'TASK OF CLIENT \n-$currentClient :',
+        "Due date -> $dueDate",
+        scheduledNotificationDateTime,
+        platformChannelSpecifics);
   }
 }

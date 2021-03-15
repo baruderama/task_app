@@ -20,12 +20,12 @@ class FenceCrud {
     var ironStyleTask = <String, dynamic>{
       'tipo': '' + ironFence.t,
       'height': '' + ironFence.heigth,
-      'spears_designs': '' + ironFence.spearsDesigns,
+      'spearsDesigns': '' + ironFence.spearsDesigns,
       'pickets': '' + ironFence.pickets,
       'channels': '' + ironFence.channels,
-      'post_size': '' + ironFence.postSize,
+      'postSize': '' + ironFence.postSize,
       'paint': '' + ironFence.paint,
-      'top_finish': '' + ironFence.topFinish,
+      'topFinish': '' + ironFence.topFinish,
     };
 
     var fenceKey = taskReference.child('Fence').push();
@@ -107,6 +107,7 @@ class FenceCrud {
   Future<String> addChainLinkTask(ChainLinkFence chainLinkFence) async {
     var chainTask = <String, dynamic>{
       'tipo': '' + chainLinkFence.t,
+      'type_fence': '' + chainLinkFence.typeFence,
       'height': '' + chainLinkFence.heigth,
       'color': '' + chainLinkFence.color,
       'line_post': '' + chainLinkFence.linePost,

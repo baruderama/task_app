@@ -132,11 +132,11 @@ class _finalFeatures extends State<ChainLinkGatesFeatures> {
               ChainLinkGates newGatelink = new ChainLinkGates(
                   "",
                   'chain_link',
-                  BringAnswerChainLink1().send(),
                   BringAnswerChainLink2().send(),
-                  BringAnswerChainLink3().send(),
                   BringAnswerChainLink4().send(),
-                  BringAnswerChainLink5().send());
+                  BringAnswerChainLink5().send(),
+                  BringAnswerChainLink3().send(),
+                  BringAnswerChainLink1().send());
               /*
               ChainLinkFence newFenceink = new ChainLinkFence(
                   "1", "1", "1", "1", "1", "1", "1", "1", "1");

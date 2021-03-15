@@ -140,9 +140,9 @@ class _finalFeatures extends State<RailingFeatures> {
               RailingFence newFenceRailing = new RailingFence(
                   "",
                   'railing',
-                  BringAnswerRailing4().send(),
-                  BringAnswerRailing2().send(),
                   BringAnswerRailing3().send(),
+                  BringAnswerRailing2().send(),
+                  BringAnswerRailing4().send(),
                   BringAnswerRailing1().send());
               //print(BringAnswerIron1().send());
               String key = await FenceCrud().addRailingTask(newFenceRailing);

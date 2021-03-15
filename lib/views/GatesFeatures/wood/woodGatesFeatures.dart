@@ -148,10 +148,10 @@ class _finalFeatures extends State<WoodGatesFeatures> {
                   'wood',
                   BringAnswerWoodGates1().send(),
                   BringAnswerWoodGates2().send(),
-                  BringAnswerWoodGates1().send(),
-                  BringAnswerWoodGates3().send(),
                   BringAnswerWoodGates4().send(),
-                  BringAnswerWoodGates5().send());
+                  BringAnswerWoodGates5().send(),
+                  BringAnswerWoodGates3().send(),
+                  BringAnswerWoodGates1().send());
               //WoodTyG newTyG = new WoodTyG("1", "1");
 
               //VinylFence newFence = new VinylFence("1", "1", "1", "1", "1");

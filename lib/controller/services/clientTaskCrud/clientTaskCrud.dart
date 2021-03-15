@@ -27,12 +27,10 @@ class ClientTaskCrud {
     });
   }
 
-  void updateClientTask(ClientTask clientTask) async {
+  void updateClientTask(String clientTaskKey, DateTime time) async {
     //int valor = int.parse(product.stock) - resta;
-    await productReference.child(clientTask.id).update({
-      "idClient": "" + clientTask.idClient,
-      "idTask": "" + clientTask.idTask,
-      "date": "" + clientTask.date,
+    await productReference.child(clientTaskKey).update({
+      "date": "" + time.toString(),
     }).then((_) {
       print('Transaction  committed.');
     });

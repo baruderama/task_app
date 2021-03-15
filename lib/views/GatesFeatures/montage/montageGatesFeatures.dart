@@ -131,9 +131,9 @@ class _finalFeatures extends State<MontageGatesFeatures> {
                   'montage',
                   BringAnswerMontageGates1().send(),
                   BringAnswerMontageGates2().send(),
-                  BringAnswerMontageGates3().send(),
                   BringAnswerMontageGates4().send(),
-                  BringAnswerMontageGates5().send());
+                  BringAnswerMontageGates5().send(),
+                  BringAnswerMontageGates3().send());
               //MontageFence newFence = new MontageFence("1", "1", "1", "1", "1");
 
               //WoodFence newFence = new WoodFence("1", "1", "1", "1");

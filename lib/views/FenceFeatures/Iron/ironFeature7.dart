@@ -24,6 +24,7 @@ enum SigningCharacter {
   Inches7,
   Inches8,
 }
+
 SigningCharacter _character = SigningCharacter.Normal;
 String selectedStateRadioQ1 = null;
 

@@ -88,7 +88,7 @@ class _feature1 extends State<WoodGatesFeature1> {
                                 actions: <Widget>[
                                   FlatButton(
                                       onPressed: () {
-                                        frameType = 'Inside';
+                                        frameType = 'wood frame';
                                         Navigator.pop(context);
                                       },
                                       child: Text("Add"))
@@ -125,7 +125,7 @@ class _feature1 extends State<WoodGatesFeature1> {
                                 actions: <Widget>[
                                   FlatButton(
                                       onPressed: () {
-                                        frameType = 'Outside';
+                                        frameType = 'iron frame';
                                         Navigator.pop(context);
                                       },
                                       child: Text("Add"))

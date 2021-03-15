@@ -89,7 +89,19 @@ class _ShopScreen extends State<ListInfoClient> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             new Text(
-                              "task with code: " + clientiron.id,
+                              "- " + clientiron.t,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 30.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "- " + clientiron.postSize,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 30.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "- " + clientiron.paint,
                               // set some style to text
                               style: new TextStyle(
                                   fontSize: 30.0, color: Colors.blue),

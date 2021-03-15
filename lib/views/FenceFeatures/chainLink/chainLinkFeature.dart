@@ -117,7 +117,7 @@ class _finalFeatures extends State<ChainLinkFeatures> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Montage Gates Features",
+          "Chain Link Fence Features",
         ),
         backgroundColor: Colors.blue,
         actions: <Widget>[
@@ -147,15 +147,15 @@ class _finalFeatures extends State<ChainLinkFeatures> {
               ChainLinkFence newFenceink = new ChainLinkFence(
                   "",
                   'chain_link',
+                  BringAnswerFenceChainLink3().send(),
                   BringAnswerFenceChainLink1().send(),
                   BringAnswerFenceChainLink2().send(),
-                  BringAnswerFenceChainLink3().send(),
                   BringAnswerFenceChainLink4().send(),
+                  BringAnswerFenceChainLink9().send(),
                   BringAnswerFenceChainLink5().send(),
-                  BringAnswerFenceChainLink6().send(),
                   BringAnswerFenceChainLink7().send(),
                   BringAnswerFenceChainLink8().send(),
-                  BringAnswerFenceChainLink9().send());
+                  BringAnswerFenceChainLink6().send());
               //print(BringAnswerIron1().send());
               String key = await FenceCrud().addChainLinkTask(newFenceink);
               print("hola");

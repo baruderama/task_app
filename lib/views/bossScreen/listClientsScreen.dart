@@ -8,6 +8,7 @@ import 'package:task_app/controller/services/clientTaskCrud/clientTaskCrud.dart'
 import 'package:task_app/models/clientModel/Client.dart';
 import 'package:task_app/models/clientTask/ClientTask.dart';
 import 'package:task_app/views/bossScreen/listInfoClient.dart';
+import 'package:task_app/views/calendar/calendar.dart';
 
 class ListClientsScreen extends StatefulWidget {
   @override
@@ -139,16 +140,25 @@ class _ShopScreen extends State<ListClientsScreen> {
                       onPressed: () async {
                         // ProductCrud().deleteProduct(product);
 
-                        showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              Future.delayed(Duration(seconds: 1), () {
-                                Navigator.of(context).pop(true);
-                              });
-                              return AlertDialog(
-                                title: Text("ha sido eliminado"),
-                              );
-                            });
+                        productReference.once().then((DataSnapshot snapshot) {
+                          Map<dynamic, dynamic> values = snapshot.value;
+
+                          values.forEach((key, values) {
+                            if (values["idClient"] == client.id) {
+                              //print('hey bro2' + values["idClient"]);
+                              print('hey bro2' + key);
+                              currentClient = values["idClient"];
+                              // print('hey bro' + key.toString());
+                              //debugPrint(key);
+                              //lastkey = key;
+                            }
+                          });
+                        });
+
+                        Navigator.push(
+                            context,
+                            new MaterialPageRoute(
+                                builder: (context) => CalendarScreen()));
                       },
                     ),
                   ],

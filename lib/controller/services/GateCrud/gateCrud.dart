@@ -56,7 +56,7 @@ class GateCrud {
       'WoodGates': '' + woodGates.woodGates,
       'typeLocks': '' + woodGates.typeLocks,
       'typeHinges': '' + woodGates.typeHinges,
-      'mesh': '' + woodGates.harbor,
+      'harbor': '' + woodGates.harbor,
       'opening_end_swing': '' + woodGates.openingEndSwing,
       'ironFrame': '' + woodGates.ironFrame,
     };

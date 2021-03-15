@@ -143,9 +143,9 @@ class _finalFeatures extends State<CantileverGatesFeatures> {
                   "",
                   'cantilever_gates',
                   BringAnswerCantileverGates1().send(),
-                  BringAnswerCantilever2().send(),
                   BringAnswerCantilever3().send(),
-                  BringAnswerCantilver4().send());
+                  BringAnswerCantilver4().send(),
+                  BringAnswerCantilever2().send());
 
               /*
               Iron newIron = new Iron(newStyle);
