@@ -12,6 +12,7 @@ class HomePage extends StatefulWidget {
 
 int globalCount = 0;
 String lastkey;
+TextEditingController _clientNameController = TextEditingController();
 
 class _HomePage extends State<HomePage> {
   @override
@@ -42,23 +43,53 @@ class _HomePage extends State<HomePage> {
                 borderRadius: BorderRadius.circular(18.0)),
             //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
             onPressed: () {
-              if (globalCount == 0) {
-                globalCount = 1;
-                Client newClient = new Client("", "pendiente", "nada");
-                ClientCrud().addClient(newClient);
-                productReferenceClient.once().then((DataSnapshot snapshot) {
-                  Map<dynamic, dynamic> values = snapshot.value;
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: Text("Client Name:"),
+                      content: Form(
+                          child:
+                              Column(mainAxisSize: MainAxisSize.min, children: [
+                        TextFormField(
+                          controller: _clientNameController,
+                          validator: (value) {
+                            return value.isNotEmpty ? null : "Invalido";
+                          },
+                          decoration:
+                              InputDecoration(hintText: "Ex: Mike, Juan, etc"),
+                        ),
+                      ])),
+                      actions: <Widget>[
+                        FlatButton(
+                            onPressed: () {
+                              if (globalCount == 0) {
+                                globalCount = 1;
+                                Client newClient = new Client("", "pendiente",
+                                    "nada", _clientNameController.text);
+                                ClientCrud().addClient(newClient);
+                                productReferenceClient
+                                    .once()
+                                    .then((DataSnapshot snapshot) {
+                                  Map<dynamic, dynamic> values = snapshot.value;
 
-                  values.forEach((key, values) {
-                    if (values["status"] == 'pending') {
-                      debugPrint(key);
-                      lastkey = key;
-                    }
+                                  values.forEach((key, values) {
+                                    if (values["status"] == 'pending') {
+                                      debugPrint(key);
+                                      lastkey = key;
+                                    }
+                                  });
+                                });
+                              }
+                              Navigator.push(
+                                  context,
+                                  new MaterialPageRoute(
+                                      builder: (context) => FenceGate()));
+                            },
+                            child: Text("Add"))
+                      ],
+                    );
                   });
-                });
-              }
-              Navigator.push(context,
-                  new MaterialPageRoute(builder: (context) => FenceGate()));
             },
             padding: EdgeInsets.symmetric(horizontal: 50),
             color: Colors.blue[700],

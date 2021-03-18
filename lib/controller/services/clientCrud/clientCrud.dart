@@ -11,6 +11,7 @@ class ClientCrud {
     productReferenceClient.push().set(<String, String>{
       "Terms&conditions": "" + client.conditions,
       "status": "" + "pending",
+      "name": "" + client.name
     }).then((_) {
       print('Transaction  committed.');
     });

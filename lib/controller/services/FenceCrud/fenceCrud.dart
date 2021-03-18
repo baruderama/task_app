@@ -19,7 +19,7 @@ class FenceCrud {
   Future<String> addIronTask(IronFence ironFence) async {
     var ironStyleTask = <String, dynamic>{
       'tipo': '' + ironFence.t,
-      'height': '' + ironFence.heigth,
+      'heigth': '' + ironFence.heigth,
       'spearsDesigns': '' + ironFence.spearsDesigns,
       'pickets': '' + ironFence.pickets,
       'channels': '' + ironFence.channels,
@@ -39,7 +39,7 @@ class FenceCrud {
   Future<String> addMontageTask(MontageFence montageFence) async {
     var montageFenceTask = <String, dynamic>{
       'tipo': '' + montageFence.t,
-      'height': '' + montageFence.heigth,
+      'heigth': '' + montageFence.heigth,
       'spearsDesigns': '' + montageFence.spearsDesigns,
       'style': '' + montageFence.style,
       'postSize': '' + montageFence.postSize,
@@ -57,7 +57,7 @@ class FenceCrud {
   Future<String> addWoodTask(WoodFence woodFence) async {
     var ironStyleTask = <String, dynamic>{
       'tipo': '' + woodFence.t,
-      'height': '' + woodFence.heigth,
+      'heigth': '' + woodFence.heigth,
       'type_fence': '' + woodFence.tapeFence,
       'post_size': '' + woodFence.postSize,
       'top_finish': '' + woodFence.topFinish,
@@ -89,7 +89,7 @@ class FenceCrud {
   Future<String> addVinylTask(VinylFence vinylFence) async {
     var vinylTask = <String, dynamic>{
       'tipo': '' + vinylFence.t,
-      'height': '' + vinylFence.heigth,
+      'heigth': '' + vinylFence.heigth,
       'type_style': '' + vinylFence.style,
       'postCaps': '' + vinylFence.postCaps,
       'top_finish': '' + vinylFence.topFinish,
@@ -108,10 +108,10 @@ class FenceCrud {
     var chainTask = <String, dynamic>{
       'tipo': '' + chainLinkFence.t,
       'type_fence': '' + chainLinkFence.typeFence,
-      'height': '' + chainLinkFence.heigth,
+      'heigth': '' + chainLinkFence.heigth,
       'color': '' + chainLinkFence.color,
       'line_post': '' + chainLinkFence.linePost,
-      'top_finish': '' + chainLinkFence.topFinish,
+      'topFinish': '' + chainLinkFence.topFinish,
       'privacy': '' + chainLinkFence.privacy,
       'security': '' + chainLinkFence.security,
       'terminale_post': '' + chainLinkFence.terminalePost,
@@ -129,7 +129,7 @@ class FenceCrud {
   Future<String> addRailingTask(RailingFence railingFence) async {
     var railingTask = <String, dynamic>{
       'tipo': '' + railingFence.t,
-      'height': '' + railingFence.heigth,
+      'heigth': '' + railingFence.heigth,
       'size_pickets': '' + railingFence.sizePIckets,
       'color': '' + railingFence.color,
       'style': '' + railingFence.style

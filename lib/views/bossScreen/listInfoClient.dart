@@ -92,19 +92,49 @@ class _ShopScreen extends State<ListInfoClient> {
                               "- " + clientiron.t,
                               // set some style to text
                               style: new TextStyle(
-                                  fontSize: 30.0, color: Colors.blue),
+                                  fontSize: 30.0, color: Colors.red),
                             ),
                             new Text(
                               "- " + clientiron.postSize,
                               // set some style to text
                               style: new TextStyle(
-                                  fontSize: 30.0, color: Colors.blue),
+                                  fontSize: 15.0, color: Colors.blue),
                             ),
                             new Text(
                               "- " + clientiron.paint,
                               // set some style to text
                               style: new TextStyle(
-                                  fontSize: 30.0, color: Colors.blue),
+                                  fontSize: 15.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "- " + clientiron.channels,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "- " + clientiron.heigth,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "- " + clientiron.pickets,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "- " + clientiron.spearsDesigns,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "- " + clientiron.topFinish,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.blue),
                             ),
                           ],
                         ),
@@ -153,7 +183,7 @@ class _ShopScreen extends State<ListInfoClient> {
                         new IconButton(
                           iconSize: 30,
                           icon: const Icon(
-                            Icons.calendar_today,
+                            Icons.delete,
                             color: const Color(0xFF167F67),
                           ),
                           onPressed: () async {
@@ -193,10 +223,64 @@ class _ShopScreen extends State<ListInfoClient> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             new Text(
-                              "task with code: " + clientChain.color,
+                              "- " + clientChain.t,
                               // set some style to text
                               style: new TextStyle(
-                                  fontSize: 30.0, color: Colors.blue),
+                                  fontSize: 30.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "-" + clientChain.color,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "-" + clientChain.heigth,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "-" + clientChain.linePost,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "-" + clientChain.privacy,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "-" + clientChain.security,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "-" + clientChain.terminalePost,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "-" + clientChain.topFinish,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "-" + clientChain.topRails,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "-" + clientChain.typeFence,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.blue),
                             ),
                           ],
                         ),
@@ -290,10 +374,34 @@ class _ShopScreen extends State<ListInfoClient> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             new Text(
-                              "task with code: " + clientMontage.style,
+                              "- " + clientMontage.t,
                               // set some style to text
                               style: new TextStyle(
-                                  fontSize: 30.0, color: Colors.blue),
+                                  fontSize: 30.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "-" + clientMontage.postSize,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "-" + clientMontage.heigth,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "-" + clientMontage.spearsDesigns,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "-" + clientMontage.style,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.blue),
                             ),
                           ],
                         ),

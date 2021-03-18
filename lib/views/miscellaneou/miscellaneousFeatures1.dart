@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:task_app/models/photos/Photos.dart';
 import 'package:task_app/views/FenceFeatures/Iron/ironFeature3.dart';
 
 class MiscellaneousFeatures1 extends StatefulWidget {
@@ -9,7 +10,7 @@ class MiscellaneousFeatures1 extends StatefulWidget {
 
 String selectedStateMiscellaneousQ1 = null;
 
-List<String> todos2 = List<String>();
+List<Photos> todos2 = List<Photos>();
 var co2;
 
 enum SigningCharacter {
@@ -35,10 +36,12 @@ class _feature1 extends State<MiscellaneousFeatures1> {
   @override
   void initState() {
     super.initState();
-    todos2.add("Image1");
-    todos2.add("Image2");
-    todos2.add("Image3");
-    todos2.add("Image4");
+    todos2 = [
+      Photos(
+        nombreFoto: 'BumperPost',
+        foto: 'assets/images/fences/iron/pickets/i1_.png',
+      ),
+    ];
   }
 
   @override
@@ -95,10 +98,10 @@ class _feature1 extends State<MiscellaneousFeatures1> {
                       ],
                     ),
                     onTap: () {
-                      print('presionado' + todos2[index]);
+                      print('presionado' + todos2[index].foto);
                       this.setState(() {
                         co2 = Colors.green[300];
-                        selectedStateMiscellaneousQ1 = todos2[index];
+                        selectedStateMiscellaneousQ1 = todos2[index].nombreFoto;
                       });
                     },
                   );

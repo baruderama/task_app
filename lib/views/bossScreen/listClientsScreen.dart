@@ -75,7 +75,7 @@ class _ShopScreen extends State<ListClientsScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         new Text(
-                          "task with code: " + client.id,
+                          "Client: " + client.name,
                           // set some style to text
                           style:
                               new TextStyle(fontSize: 30.0, color: Colors.blue),
@@ -134,7 +134,7 @@ class _ShopScreen extends State<ListClientsScreen> {
                     new IconButton(
                       iconSize: 30,
                       icon: const Icon(
-                        Icons.delete_forever,
+                        Icons.calendar_today_rounded,
                         color: const Color(0xFF167F67),
                       ),
                       onPressed: () async {

@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:task_app/models/photos/Photos.dart';
 
 class IronFeature3 extends StatefulWidget {
   @override
@@ -7,7 +8,7 @@ class IronFeature3 extends StatefulWidget {
 }
 
 String selectedStateIronQ3 = null;
-List<String> todos3 = List<String>();
+List<Photos> todos3 = List<Photos>();
 var co;
 
 enum SigningCharacter {
@@ -33,10 +34,40 @@ class _feature1 extends State<IronFeature3> {
   @override
   void initState() {
     super.initState();
-    todos3.add("Image1");
-    todos3.add("Image2");
-    todos3.add("Image3");
-    todos3.add("Image4");
+    todos3 = [
+      Photos(
+        nombreFoto: '1',
+        foto: 'assets/images/fences/iron/pickets/i1_.png',
+      ),
+      Photos(
+        nombreFoto: '1_2',
+        foto: 'assets/images/fences/iron/pickets/i1_2_.png',
+      ),
+      Photos(
+        nombreFoto: '3_4',
+        foto: 'assets/images/fences/iron/pickets/i3_4_.png',
+      ),
+      Photos(
+        nombreFoto: '5_8',
+        foto: 'assets/images/fences/iron/pickets/i5_8_.png',
+      ),
+      Photos(
+        nombreFoto: 'twisted_picket1',
+        foto: 'assets/images/fences/iron/pickets/twisted_picket1_.jpeg',
+      ),
+      Photos(
+        nombreFoto: 'twisted_picket1_2',
+        foto: 'assets/images/fences/iron/pickets/twisted_picket1_2.jpeg',
+      ),
+      Photos(
+        nombreFoto: 'twisted_picket3_4',
+        foto: 'assets/images/fences/iron/pickets/twisted_picket3_4.jpeg',
+      ),
+      Photos(
+        nombreFoto: 'twisted_picket5_8_',
+        foto: 'assets/images/fences/iron/pickets/twisted_picket5_8_.jpeg',
+      ),
+    ];
   }
 
   @override
@@ -64,9 +95,10 @@ class _feature1 extends State<IronFeature3> {
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2, childAspectRatio: 1.2),
-                itemCount: 4,
+                itemCount: todos3.length,
                 itemBuilder: (context, index) => ItemCard(
-                  image: todos3[index],
+                  image: todos3[index].foto,
+                  imageName: todos3[index].nombreFoto,
                 ),
               )),
           /*Expanded(
@@ -81,8 +113,10 @@ class _feature1 extends State<IronFeature3> {
 class ItemCard extends StatelessWidget {
   final Function press;
   final String image;
+  final String imageName;
 
-  const ItemCard({Key key, this.press, this.image}) : super(key: key);
+  const ItemCard({Key key, this.press, this.image, this.imageName})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -101,8 +135,8 @@ class ItemCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16.0),
               ),
               child: Hero(
-                tag: image,
-                child: Image.asset('assets/images/Fence.JPG', color: co),
+                tag: imageName,
+                child: Image.asset(image, color: co),
               ),
             ),
           ),
@@ -110,7 +144,7 @@ class ItemCard extends StatelessWidget {
       ),
       onTap: () {
         print('presionado' + this.image.toString());
-        selectedStateIronQ3 = image;
+        selectedStateIronQ3 = imageName;
         co = Colors.green[300];
       },
     );
