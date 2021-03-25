@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:task_app/models/photos/Photos.dart';
 import 'package:task_app/views/FenceFeatures/Iron/ironFeature3.dart';
 
 class VinylGatesFeatures2 extends StatefulWidget {
@@ -9,7 +10,7 @@ class VinylGatesFeatures2 extends StatefulWidget {
 
 String selectedStateVinylGatesQ2 = null;
 
-List<String> todos2 = List<String>();
+List<Photos> todos2 = List<Photos>();
 var co2;
 
 enum SigningCharacter {
@@ -35,10 +36,20 @@ class _feature1 extends State<VinylGatesFeatures2> {
   @override
   void initState() {
     super.initState();
-    todos2.add("Image1");
-    todos2.add("Image2");
-    todos2.add("Image3");
-    todos2.add("Image4");
+    todos2 = [
+      Photos(
+        nombreFoto: 'keylock',
+        foto: 'assets/images/gates/vinyl/locks/keylock.jpg',
+      ),
+      Photos(
+        nombreFoto: 'single',
+        foto: 'assets/images/gates/vinyl/locks/single.jpg',
+      ),
+      Photos(
+        nombreFoto: 'VinylDriveway2',
+        foto: 'assets/images/gates/vinyl/locks/VinylDriveway2.jpg',
+      )
+    ];
   }
 
   @override
@@ -66,7 +77,7 @@ class _feature1 extends State<VinylGatesFeatures2> {
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2, childAspectRatio: 1.2),
-                itemCount: 4,
+                itemCount: todos2.length,
                 itemBuilder: (BuildContext context, int index) {
                   return GestureDetector(
                     child: Column(
@@ -85,7 +96,7 @@ class _feature1 extends State<VinylGatesFeatures2> {
                             child: Hero(
                               tag: todos2[index],
                               child: Image.asset(
-                                'assets/images/Fence.JPG',
+                                todos2[index].foto,
                                 color: co2,
                                 colorBlendMode: BlendMode.darken,
                               ),
@@ -95,10 +106,10 @@ class _feature1 extends State<VinylGatesFeatures2> {
                       ],
                     ),
                     onTap: () {
-                      print('presionado' + todos2[index]);
+                      print('presionado' + todos2[index].nombreFoto);
                       this.setState(() {
                         co2 = Colors.green[300];
-                        selectedStateVinylGatesQ2 = todos2[index];
+                        selectedStateVinylGatesQ2 = todos2[index].nombreFoto;
                       });
                     },
                   );

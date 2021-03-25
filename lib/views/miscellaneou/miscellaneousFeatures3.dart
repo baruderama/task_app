@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:task_app/models/photos/Photos.dart';
 import 'package:task_app/views/FenceFeatures/Iron/ironFeature3.dart';
 
 class MiscellaneousFeatures3 extends StatefulWidget {
@@ -9,7 +10,7 @@ class MiscellaneousFeatures3 extends StatefulWidget {
 
 String selectedStateMiscellaneousQ3 = null;
 
-List<String> todos2 = List<String>();
+List<Photos> todos2 = List<Photos>();
 var co2;
 
 enum SigningCharacter {
@@ -35,10 +36,12 @@ class _feature1 extends State<MiscellaneousFeatures3> {
   @override
   void initState() {
     super.initState();
-    todos2.add("Image1");
-    todos2.add("Image2");
-    todos2.add("Image3");
-    todos2.add("Image4");
+    todos2 = [
+      Photos(
+        nombreFoto: 'windowGuards1',
+        foto: 'assets/images/misce/windowGuards/windowGuards1.JPG',
+      ),
+    ];
   }
 
   @override
@@ -66,7 +69,7 @@ class _feature1 extends State<MiscellaneousFeatures3> {
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2, childAspectRatio: 1.2),
-                itemCount: 4,
+                itemCount: todos2.length,
                 itemBuilder: (BuildContext context, int index) {
                   return GestureDetector(
                     child: Column(
@@ -85,7 +88,7 @@ class _feature1 extends State<MiscellaneousFeatures3> {
                             child: Hero(
                               tag: todos2[index],
                               child: Image.asset(
-                                'assets/images/Fence.JPG',
+                                todos2[index].foto,
                                 color: co2,
                                 colorBlendMode: BlendMode.darken,
                               ),
@@ -95,10 +98,10 @@ class _feature1 extends State<MiscellaneousFeatures3> {
                       ],
                     ),
                     onTap: () {
-                      print('presionado' + todos2[index]);
+                      print('presionado' + todos2[index].nombreFoto);
                       this.setState(() {
                         co2 = Colors.green[300];
-                        selectedStateMiscellaneousQ3 = todos2[index];
+                        selectedStateMiscellaneousQ3 = todos2[index].nombreFoto;
                       });
                     },
                   );

@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:task_app/models/photos/Photos.dart';
 import 'package:task_app/views/FenceFeatures/Iron/ironFeature3.dart';
 
 class IronFeature2 extends StatefulWidget {
@@ -9,7 +10,7 @@ class IronFeature2 extends StatefulWidget {
 
 String selectedStateIronQ2 = null;
 
-List<String> todos2 = List<String>();
+List<Photos> todos2 = List<Photos>();
 var co2;
 
 enum SigningCharacter {
@@ -35,10 +36,37 @@ class _feature1 extends State<IronFeature2> {
   @override
   void initState() {
     super.initState();
-    todos2.add("Image1");
-    todos2.add("Image2");
-    todos2.add("Image3");
-    todos2.add("Image4");
+    todos2 = [
+      Photos(
+        nombreFoto: 'spears_1_2_Picket3_Wx5-7_8_H',
+        foto:
+            'assets/images/fences/iron/spearsDesing/spears_1_2_Picket3_Wx5-7_8_H.png',
+      ),
+      Photos(
+        nombreFoto: 'spears1_2,5_8_,3_4_',
+        foto: 'assets/images/fences/iron/spearsDesing/spears1_2_,5_8_,3_4_.png',
+      ),
+      Photos(
+        nombreFoto: 'spears1_2_.3_4_',
+        foto: 'assets/images/fences/iron/spearsDesing/spears1_2_.3_4_.png',
+      ),
+      Photos(
+        nombreFoto: 'spears1_2_',
+        foto: 'assets/images/fences/iron/spearsDesing/spears1_2_.png',
+      ),
+      Photos(
+        nombreFoto: 'spears1_2_3_4_',
+        foto: 'assets/images/fences/iron/spearsDesing/spears1_2_3_4_.png',
+      ),
+      Photos(
+        nombreFoto: 'spears1_2_3_4_1_',
+        foto: 'assets/images/fences/iron/spearsDesing/spears1_2_3_4_1_.png',
+      ),
+      Photos(
+        nombreFoto: 'spears1_2_5_8_3_4_1_',
+        foto: 'assets/images/fences/iron/spearsDesing/spears1_2_5_8_3_4_1_.png',
+      ),
+    ];
   }
 
   @override
@@ -66,7 +94,7 @@ class _feature1 extends State<IronFeature2> {
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2, childAspectRatio: 1.2),
-                itemCount: 4,
+                itemCount: todos2.length,
                 itemBuilder: (BuildContext context, int index) {
                   return GestureDetector(
                     child: Column(
@@ -83,9 +111,9 @@ class _feature1 extends State<IronFeature2> {
                               borderRadius: BorderRadius.circular(16.0),
                             ),
                             child: Hero(
-                              tag: todos2[index],
+                              tag: todos2[index].nombreFoto,
                               child: Image.asset(
-                                'assets/images/Fence.JPG',
+                                todos2[index].foto,
                                 color: co2,
                                 colorBlendMode: BlendMode.darken,
                               ),
@@ -95,10 +123,10 @@ class _feature1 extends State<IronFeature2> {
                       ],
                     ),
                     onTap: () {
-                      print('presionado' + todos2[index]);
+                      print('presionado' + todos2[index].nombreFoto);
                       this.setState(() {
                         co2 = Colors.green[300];
-                        selectedStateIronQ2 = todos2[index];
+                        selectedStateIronQ2 = todos2[index].nombreFoto;
                       });
                     },
                   );

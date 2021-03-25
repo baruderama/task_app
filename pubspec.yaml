@@ -57,6 +57,20 @@ flutter:
       - assets/images/
       - assets/icons/
       - assets/images/fences/iron/pickets/
+      - assets/images/fences/iron/spearsDesing/
+      - assets/images/fences/wood/
+      - assets/images/fences/vinyl/postCaps/
+      - assets/images/fences/railing/
+      - assets/images/gates/locks/
+      - assets/images/gates/hinges/
+      - assets/images/gates/montage/styleGate/
+      - assets/images/gates/cantileverGates/locks/
+      - assets/images/misce/bumperPost/
+      - assets/images/misce/guardTrial/
+      - assets/images/misce/scissorsGates/
+      - assets/images/misce/windowGuards/
+      - assets/images/gates/vinyl/locks/
+      - assets/images/gates/vinyl/hinges/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

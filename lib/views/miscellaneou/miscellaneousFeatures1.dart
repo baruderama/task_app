@@ -38,8 +38,8 @@ class _feature1 extends State<MiscellaneousFeatures1> {
     super.initState();
     todos2 = [
       Photos(
-        nombreFoto: 'BumperPost',
-        foto: 'assets/images/fences/iron/pickets/i1_.png',
+        nombreFoto: 'bumperPost1',
+        foto: 'assets/images/misce/bumperPost/bumperPost1.jpg',
       ),
     ];
   }
@@ -69,7 +69,7 @@ class _feature1 extends State<MiscellaneousFeatures1> {
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2, childAspectRatio: 1.2),
-                itemCount: 4,
+                itemCount: todos2.length,
                 itemBuilder: (BuildContext context, int index) {
                   return GestureDetector(
                     child: Column(
@@ -88,7 +88,7 @@ class _feature1 extends State<MiscellaneousFeatures1> {
                             child: Hero(
                               tag: todos2[index],
                               child: Image.asset(
-                                'assets/images/Fence.JPG',
+                                todos2[index].foto,
                                 color: co2,
                                 colorBlendMode: BlendMode.darken,
                               ),
@@ -98,7 +98,7 @@ class _feature1 extends State<MiscellaneousFeatures1> {
                       ],
                     ),
                     onTap: () {
-                      print('presionado' + todos2[index].foto);
+                      print('presionado' + todos2[index].nombreFoto);
                       this.setState(() {
                         co2 = Colors.green[300];
                         selectedStateMiscellaneousQ1 = todos2[index].nombreFoto;

@@ -38,37 +38,22 @@ class _feature1 extends State<IronGatesFeature3> {
     super.initState();
     todos2 = [
       Photos(
-        nombreFoto: '1',
-        foto: 'assets/images/fences/iron/pickets/i1_.png',
+        nombreFoto: 'BARRILHINGE',
+        foto: 'assets/images/gates/hinges/BARRILHINGE.png',
       ),
       Photos(
-        nombreFoto: '1_2',
-        foto: 'assets/images/fences/iron/pickets/i1_.png',
+        nombreFoto: 'mammothLocinoxselfcloserupto300lbs',
+        foto:
+            'assets/images/gates/hinges/mammothLocinoxselfcloserupto300lbs.jpg',
       ),
       Photos(
-        nombreFoto: '3_4',
-        foto: 'assets/images/fences/iron/pickets/i1_.png',
+        nombreFoto: 'tigerLocinoxupto170lbs',
+        foto: 'assets/images/gates/hinges/tigerLocinoxupto170lbs.jpg',
       ),
       Photos(
-        nombreFoto: '5_8',
-        foto: 'assets/images/fences/iron/pickets/i1_.png',
-      ),
-      Photos(
-        nombreFoto: 'twisted_picket1',
-        foto: 'assets/images/fences/iron/pickets/i1_.png',
-      ),
-      Photos(
-        nombreFoto: 'twisted_picket1_2',
-        foto: 'assets/images/fences/iron/pickets/i1_.png',
-      ),
-      Photos(
-        nombreFoto: 'twisted_picket3_4',
-        foto: 'assets/images/fences/iron/pickets/i1_.png',
-      ),
-      Photos(
-        nombreFoto: 'twisted_picket5_8',
-        foto: 'assets/images/fences/iron/pickets/i1_.png',
-      ),
+        nombreFoto: 'weldedhinges',
+        foto: 'assets/images/gates/hinges/weldedhinges.png',
+      )
     ];
   }
 
