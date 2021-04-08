@@ -10,9 +10,23 @@ class IronFence {
   String _postSize;
   String _paint;
   String _topFinish;
+  String _mailBox;
+  String _postCaps;
+  String _tube;
 
-  IronFence(this._id, this._t, this._heigth, this._spearsDesigns, this._pickets,
-      this._channels, this._postSize, this._paint, this._topFinish);
+  IronFence(
+      this._id,
+      this._t,
+      this._heigth,
+      this._spearsDesigns,
+      this._pickets,
+      this._channels,
+      this._postSize,
+      this._paint,
+      this._topFinish,
+      this._mailBox,
+      this._postCaps,
+      this._tube);
 
   IronFence.map(dynamic obj) {
     this._t = obj['tipo'];
@@ -23,6 +37,9 @@ class IronFence {
     this._postSize = obj['postSize'];
     this._paint = obj['paint'];
     this._topFinish = obj['topFinish'];
+    this._mailBox = obj['mailBox'];
+    this._postCaps = obj['postCaps'];
+    this._tube = obj['tube'];
   }
   String get t => _t;
   String get heigth => _heigth;
@@ -33,6 +50,9 @@ class IronFence {
   String get paint => _paint;
   String get topFinish => _topFinish;
   String get id => _id;
+  String get mailBox => _mailBox;
+  String get postCaps => _postCaps;
+  String get tube => _tube;
 
   IronFence.fromSnapShot(DataSnapshot snapshot) {
     _id = snapshot.key;
@@ -44,5 +64,8 @@ class IronFence {
     _postSize = snapshot.value['postSize'];
     _paint = snapshot.value['paint'];
     _topFinish = snapshot.value['topFinish'];
+    _mailBox = snapshot.value['mailBox'];
+    _postCaps = snapshot.value['postCaps'];
+    _tube = snapshot.value['tube'];
   }
 }

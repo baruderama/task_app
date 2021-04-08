@@ -7,9 +7,10 @@ class WoodFence {
   String _heigth;
   String _postSize;
   String _topFinish;
+  String _composive;
 
   WoodFence(this._id, this._t, this._tapeFence, this._heigth, this._postSize,
-      this._topFinish);
+      this._topFinish, this._composive);
 
   WoodFence.map(dynamic obj) {
     this._t = obj['tipo'];
@@ -17,6 +18,7 @@ class WoodFence {
     this._postSize = obj['postSize'];
     this._tapeFence = obj['tapeFence'];
     this._topFinish = obj['topFinish'];
+    this._composive = obj['composive'];
   }
 
   String get id => _id;
@@ -25,6 +27,7 @@ class WoodFence {
   String get postSize => _postSize;
   String get tapeFence => _tapeFence;
   String get topFinish => _topFinish;
+  String get composive => _composive;
 
   WoodFence.fromSnapShot(DataSnapshot snapshot) {
     _id = snapshot.key;
@@ -33,5 +36,6 @@ class WoodFence {
     _postSize = snapshot.value['postSize'];
     _tapeFence = snapshot.value['style'];
     _topFinish = snapshot.value['topFinish'];
+    _composive = snapshot.value['composive'];
   }
 }
