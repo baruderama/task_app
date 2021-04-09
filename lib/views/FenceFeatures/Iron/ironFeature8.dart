@@ -36,27 +36,27 @@ class _feature1 extends State<IronFeature8> {
     super.initState();
     todos3 = [
       Photos(
-        nombreFoto: '2',
+        nombreFoto: '13',
         foto:
             'assets/images/fences/iron/mailBoxes/2 Compartment Aluminum Mail Box 13 1_4_ W x  19_ H x 7_ D.png',
       ),
       Photos(
-        nombreFoto: '3',
+        nombreFoto: '18',
         foto:
             'assets/images/fences/iron/mailBoxes/3 Compartment Aluminum Mail Box 18 3_4_ W x 19_ H x 7_D.png',
       ),
       Photos(
-        nombreFoto: '4',
+        nombreFoto: '24',
         foto:
             'assets/images/fences/iron/mailBoxes/4 Compartment Aluminum Mail Box 24 1_2Wx19Hx7_D.png',
       ),
       Photos(
-        nombreFoto: '5',
+        nombreFoto: 'special order',
         foto:
             'assets/images/fences/iron/mailBoxes/5 Compartment Aluminum Mail Box Special Order.png',
       ),
       Photos(
-        nombreFoto: 'small,medium.large',
+        nombreFoto: 'large',
         foto: 'assets/images/fences/iron/mailBoxes/small, medium, large.png',
       ),
     ];
@@ -132,6 +132,17 @@ class ItemCard extends StatelessWidget {
               ),
             ),
           ),
+          Container(
+            child: Column(children: <Widget>[
+              Text(
+                imageName,
+                style: TextStyle(
+                  fontSize: 10.0,
+                  fontFamily: "Ralewaybold",
+                ),
+              )
+            ]),
+          )
         ],
       ),
       onTap: () {

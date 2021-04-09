@@ -140,6 +140,17 @@ class ItemCard extends StatelessWidget {
               ),
             ),
           ),
+          Container(
+            child: Column(children: <Widget>[
+              Text(
+                imageName,
+                style: TextStyle(
+                  fontSize: 10.0,
+                  fontFamily: "Ralewaybold",
+                ),
+              )
+            ]),
+          )
         ],
       ),
       onTap: () {

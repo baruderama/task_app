@@ -36,21 +36,21 @@ class _feature1 extends State<IronFeature10> {
     super.initState();
     todos3 = [
       Photos(
-        nombreFoto: '1',
+        nombreFoto: 'rectangular special',
         foto:
             'assets/images/fences/iron/tube/rectangular tube (enter special measurement).png',
       ),
       Photos(
-        nombreFoto: '2',
+        nombreFoto: 'rectangular 1',
         foto: 'assets/images/fences/iron/tube/rectangular tube 1_x1 1_2_ .png',
       ),
       Photos(
-        nombreFoto: '3',
+        nombreFoto: 'rectangular 2',
         foto:
             'assets/images/fences/iron/tube/rectangular tube 2 1_2_ x 1_ .png',
       ),
       Photos(
-        nombreFoto: '4',
+        nombreFoto: 'rectangular 2x1',
         foto: 'assets/images/fences/iron/tube/rectangular tube 2_x1_ .png',
       ),
     ];
@@ -126,6 +126,17 @@ class ItemCard extends StatelessWidget {
               ),
             ),
           ),
+          Container(
+            child: Column(children: <Widget>[
+              Text(
+                imageName,
+                style: TextStyle(
+                  fontSize: 10.0,
+                  fontFamily: "Ralewaybold",
+                ),
+              )
+            ]),
+          )
         ],
       ),
       onTap: () {
