@@ -31,12 +31,15 @@ import 'package:task_app/models/wood/WoodFence.dart';
 import 'package:task_app/models/wood/WoodGates.dart';
 import 'package:task_app/models/wood/WoodT&G.dart';
 import 'package:task_app/views/FenceFeatures/Iron/ironFeature1.dart';
+import 'package:task_app/views/FenceFeatures/Iron/ironFeature10.dart';
 import 'package:task_app/views/FenceFeatures/Iron/ironFeature2.dart';
 import 'package:task_app/views/FenceFeatures/Iron/ironFeature3.dart';
 import 'package:task_app/views/FenceFeatures/Iron/ironFeature4.dart';
 import 'package:task_app/views/FenceFeatures/Iron/ironFeature5.dart';
 import 'package:task_app/views/FenceFeatures/Iron/ironFeature6.dart';
 import 'package:task_app/views/FenceFeatures/Iron/ironFeature7.dart';
+import 'package:task_app/views/FenceFeatures/Iron/ironFeature8.dart';
+import 'package:task_app/views/FenceFeatures/Iron/ironFeature9.dart';
 import 'package:task_app/views/TaskCreation/features/feature1.dart';
 import 'package:task_app/views/TaskCreation/features/feature2.dart';
 import 'package:task_app/views/bossScreen/listClientsScreen.dart';
@@ -114,6 +117,9 @@ class _finalFeatures extends State<IronFeatures> {
           IronFeature5(),
           IronFeature6(),
           IronFeature7(),
+          IronFeature8(),
+          IronFeature9(),
+          IronFeature10(),
           RaisedButton(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(18.0)),
@@ -128,7 +134,10 @@ class _finalFeatures extends State<IronFeatures> {
                   BringAnswerIron4().send(),
                   BringAnswerIron5().send(),
                   BringAnswerIron6().send(),
-                  BringAnswerIron7().send());
+                  BringAnswerIron7().send(),
+                  BringAnswerIron8().send(),
+                  BringAnswerIron9().send(),
+                  BringAnswerIron10().send());
               print(BringAnswerIron1().send());
               String key = await FenceCrud().addIronTask(newStyle);
               print("hola");

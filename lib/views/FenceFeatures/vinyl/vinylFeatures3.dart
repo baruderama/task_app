@@ -53,13 +53,13 @@ class _feature1 extends State<VinylFeature3> {
             child: Column(
               children: <Widget>[
                 RadioListTile<SigningCharacter>(
-                  title: const Text('15"'),
+                  title: const Text('4"'),
                   value: SigningCharacter.Inches15,
                   groupValue: _character,
                   onChanged: (SigningCharacter value) {
                     setState(() {
                       _character = value;
-                      selectedStateVinylQ3 = '15"';
+                      selectedStateVinylQ3 = '4"';
                     });
                   },
                 ),
@@ -67,13 +67,13 @@ class _feature1 extends State<VinylFeature3> {
                   height: 10,
                 ),
                 RadioListTile<SigningCharacter>(
-                  title: const Text('24"'),
+                  title: const Text('5"'),
                   value: SigningCharacter.Inches24,
                   groupValue: _character,
                   onChanged: (SigningCharacter value) {
                     setState(() {
                       _character = value;
-                      selectedStateVinylQ3 = '24"';
+                      selectedStateVinylQ3 = '5"';
                     });
                   },
                 ),
@@ -81,97 +81,13 @@ class _feature1 extends State<VinylFeature3> {
                   height: 10,
                 ),
                 RadioListTile<SigningCharacter>(
-                  title: const Text('36"'),
+                  title: const Text('6"'),
                   value: SigningCharacter.Inches36,
                   groupValue: _character,
                   onChanged: (SigningCharacter value) {
                     setState(() {
                       _character = value;
-                      selectedStateVinylQ3 = '36"';
-                    });
-                  },
-                ),
-                Divider(
-                  height: 10,
-                ),
-                RadioListTile<SigningCharacter>(
-                  title: const Text('42"'),
-                  value: SigningCharacter.Inches42,
-                  groupValue: _character,
-                  onChanged: (SigningCharacter value) {
-                    setState(() {
-                      _character = value;
-                      selectedStateVinylQ3 = '42"';
-                    });
-                  },
-                ),
-                Divider(
-                  height: 10,
-                ),
-                RadioListTile<SigningCharacter>(
-                  title: const Text('48"'),
-                  value: SigningCharacter.Inches48,
-                  groupValue: _character,
-                  onChanged: (SigningCharacter value) {
-                    setState(() {
-                      _character = value;
-                      selectedStateVinylQ3 = '48"';
-                    });
-                  },
-                ),
-                Divider(
-                  height: 10,
-                ),
-                RadioListTile<SigningCharacter>(
-                  title: const Text('5\''),
-                  value: SigningCharacter.Inches5,
-                  groupValue: _character,
-                  onChanged: (SigningCharacter value) {
-                    setState(() {
-                      _character = value;
-                      selectedStateVinylQ3 = '5';
-                    });
-                  },
-                ),
-                Divider(
-                  height: 10,
-                ),
-                RadioListTile<SigningCharacter>(
-                  title: const Text('6\''),
-                  value: SigningCharacter.Inches6,
-                  groupValue: _character,
-                  onChanged: (SigningCharacter value) {
-                    setState(() {
-                      _character = value;
-                      selectedStateVinylQ3 = '6';
-                    });
-                  },
-                ),
-                Divider(
-                  height: 10,
-                ),
-                RadioListTile<SigningCharacter>(
-                  title: const Text('7\''),
-                  value: SigningCharacter.Inches7,
-                  groupValue: _character,
-                  onChanged: (SigningCharacter value) {
-                    setState(() {
-                      _character = value;
-                      selectedStateVinylQ3 = '7';
-                    });
-                  },
-                ),
-                Divider(
-                  height: 10,
-                ),
-                RadioListTile<SigningCharacter>(
-                  title: const Text('8\''),
-                  value: SigningCharacter.Inches8,
-                  groupValue: _character,
-                  onChanged: (SigningCharacter value) {
-                    setState(() {
-                      _character = value;
-                      selectedStateVinylQ3 = '8';
+                      selectedStateVinylQ3 = '6"';
                     });
                   },
                 ),

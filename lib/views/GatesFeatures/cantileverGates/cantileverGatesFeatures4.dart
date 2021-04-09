@@ -83,34 +83,12 @@ class _feature1 extends State<CantileverGatesFeatures4> {
                   ),
                   Card(
                     child: ListTile(
-                      title: Text('Safely device'),
+                      title: Text('Accesories'),
                       onTap: () {
                         Navigator.push(
                             context,
                             new MaterialPageRoute(
                                 builder: (context) => MotorCantileverGates2()));
-                      },
-                    ),
-                  ),
-                  Card(
-                    child: ListTile(
-                      title: Text('Key pads'),
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            new MaterialPageRoute(
-                                builder: (context) => MotorCantileverGates3()));
-                      },
-                    ),
-                  ),
-                  Card(
-                    child: ListTile(
-                      title: Text('Remote control'),
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            new MaterialPageRoute(
-                                builder: (context) => MotorCantileverGates4()));
                       },
                     ),
                   ),

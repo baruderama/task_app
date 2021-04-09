@@ -1,17 +1,16 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:task_app/models/photos/Photos.dart';
 import 'package:task_app/views/FenceFeatures/Iron/ironFeature3.dart';
-import 'package:task_app/views/GatesFeatures/cantileverGates/cantileverGatesFeatures1.dart';
-import 'package:task_app/views/GatesFeatures/cantileverGates/cantileverGatesFeatures4.dart';
 
 class MotorCantileverGates1 extends StatefulWidget {
   @override
   _feature1 createState() => _feature1();
 }
 
-String selectedStateMiscellaneousQ1 = null;
+String selectedStateIronQ2 = null;
 
-//todosStyle = List<String>();
+List<Photos> todos2 = List<Photos>();
 var co2;
 
 enum SigningCharacter {
@@ -37,28 +36,37 @@ class _feature1 extends State<MotorCantileverGates1> {
   @override
   void initState() {
     super.initState();
-    todosMotor = new List<String>();
-    todosMotor.add("TypeMotors: Image1");
-    todosMotor.add("TypeMotors: Image2");
-    todosMotor.add("TypeMotors: Image3");
-    todosMotor.add("TypeMotors: Image4");
+    todos2 = [
+      Photos(
+        nombreFoto: '400',
+        foto: 'assets/images/gates/cantileverGates/typeMotors/la_400_gate.jpg',
+      ),
+      Photos(
+        nombreFoto: '500',
+        foto:
+            'assets/images/gates/cantileverGates/typeMotors/liftmaster-la500-light-commercial-.png',
+      ),
+      Photos(
+        nombreFoto: 'dual',
+        foto:
+            'assets/images/gates/cantileverGates/typeMotors/Liftmaster-Dual-CSW24UDC-250.jpg',
+      ),
+      Photos(
+        nombreFoto: '3000',
+        foto:
+            'assets/images/gates/cantileverGates/typeMotors/SL_3000-Liftmaster.jpg',
+      ),
+      Photos(
+        nombreFoto: '585',
+        foto:
+            'assets/images/gates/cantileverGates/typeMotors/sl585u-liftmaster_hi_trafig.png',
+      ),
+    ];
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          "Motor Gates Features",
-        ),
-        backgroundColor: Colors.blue,
-        actions: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(3.0),
-          ),
-        ],
-      ),
       body: Column(
         children: <Widget>[
           Expanded(
@@ -68,7 +76,7 @@ class _feature1 extends State<MotorCantileverGates1> {
               padding: EdgeInsets.all(15.0),
               alignment: Alignment.center,
               child: Text(
-                "Type of motors:",
+                "motors:",
                 style: TextStyle(
                   fontSize: 22.0,
                   fontFamily: "Ralewaybold",
@@ -81,7 +89,7 @@ class _feature1 extends State<MotorCantileverGates1> {
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2, childAspectRatio: 1.2),
-                itemCount: 4,
+                itemCount: todos2.length,
                 itemBuilder: (BuildContext context, int index) {
                   return GestureDetector(
                     child: Column(
@@ -98,9 +106,9 @@ class _feature1 extends State<MotorCantileverGates1> {
                               borderRadius: BorderRadius.circular(16.0),
                             ),
                             child: Hero(
-                              tag: todosMotor[index],
+                              tag: todos2[index].nombreFoto,
                               child: Image.asset(
-                                'assets/images/Fence.JPG',
+                                todos2[index].foto,
                                 color: co2,
                                 colorBlendMode: BlendMode.darken,
                               ),
@@ -110,10 +118,10 @@ class _feature1 extends State<MotorCantileverGates1> {
                       ],
                     ),
                     onTap: () {
-                      print('presionado' + todosMotor[index]);
+                      print('presionado' + todos2[index].nombreFoto);
                       this.setState(() {
                         co2 = Colors.green[300];
-                        motorGate = todosMotor[index];
+                        selectedStateIronQ2 = todos2[index].nombreFoto;
                       });
                     },
                   );
@@ -174,11 +182,9 @@ class ItemCard extends StatelessWidget {
     );
   }
 }
-/*
-class BringAnswerMiscellaneous1 {
+
+class BringAnswerIron2 {
   String send() {
-    return selectedStateMiscellaneousQ1;
+    return selectedStateIronQ2;
   }
-  
 }
-*/

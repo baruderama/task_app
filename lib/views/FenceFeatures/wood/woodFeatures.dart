@@ -45,6 +45,7 @@ import 'package:task_app/views/FenceFeatures/wood/woodFeatures1.dart';
 import 'package:task_app/views/FenceFeatures/wood/woodFeatures2.dart';
 import 'package:task_app/views/FenceFeatures/wood/woodFeatures3.dart';
 import 'package:task_app/views/FenceFeatures/wood/woodFeatures4.dart';
+import 'package:task_app/views/FenceFeatures/wood/woodFeatures5.dart';
 import 'package:task_app/views/TaskCreation/features/feature1.dart';
 import 'package:task_app/views/TaskCreation/features/feature2.dart';
 import 'package:task_app/views/continueFinish.dart';
@@ -118,6 +119,7 @@ class _finalFeatures extends State<WoodFeatures> {
           WoodFeatures2(),
           WoodFeatures3(),
           WoodFeatures4(),
+          WoodFeatures5(),
           RaisedButton(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(18.0)),
@@ -131,7 +133,8 @@ class _finalFeatures extends State<WoodFeatures> {
                   BringAnswerWood2().send(),
                   BringAnswerWood1().send(),
                   BringAnswerWood3().send(),
-                  BringAnswerWood4().send());
+                  BringAnswerWood4().send(),
+                  BringAnswerWood5().send());
               //print(BringAnswerIron1().send());
               String key = await FenceCrud().addWoodTask(newFence);
               print("hola");

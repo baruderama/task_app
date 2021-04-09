@@ -64,95 +64,67 @@ class _feature1 extends State<ChainLinkFeatures1> {
                   },
                 ),
                 Divider(
-                  height: 10,
+                  height: 5,
                 ),
                 RadioListTile<SigningCharacter>(
-                  title: const Text('24"'),
+                  title: const Text('3"'),
                   value: SigningCharacter.Inches24,
                   groupValue: _character,
                   onChanged: (SigningCharacter value) {
                     setState(() {
                       _character = value;
-                      selectedStateChainLinkQ1 = '24"';
+                      selectedStateChainLinkQ1 = '3"';
                     });
                   },
                 ),
                 Divider(
-                  height: 10,
+                  height: 5,
                 ),
                 RadioListTile<SigningCharacter>(
-                  title: const Text('36"'),
+                  title: const Text('4"'),
                   value: SigningCharacter.Inches36,
                   groupValue: _character,
                   onChanged: (SigningCharacter value) {
                     setState(() {
                       _character = value;
-                      selectedStateChainLinkQ1 = '36"';
+                      selectedStateChainLinkQ1 = '4"';
                     });
                   },
                 ),
                 Divider(
-                  height: 10,
+                  height: 5,
                 ),
                 RadioListTile<SigningCharacter>(
-                  title: const Text('42"'),
+                  title: const Text('5"'),
                   value: SigningCharacter.Inches42,
                   groupValue: _character,
                   onChanged: (SigningCharacter value) {
                     setState(() {
                       _character = value;
-                      selectedStateChainLinkQ1 = '42"';
+                      selectedStateChainLinkQ1 = '5"';
                     });
                   },
                 ),
                 Divider(
-                  height: 10,
+                  height: 5,
                 ),
                 RadioListTile<SigningCharacter>(
-                  title: const Text('48"'),
+                  title: const Text('6"'),
                   value: SigningCharacter.Inches48,
                   groupValue: _character,
                   onChanged: (SigningCharacter value) {
                     setState(() {
                       _character = value;
-                      selectedStateChainLinkQ1 = '48"';
+                      selectedStateChainLinkQ1 = '6"';
                     });
                   },
                 ),
                 Divider(
-                  height: 10,
-                ),
-                RadioListTile<SigningCharacter>(
-                  title: const Text('5\''),
-                  value: SigningCharacter.Inches5,
-                  groupValue: _character,
-                  onChanged: (SigningCharacter value) {
-                    setState(() {
-                      _character = value;
-                      selectedStateChainLinkQ1 = '5';
-                    });
-                  },
-                ),
-                Divider(
-                  height: 10,
-                ),
-                RadioListTile<SigningCharacter>(
-                  title: const Text('6\''),
-                  value: SigningCharacter.Inches6,
-                  groupValue: _character,
-                  onChanged: (SigningCharacter value) {
-                    setState(() {
-                      _character = value;
-                      selectedStateChainLinkQ1 = '6';
-                    });
-                  },
-                ),
-                Divider(
-                  height: 10,
+                  height: 5,
                 ),
                 RadioListTile<SigningCharacter>(
                   title: const Text('7\''),
-                  value: SigningCharacter.Inches7,
+                  value: SigningCharacter.Inches5,
                   groupValue: _character,
                   onChanged: (SigningCharacter value) {
                     setState(() {
@@ -166,12 +138,54 @@ class _feature1 extends State<ChainLinkFeatures1> {
                 ),
                 RadioListTile<SigningCharacter>(
                   title: const Text('8\''),
-                  value: SigningCharacter.Inches8,
+                  value: SigningCharacter.Inches6,
                   groupValue: _character,
                   onChanged: (SigningCharacter value) {
                     setState(() {
                       _character = value;
                       selectedStateChainLinkQ1 = '8';
+                    });
+                  },
+                ),
+                Divider(
+                  height: 10,
+                ),
+                RadioListTile<SigningCharacter>(
+                  title: const Text('10\''),
+                  value: SigningCharacter.Inches7,
+                  groupValue: _character,
+                  onChanged: (SigningCharacter value) {
+                    setState(() {
+                      _character = value;
+                      selectedStateChainLinkQ1 = '10';
+                    });
+                  },
+                ),
+                Divider(
+                  height: 10,
+                ),
+                RadioListTile<SigningCharacter>(
+                  title: const Text('11\''),
+                  value: SigningCharacter.Inches8,
+                  groupValue: _character,
+                  onChanged: (SigningCharacter value) {
+                    setState(() {
+                      _character = value;
+                      selectedStateChainLinkQ1 = '11';
+                    });
+                  },
+                ),
+                Divider(
+                  height: 10,
+                ),
+                RadioListTile<SigningCharacter>(
+                  title: const Text('12\''),
+                  value: SigningCharacter.Inches8,
+                  groupValue: _character,
+                  onChanged: (SigningCharacter value) {
+                    setState(() {
+                      _character = value;
+                      selectedStateChainLinkQ1 = '12';
                     });
                   },
                 ),

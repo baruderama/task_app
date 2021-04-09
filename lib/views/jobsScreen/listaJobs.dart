@@ -8,15 +8,19 @@ import 'package:task_app/views/TaskCreation/levelMaterial.dart';
 import 'package:task_app/views/TaskCreation/levelMaterialGates.dart';
 import 'package:task_app/views/bossScreen/autenticationScreen.dart';
 import 'package:task_app/views/homeScreen/homePage.dart';
-import 'package:task_app/views/jobsScreen/listaJobs.dart';
+import 'package:task_app/views/jobsScreen/chainLink.dart';
+import 'package:task_app/views/jobsScreen/dePortada.dart';
+import 'package:task_app/views/jobsScreen/ironJobs.dart';
+import 'package:task_app/views/jobsScreen/vinyl.dart';
+import 'package:task_app/views/jobsScreen/wood.dart';
 import 'package:task_app/views/miscellaneou/miscellaneous.dart';
 
-class PrincipalScreen extends StatefulWidget {
+class ListaJobs extends StatefulWidget {
   @override
   _fenceGate createState() => _fenceGate();
 }
 
-class _fenceGate extends State<PrincipalScreen> {
+class _fenceGate extends State<ListaJobs> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
@@ -44,10 +48,108 @@ class _fenceGate extends State<PrincipalScreen> {
                 borderRadius: BorderRadius.circular(18.0)),
             //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
             onPressed: () {
+              Navigator.push(context,
+                  new MaterialPageRoute(builder: (context) => IronJobs()));
+            },
+            padding: EdgeInsets.symmetric(horizontal: 50),
+            color: Colors.blue[700],
+            textColor: Colors.white,
+            // child: Image.asset(
+            //  "assets/images/cerebroAzul.png",
+            // height: size.height * 0.25,
+            //  ),
+            child: Text("Iron", style: TextStyle(fontSize: 15)),
+          ),
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Container(
+          height: 50,
+          margin: EdgeInsets.symmetric(horizontal: 40),
+          child: FlatButton(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(18.0)),
+            //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
+            onPressed: () {
+              // RoutesGeneral().toRegister(context);
+              Navigator.push(context,
+                  new MaterialPageRoute(builder: (context) => ChainLink()));
+            },
+            padding: EdgeInsets.symmetric(horizontal: 50),
+            color: Colors.blue[700],
+            textColor: Colors.white,
+            // child: Image.asset(
+            //  "assets/images/cerebroAzul.png",
+            // height: size.height * 0.25,
+            //  ),
+            child: Text("Chain Link", style: TextStyle(fontSize: 15)),
+          ),
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Container(
+          height: 50,
+          margin: EdgeInsets.symmetric(horizontal: 40),
+          child: FlatButton(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(18.0)),
+            //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
+            onPressed: () {
+              // RoutesGeneral().toRegister(context);
+              Navigator.push(context,
+                  new MaterialPageRoute(builder: (context) => Deportada()));
+            },
+            padding: EdgeInsets.symmetric(horizontal: 50),
+            color: Colors.blue[700],
+            textColor: Colors.white,
+            // child: Image.asset(
+            //  "assets/images/cerebroAzul.png",
+            // height: size.height * 0.25,
+            //  ),
+            child: Text("de Portada", style: TextStyle(fontSize: 15)),
+          ),
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Container(
+          height: 50,
+          margin: EdgeInsets.symmetric(horizontal: 40),
+          child: FlatButton(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(18.0)),
+            //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
+            onPressed: () {
+              // RoutesGeneral().toRegister(context);
+              Navigator.push(context,
+                  new MaterialPageRoute(builder: (context) => Vinyl()));
+            },
+            padding: EdgeInsets.symmetric(horizontal: 50),
+            color: Colors.blue[700],
+            textColor: Colors.white,
+            // child: Image.asset(
+            //  "assets/images/cerebroAzul.png",
+            // height: size.height * 0.25,
+            //  ),
+            child: Text("Vinyl", style: TextStyle(fontSize: 15)),
+          ),
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Container(
+          height: 50,
+          margin: EdgeInsets.symmetric(horizontal: 40),
+          child: FlatButton(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(18.0)),
+            //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
+            onPressed: () {
+              // RoutesGeneral().toRegister(context);
               Navigator.push(
-                  context,
-                  new MaterialPageRoute(
-                      builder: (context) => AutenticationScreen()));
+                  context, new MaterialPageRoute(builder: (context) => Wood()));
             },
             padding: EdgeInsets.symmetric(horizontal: 50),
             color: Colors.blue[700],
@@ -56,57 +158,7 @@ class _fenceGate extends State<PrincipalScreen> {
             //  "assets/images/cerebroAzul.png",
             // height: size.height * 0.25,
             //  ),
-            child: Text("Boss", style: TextStyle(fontSize: 15)),
-          ),
-        ),
-        SizedBox(
-          height: 20,
-        ),
-        Container(
-          height: 50,
-          margin: EdgeInsets.symmetric(horizontal: 40),
-          child: FlatButton(
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(18.0)),
-            //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
-            onPressed: () {
-              // RoutesGeneral().toRegister(context);
-              Navigator.push(context,
-                  new MaterialPageRoute(builder: (context) => HomePage()));
-            },
-            padding: EdgeInsets.symmetric(horizontal: 50),
-            color: Colors.blue[700],
-            textColor: Colors.white,
-            // child: Image.asset(
-            //  "assets/images/cerebroAzul.png",
-            // height: size.height * 0.25,
-            //  ),
-            child: Text("Seller", style: TextStyle(fontSize: 15)),
-          ),
-        ),
-        SizedBox(
-          height: 20,
-        ),
-        Container(
-          height: 50,
-          margin: EdgeInsets.symmetric(horizontal: 40),
-          child: FlatButton(
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(18.0)),
-            //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
-            onPressed: () {
-              // RoutesGeneral().toRegister(context);
-              Navigator.push(context,
-                  new MaterialPageRoute(builder: (context) => ListaJobs()));
-            },
-            padding: EdgeInsets.symmetric(horizontal: 50),
-            color: Colors.blue[700],
-            textColor: Colors.white,
-            // child: Image.asset(
-            //  "assets/images/cerebroAzul.png",
-            // height: size.height * 0.25,
-            //  ),
-            child: Text("Jobs", style: TextStyle(fontSize: 15)),
+            child: Text("wood", style: TextStyle(fontSize: 15)),
           ),
         ),
       ]),

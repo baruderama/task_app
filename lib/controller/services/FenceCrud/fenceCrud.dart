@@ -26,6 +26,9 @@ class FenceCrud {
       'postSize': '' + ironFence.postSize,
       'paint': '' + ironFence.paint,
       'topFinish': '' + ironFence.topFinish,
+      'mailBox': '' + ironFence.mailBox,
+      'postCaps': '' + ironFence.postCaps,
+      'tube': '' + ironFence.tube,
     };
 
     var fenceKey = taskReference.child('Fence').push();
@@ -61,6 +64,7 @@ class FenceCrud {
       'type_fence': '' + woodFence.tapeFence,
       'post_size': '' + woodFence.postSize,
       'top_finish': '' + woodFence.topFinish,
+      'composive': '' + woodFence.composive
     };
 
     var fenceKey = taskReference.child('Fence').push();

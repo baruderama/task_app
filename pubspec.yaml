@@ -71,6 +71,22 @@ flutter:
       - assets/images/misce/windowGuards/
       - assets/images/gates/vinyl/locks/
       - assets/images/gates/vinyl/hinges/
+      - assets/images/fences/iron/mailBoxes/
+      - assets/images/fences/iron/postCaps/
+      - assets/images/fences/iron/tube/
+      - assets/images/jobs/iron/
+      - assets/images/jobs/vinyl/
+      - assets/images/jobs/wood/
+      - assets/images/jobs/dePortada/
+      - assets/images/jobs/chainLink/
+      - assets/images/fences/wood/composite/
+      - assets/images/gates/harbor/
+      - assets/images/gates/mesh/
+      - assets/images/fences/chainLink/terminalPost/
+      - assets/images/fences/chainLink/privacy/
+      - assets/images/gates/chainLink/singleDouble/
+      - assets/images/gates/cantileverGates/accesories/
+      - assets/images/gates/cantileverGates/typeMotors/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

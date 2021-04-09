@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:task_app/models/photos/Photos.dart';
 import 'package:task_app/views/FenceFeatures/Iron/ironFeature3.dart';
 
-class MotorCantileverGates2 extends StatefulWidget {
+class WoodFeatures5 extends StatefulWidget {
   @override
   _feature1 createState() => _feature1();
 }
 
-String selectedStateIronQ2 = null;
+String selectedStateWoodQ5 = null;
 
 List<Photos> todos2 = List<Photos>();
 var co2;
@@ -32,58 +32,27 @@ enum SigningCharacter {
 SigningCharacter _character = SigningCharacter.Normal;
 String selectedStateRadioQ1 = null;
 
-class _feature1 extends State<MotorCantileverGates2> {
+class _feature1 extends State<WoodFeatures5> {
   @override
   void initState() {
     super.initState();
     todos2 = [
       Photos(
-        nombreFoto: 'pedestals',
+        nombreFoto: '1',
+        foto: 'assets/images/fences/wood/composite/20200803_090345.jpg',
+      ),
+      Photos(
+        nombreFoto: '2',
+        foto: 'assets/images/fences/wood/composite/20201123_102916.jpg',
+      ),
+      Photos(
+        nombreFoto: '3',
         foto:
-            'assets/images/gates/cantileverGates/accesories/Access Control Pedestals.png',
+            'assets/images/fences/wood/composite/Advanced-Series-Product-No.-GWF403-1-e1614392063912.png',
       ),
       Photos(
-        nombreFoto: 'mounting post',
-        foto:
-            'assets/images/gates/cantileverGates/accesories/Dual Gooseneck Mounting Posts.jpg',
-      ),
-      Photos(
-        nombreFoto: 'elect lock',
-        foto:
-            'assets/images/gates/cantileverGates/accesories/Electromagnetic Lock.jpg',
-      ),
-      Photos(
-        nombreFoto: 'fire lock',
-        foto:
-            'assets/images/gates/cantileverGates/accesories/Fire Lock Box.png',
-      ),
-      Photos(
-        nombreFoto: 'loop detector',
-        foto:
-            'assets/images/gates/cantileverGates/accesories/LiftMaster Plug-In Loop Detector.png',
-      ),
-      Photos(
-        nombreFoto: 'Universal remote',
-        foto:
-            'assets/images/gates/cantileverGates/accesories/LiftMaster Universal Remote.png',
-      ),
-      Photos(
-        nombreFoto: 'photo ayes',
-        foto: 'assets/images/gates/cantileverGates/accesories/photo ayes.jpg',
-      ),
-      Photos(
-        nombreFoto: 'remote2',
-        foto: 'assets/images/gates/cantileverGates/accesories/remote.png',
-      ),
-      Photos(
-        nombreFoto: 'smartphone',
-        foto:
-            'assets/images/gates/cantileverGates/accesories/smartphone-liftmaster-myQ.png',
-      ),
-      Photos(
-        nombreFoto: 'wireless',
-        foto:
-            'assets/images/gates/cantileverGates/accesories/Wireless Keypad.jpg',
+        nombreFoto: '4',
+        foto: 'assets/images/fences/wood/composite/first generation colors.png',
       ),
     ];
   }
@@ -100,7 +69,7 @@ class _feature1 extends State<MotorCantileverGates2> {
               padding: EdgeInsets.all(15.0),
               alignment: Alignment.center,
               child: Text(
-                "accesories:",
+                "Type of Fence:",
                 style: TextStyle(
                   fontSize: 22.0,
                   fontFamily: "Ralewaybold",
@@ -130,7 +99,7 @@ class _feature1 extends State<MotorCantileverGates2> {
                               borderRadius: BorderRadius.circular(16.0),
                             ),
                             child: Hero(
-                              tag: todos2[index].nombreFoto,
+                              tag: todos2[index],
                               child: Image.asset(
                                 todos2[index].foto,
                                 color: co2,
@@ -145,7 +114,7 @@ class _feature1 extends State<MotorCantileverGates2> {
                       print('presionado' + todos2[index].nombreFoto);
                       this.setState(() {
                         co2 = Colors.green[300];
-                        selectedStateIronQ2 = todos2[index].nombreFoto;
+                        selectedStateWoodQ5 = todos2[index].nombreFoto;
                       });
                     },
                   );
@@ -207,8 +176,8 @@ class ItemCard extends StatelessWidget {
   }
 }
 
-class BringAnswerIron2 {
+class BringAnswerWood5 {
   String send() {
-    return selectedStateIronQ2;
+    return selectedStateWoodQ5;
   }
 }
