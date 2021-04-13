@@ -140,12 +140,13 @@ class _finalFeatures extends State<CantileverGatesFeatures> {
               Intercom newIntercom = new Intercom("1");
                 */
               CantileverGates newCantelever = new CantileverGates(
-                  "",
-                  'cantilever_gates',
-                  BringAnswerCantileverGates1().send(),
-                  BringAnswerCantilever3().send(),
-                  BringAnswerCantilver4().send(),
-                  BringAnswerCantilever2().send());
+                "",
+                'cantilever_gates',
+                BringAnswerCantileverGates1().send(),
+                BringAnswerCantilever3().send(),
+                BringAnswerCantilver4().send(),
+                BringAnswerCantilever2().send(),
+              );
 
               /*
               Iron newIron = new Iron(newStyle);

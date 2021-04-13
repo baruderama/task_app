@@ -87,7 +87,18 @@ class _feature1 extends State<VinylFeature1> {
                       });
                     },
                   ),
-                  Card(
+                  RadioListTile<SigningCharacter>(
+                    title: const Text('kakhi'),
+                    value: SigningCharacter.Inches24,
+                    groupValue: _character,
+                    onChanged: (SigningCharacter value) {
+                      setState(() {
+                        _character = value;
+                        selectedStateVinylGatesQ1 = 'Kaki';
+                      });
+                    },
+                  ),
+                  /* Card(
                     child: ListTile(
                       title: Text('Other'),
                       onTap: () {
@@ -124,7 +135,7 @@ class _feature1 extends State<VinylFeature1> {
                             });
                       },
                     ),
-                  ),
+                  ),*/
                 ],
               )),
           /*Expanded(

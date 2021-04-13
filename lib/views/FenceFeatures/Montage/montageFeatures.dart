@@ -124,7 +124,7 @@ class _finalFeatures extends State<MontageFeatures> {
 
               MontageFence newFence = new MontageFence(
                   "",
-                  'montage',
+                  'montageF',
                   BringAnswerMontage1().send(),
                   BringAnswerMontage2().send(),
                   BringAnswerMontage3().send(),

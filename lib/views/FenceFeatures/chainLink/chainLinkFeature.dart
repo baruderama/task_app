@@ -146,7 +146,7 @@ class _finalFeatures extends State<ChainLinkFeatures> {
             onPressed: () async {
               ChainLinkFence newFenceink = new ChainLinkFence(
                   "",
-                  'chain_link',
+                  'chain_linkF',
                   BringAnswerFenceChainLink3().send(),
                   BringAnswerFenceChainLink1().send(),
                   BringAnswerFenceChainLink2().send(),

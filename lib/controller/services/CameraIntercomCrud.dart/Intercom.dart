@@ -20,6 +20,7 @@ DatabaseReference taskReference = db.reference().child('task');
 class IntercomCrud {
   Future<String> addIntercomTask(Intercom intercom) async {
     var intercomTask = <String, dynamic>{
+      'tipo': '' + intercom.t,
       'tipe': '' + intercom.tipe,
     };
 

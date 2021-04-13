@@ -79,7 +79,7 @@ class _feature1 extends State<CantileverGatesFeatures1> {
                   ),
                   Card(
                     child: ListTile(
-                      title: Text('Aluminum Tracks:'),
+                      title: Text('Aluminum Tracks'),
                       onTap: () {
                         Navigator.push(
                             context,
@@ -90,7 +90,7 @@ class _feature1 extends State<CantileverGatesFeatures1> {
                   ),
                   Card(
                     child: ListTile(
-                      title: Text('Over head:'),
+                      title: Text('Over head'),
                       onTap: () {
                         Navigator.push(
                             context,

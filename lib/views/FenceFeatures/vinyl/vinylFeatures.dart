@@ -140,7 +140,7 @@ class _finalFeatures extends State<VinylFeatures> {
 
               VinylFence newFence = new VinylFence(
                   "",
-                  'vinyl',
+                  'vinylF',
                   BringAnswerVinyl2().send(),
                   BringAnswerVinyl3().send(),
                   BringAnswerVinyl1().send(),

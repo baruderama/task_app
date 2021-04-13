@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:task_app/controller/services/clientCrud/clientCrud.dart';
 import 'package:task_app/models/miscellaneo/Miscellaneous.dart';
 import 'package:task_app/views/CameraIntercom/camaraIntercomScreen.dart';
+import 'package:task_app/views/TaskCreation/fenceGate.dart';
 
 import 'package:task_app/views/TaskCreation/finalFeaures.dart';
 import 'package:task_app/views/TaskCreation/levelMaterial.dart';
@@ -68,7 +69,7 @@ class _fenceGate extends State<ContinueFinish> {
             //   side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
             onPressed: () {
               Navigator.push(context,
-                  new MaterialPageRoute(builder: (context) => HomePage()));
+                  new MaterialPageRoute(builder: (context) => FenceGate()));
             },
             padding: EdgeInsets.symmetric(horizontal: 50),
             color: Colors.blue[700],

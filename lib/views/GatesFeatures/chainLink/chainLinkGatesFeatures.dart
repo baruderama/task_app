@@ -131,7 +131,7 @@ class _finalFeatures extends State<ChainLinkGatesFeatures> {
 
               ChainLinkGates newGatelink = new ChainLinkGates(
                   "",
-                  'chain_link',
+                  'chain_linkG',
                   BringAnswerChainLink2().send(),
                   BringAnswerChainLink4().send(),
                   BringAnswerChainLink5().send(),

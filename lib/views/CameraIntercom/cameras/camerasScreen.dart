@@ -128,14 +128,12 @@ class _finalFeatures extends State<CameraScreen> {
               */
               Cameras newCamera = new Cameras(
                 "",
-                //'camara',
+                'camara',
                 BringAnswerLp().send(),
                 BringAnswerFourK().send(),
                 BringAnswerHD().send(),
                 BringAnswerDvr().send(),
-
                 BringAnswerHdSize().send(),
-
                 BringAnswerNumcameras().send(),
                 BringAnswerSizeTv().send(),
               );

@@ -20,6 +20,7 @@ DatabaseReference taskReference = db.reference().child('task');
 class MisceleniumCrud {
   Future<String> addMisceleniumTask(Miscellaneous miscellaneous) async {
     var miscellaneousTask = <String, dynamic>{
+      'tipo': '' + miscellaneous.t,
       'bumper_post': '' + miscellaneous.bumperPost,
       'guard_rail': '' + miscellaneous.guardRail,
       'window_guard': '' + miscellaneous.windowGuard,

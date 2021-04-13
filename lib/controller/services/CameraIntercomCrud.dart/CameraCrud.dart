@@ -19,6 +19,7 @@ DatabaseReference taskReference = db.reference().child('task');
 class CamaraCrud {
   Future<String> addCamaraTask(Cameras camara) async {
     var camaraTask = <String, dynamic>{
+      'tipo': '' + camara.t,
       'lp': '' + camara.lp,
       '4k': '' + camara.cuatrok,
       'hd': '' + camara.hd,

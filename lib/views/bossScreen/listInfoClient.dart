@@ -7,13 +7,22 @@ import 'package:task_app/controller/services/clientCrud/clientCrud.dart';
 import 'package:task_app/controller/services/clientTaskCrud/clientTaskCrud.dart';
 import 'package:task_app/models/Iron.dart';
 import 'package:task_app/models/Iron/IronFence.dart';
+import 'package:task_app/models/Iron/IronGates.dart';
+import 'package:task_app/models/camerasIntercom/Cameras.dart';
+import 'package:task_app/models/camerasIntercom/Intercom.dart';
+import 'package:task_app/models/cantileverGates/cantileverGates.dart';
 import 'package:task_app/models/chainLink/ChainLinkFence.dart';
+import 'package:task_app/models/chainLink/ChainLinkGates.dart';
 import 'package:task_app/models/clientModel/Client.dart';
 import 'package:task_app/models/clientTask/ClientTask.dart';
+import 'package:task_app/models/miscellaneo/Miscellaneous.dart';
 import 'package:task_app/models/montage/MontageFence.dart';
+import 'package:task_app/models/montage/MontageGates.dart';
 import 'package:task_app/models/railing/RailingFence.dart';
 import 'package:task_app/models/vinyl/VinylFence.dart';
+import 'package:task_app/models/vinyl/VinylGates.dart';
 import 'package:task_app/models/wood/WoodFence.dart';
+import 'package:task_app/models/wood/WoodGates.dart';
 import 'package:task_app/models/wood/WoodT&G.dart';
 import 'package:task_app/views/bossScreen/listClientsScreen.dart';
 import 'package:task_app/views/calendar/calendar.dart';
@@ -70,7 +79,7 @@ class _ShopScreen extends State<ListInfoClient> {
     }
 
     if (confirm) {
-      if (client.t == 'iron') {
+      if (client.t == 'ironF') {
         IronFence clientiron = IronFence.fromSnapShot(res);
         item = new Card(
           child: new Container(
@@ -204,7 +213,7 @@ class _ShopScreen extends State<ListInfoClient> {
         );
       }
 
-      if (client.t == 'chain_link') {
+      if (client.t == 'chain_linkF') {
         ChainLinkFence clientChain = ChainLinkFence.fromSnapShot(res);
         item = new Card(
           child: new Container(
@@ -355,7 +364,7 @@ class _ShopScreen extends State<ListInfoClient> {
               padding: const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0)),
         );
       }
-      if (client.t == 'montage') {
+      if (client.t == 'montageF') {
         MontageFence clientMontage = MontageFence.fromSnapShot(res);
         item = new Card(
           child: new Container(
@@ -476,7 +485,7 @@ class _ShopScreen extends State<ListInfoClient> {
               padding: const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0)),
         );
       }
-      if (client.t == 'railing') {
+      if (client.t == 'railingF') {
         RailingFence clientRailing = RailingFence.fromSnapShot(res);
         item = new Card(
           child: new Container(
@@ -495,10 +504,40 @@ class _ShopScreen extends State<ListInfoClient> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             new Text(
-                              "task with code: " + clientRailing.color,
+                              "- " + clientRailing.t,
                               // set some style to text
                               style: new TextStyle(
-                                  fontSize: 30.0, color: Colors.blue),
+                                  fontSize: 30.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "-" + clientRailing.color,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "-" + clientRailing.heigth,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "-" + clientRailing.heigth,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "-" + clientRailing.style,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "-" + clientRailing.sizePIckets,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.blue),
                             ),
                           ],
                         ),
@@ -573,7 +612,7 @@ class _ShopScreen extends State<ListInfoClient> {
               padding: const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0)),
         );
       }
-      if (client.t == 'vinyl') {
+      if (client.t == 'vinylF') {
         VinylFence clientVinyl = VinylFence.fromSnapShot(res);
         item = new Card(
           child: new Container(
@@ -592,10 +631,40 @@ class _ShopScreen extends State<ListInfoClient> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             new Text(
-                              "task with code: " + clientVinyl.color,
+                              "- " + clientVinyl.t,
                               // set some style to text
                               style: new TextStyle(
                                   fontSize: 30.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "- " + clientVinyl.color,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientVinyl.heigth,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientVinyl.postCaps,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientVinyl.style,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientVinyl.topFinish,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
                             ),
                           ],
                         ),
@@ -670,7 +739,7 @@ class _ShopScreen extends State<ListInfoClient> {
               padding: const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0)),
         );
       }
-      if (client.t == 'tyg') {
+      if (client.t == 'tygF') {
         WoodTyG clientTyg = WoodTyG.fromSnapShot(res);
         item = new Card(
           child: new Container(
@@ -689,10 +758,22 @@ class _ShopScreen extends State<ListInfoClient> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             new Text(
-                              "task with code: " + clientTyg.ironWood,
+                              "- " + clientTyg.t,
                               // set some style to text
                               style: new TextStyle(
                                   fontSize: 30.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "- " + clientTyg.ironWood,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientTyg.verticalHorizontal,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
                             ),
                           ],
                         ),
@@ -767,7 +848,7 @@ class _ShopScreen extends State<ListInfoClient> {
               padding: const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0)),
         );
       }
-      if (client.t == 'wood') {
+      if (client.t == 'woodF') {
         WoodFence clientWood = WoodFence.fromSnapShot(res);
         item = new Card(
           child: new Container(
@@ -786,10 +867,1168 @@ class _ShopScreen extends State<ListInfoClient> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             new Text(
-                              "task with code: " + clientWood.postSize,
+                              "- " + clientWood.t,
                               // set some style to text
                               style: new TextStyle(
                                   fontSize: 30.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "- " + clientWood.composive,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientWood.heigth,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientWood.postSize,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientWood.tapeFence,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientWood.topFinish,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    new Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.remove_red_eye_outlined,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido añadido al carrito"),
+                                  );
+                                });
+
+                            productReference
+                                .once()
+                                .then((DataSnapshot snapshot) {
+                              Map<dynamic, dynamic> values = snapshot.value;
+
+                              values.forEach((key, values) {
+                                if (values["idClient"] == client.id) {
+                                  //listTask.add(values["idTask"]);
+                                  //debugPrint(key);
+                                  //lastkey = key;
+                                }
+                              });
+                            });
+
+                            setState(() {
+                              //productList.add(client);
+                            });
+                          },
+                        ),
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.delete_forever,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () async {
+                            // ProductCrud().deleteProduct(product);
+
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido eliminado"),
+                                  );
+                                });
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              padding: const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0)),
+        );
+      }
+
+      if (client.t == 'woodG') {
+        WoodGates clientWood = WoodGates.fromSnapShot(res);
+        item = new Card(
+          child: new Container(
+              child: new Center(
+                child: new Row(
+                  children: <Widget>[
+                    new CircleAvatar(
+                      radius: 40.0,
+                      child: Image.asset("assets/images/giftbox.png"),
+                      backgroundColor: const Color(0xFF20283e),
+                    ),
+                    new Expanded(
+                      child: new Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: new Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            new Text(
+                              "- " + clientWood.t,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 30.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "- " + clientWood.harbor,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientWood.ironFrame,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientWood.openingEndSwing,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientWood.typeHinges,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientWood.typeLocks,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientWood.woodGates,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    new Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.remove_red_eye_outlined,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido añadido al carrito"),
+                                  );
+                                });
+
+                            productReference
+                                .once()
+                                .then((DataSnapshot snapshot) {
+                              Map<dynamic, dynamic> values = snapshot.value;
+
+                              values.forEach((key, values) {
+                                if (values["idClient"] == client.id) {
+                                  //listTask.add(values["idTask"]);
+                                  //debugPrint(key);
+                                  //lastkey = key;
+                                }
+                              });
+                            });
+
+                            setState(() {
+                              //productList.add(client);
+                            });
+                          },
+                        ),
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.delete_forever,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () async {
+                            // ProductCrud().deleteProduct(product);
+
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido eliminado"),
+                                  );
+                                });
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              padding: const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0)),
+        );
+      }
+
+      if (client.t == 'IronG') {
+        IronGates clientIron = IronGates.fromSnapShot(res);
+        item = new Card(
+          child: new Container(
+              child: new Center(
+                child: new Row(
+                  children: <Widget>[
+                    new CircleAvatar(
+                      radius: 40.0,
+                      child: Image.asset("assets/images/giftbox.png"),
+                      backgroundColor: const Color(0xFF20283e),
+                    ),
+                    new Expanded(
+                      child: new Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: new Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            new Text(
+                              "-" + clientIron.t,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 30.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "-" + clientIron.harbor,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "-" + clientIron.mesh,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "-" + clientIron.style,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "-" + clientIron.swing,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "-" + clientIron.typeHinges,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "-" + clientIron.typeLocks,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    new Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.remove_red_eye_outlined,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido añadido al carrito"),
+                                  );
+                                });
+
+                            productReference
+                                .once()
+                                .then((DataSnapshot snapshot) {
+                              Map<dynamic, dynamic> values = snapshot.value;
+
+                              values.forEach((key, values) {
+                                if (values["idClient"] == client.id) {
+                                  //listTask.add(values["idTask"]);
+                                  //debugPrint(key);
+                                  //lastkey = key;
+                                }
+                              });
+                            });
+
+                            setState(() {
+                              //productList.add(client);
+                            });
+                          },
+                        ),
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.delete_forever,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () async {
+                            // ProductCrud().deleteProduct(product);
+
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido eliminado"),
+                                  );
+                                });
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              padding: const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0)),
+        );
+      }
+
+      if (client.t == 'montageG') {
+        MontageGates clientMontage = MontageGates.fromSnapShot(res);
+        item = new Card(
+          child: new Container(
+              child: new Center(
+                child: new Row(
+                  children: <Widget>[
+                    new CircleAvatar(
+                      radius: 40.0,
+                      child: Image.asset("assets/images/giftbox.png"),
+                      backgroundColor: const Color(0xFF20283e),
+                    ),
+                    new Expanded(
+                      child: new Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: new Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            new Text(
+                              "- " + clientMontage.t,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 30.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "- " + clientMontage.mesh,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientMontage.openingEndSwing,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientMontage.style,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientMontage.typeHinges,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientMontage.typeLocks,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    new Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.remove_red_eye_outlined,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido añadido al carrito"),
+                                  );
+                                });
+
+                            productReference
+                                .once()
+                                .then((DataSnapshot snapshot) {
+                              Map<dynamic, dynamic> values = snapshot.value;
+
+                              values.forEach((key, values) {
+                                if (values["idClient"] == client.id) {
+                                  //listTask.add(values["idTask"]);
+                                  //debugPrint(key);
+                                  //lastkey = key;
+                                }
+                              });
+                            });
+
+                            setState(() {
+                              //productList.add(client);
+                            });
+                          },
+                        ),
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.delete_forever,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () async {
+                            // ProductCrud().deleteProduct(product);
+
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido eliminado"),
+                                  );
+                                });
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              padding: const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0)),
+        );
+      }
+
+      if (client.t == 'vinylG') {
+        VinylGates clientvinyl = VinylGates.fromSnapShot(res);
+        item = new Card(
+          child: new Container(
+              child: new Center(
+                child: new Row(
+                  children: <Widget>[
+                    new CircleAvatar(
+                      radius: 40.0,
+                      child: Image.asset("assets/images/giftbox.png"),
+                      backgroundColor: const Color(0xFF20283e),
+                    ),
+                    new Expanded(
+                      child: new Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: new Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            new Text(
+                              "- " + clientvinyl.t,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 30.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "- " + clientvinyl.openingEndSwing,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientvinyl.typeHinges,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientvinyl.typeLocks,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    new Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.remove_red_eye_outlined,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido añadido al carrito"),
+                                  );
+                                });
+
+                            productReference
+                                .once()
+                                .then((DataSnapshot snapshot) {
+                              Map<dynamic, dynamic> values = snapshot.value;
+
+                              values.forEach((key, values) {
+                                if (values["idClient"] == client.id) {
+                                  //listTask.add(values["idTask"]);
+                                  //debugPrint(key);
+                                  //lastkey = key;
+                                }
+                              });
+                            });
+
+                            setState(() {
+                              //productList.add(client);
+                            });
+                          },
+                        ),
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.delete_forever,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () async {
+                            // ProductCrud().deleteProduct(product);
+
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido eliminado"),
+                                  );
+                                });
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              padding: const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0)),
+        );
+      }
+
+      if (client.t == 'chain_linkG') {
+        ChainLinkGates clientchain = ChainLinkGates.fromSnapShot(res);
+        item = new Card(
+          child: new Container(
+              child: new Center(
+                child: new Row(
+                  children: <Widget>[
+                    new CircleAvatar(
+                      radius: 40.0,
+                      child: Image.asset("assets/images/giftbox.png"),
+                      backgroundColor: const Color(0xFF20283e),
+                    ),
+                    new Expanded(
+                      child: new Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: new Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            new Text(
+                              "- " + clientchain.t,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 30.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "- " + clientchain.openingSwing,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientchain.singleDoble,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientchain.sizePost,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientchain.typeHinges,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientchain.typeLocks,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    new Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.remove_red_eye_outlined,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido añadido al carrito"),
+                                  );
+                                });
+
+                            productReference
+                                .once()
+                                .then((DataSnapshot snapshot) {
+                              Map<dynamic, dynamic> values = snapshot.value;
+
+                              values.forEach((key, values) {
+                                if (values["idClient"] == client.id) {
+                                  //listTask.add(values["idTask"]);
+                                  //debugPrint(key);
+                                  //lastkey = key;
+                                }
+                              });
+                            });
+
+                            setState(() {
+                              //productList.add(client);
+                            });
+                          },
+                        ),
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.delete_forever,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () async {
+                            // ProductCrud().deleteProduct(product);
+
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido eliminado"),
+                                  );
+                                });
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              padding: const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0)),
+        );
+      }
+
+      if (client.t == 'cantilever_gates') {
+        CantileverGates clientCantilever = CantileverGates.fromSnapShot(res);
+        item = new Card(
+          child: new Container(
+              child: new Center(
+                child: new Row(
+                  children: <Widget>[
+                    new CircleAvatar(
+                      radius: 40.0,
+                      child: Image.asset("assets/images/giftbox.png"),
+                      backgroundColor: const Color(0xFF20283e),
+                    ),
+                    new Expanded(
+                      child: new Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: new Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            new Text(
+                              "- " + clientCantilever.t,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 30.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "- " + clientCantilever.motor,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientCantilever.sizePost,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientCantilever.style,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientCantilever.typeLocks,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    new Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.remove_red_eye_outlined,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido añadido al carrito"),
+                                  );
+                                });
+
+                            productReference
+                                .once()
+                                .then((DataSnapshot snapshot) {
+                              Map<dynamic, dynamic> values = snapshot.value;
+
+                              values.forEach((key, values) {
+                                if (values["idClient"] == client.id) {
+                                  //listTask.add(values["idTask"]);
+                                  //debugPrint(key);
+                                  //lastkey = key;
+                                }
+                              });
+                            });
+
+                            setState(() {
+                              //productList.add(client);
+                            });
+                          },
+                        ),
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.delete_forever,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () async {
+                            // ProductCrud().deleteProduct(product);
+
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido eliminado"),
+                                  );
+                                });
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              padding: const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0)),
+        );
+      }
+
+      if (client.t == 'camara') {
+        Cameras clientCamera = Cameras.fromSnapShot(res);
+        item = new Card(
+          child: new Container(
+              child: new Center(
+                child: new Row(
+                  children: <Widget>[
+                    new CircleAvatar(
+                      radius: 40.0,
+                      child: Image.asset("assets/images/giftbox.png"),
+                      backgroundColor: const Color(0xFF20283e),
+                    ),
+                    new Expanded(
+                      child: new Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: new Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            new Text(
+                              "- " + clientCamera.t,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 30.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "- " + clientCamera.cuatrok,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientCamera.dvr,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientCamera.hd,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientCamera.hdSize,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientCamera.lp,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientCamera.numberCameras,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientCamera.sizeTv,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    new Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.remove_red_eye_outlined,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido añadido al carrito"),
+                                  );
+                                });
+
+                            productReference
+                                .once()
+                                .then((DataSnapshot snapshot) {
+                              Map<dynamic, dynamic> values = snapshot.value;
+
+                              values.forEach((key, values) {
+                                if (values["idClient"] == client.id) {
+                                  //listTask.add(values["idTask"]);
+                                  //debugPrint(key);
+                                  //lastkey = key;
+                                }
+                              });
+                            });
+
+                            setState(() {
+                              //productList.add(client);
+                            });
+                          },
+                        ),
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.delete_forever,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () async {
+                            // ProductCrud().deleteProduct(product);
+
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido eliminado"),
+                                  );
+                                });
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              padding: const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0)),
+        );
+      }
+
+      if (client.t == 'intercom') {
+        Intercom clientInter = Intercom.fromSnapShot(res);
+        item = new Card(
+          child: new Container(
+              child: new Center(
+                child: new Row(
+                  children: <Widget>[
+                    new CircleAvatar(
+                      radius: 40.0,
+                      child: Image.asset("assets/images/giftbox.png"),
+                      backgroundColor: const Color(0xFF20283e),
+                    ),
+                    new Expanded(
+                      child: new Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: new Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            new Text(
+                              "- " + clientInter.t,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 30.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "- " + clientInter.tipe,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    new Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.remove_red_eye_outlined,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido añadido al carrito"),
+                                  );
+                                });
+
+                            productReference
+                                .once()
+                                .then((DataSnapshot snapshot) {
+                              Map<dynamic, dynamic> values = snapshot.value;
+
+                              values.forEach((key, values) {
+                                if (values["idClient"] == client.id) {
+                                  //listTask.add(values["idTask"]);
+                                  //debugPrint(key);
+                                  //lastkey = key;
+                                }
+                              });
+                            });
+
+                            setState(() {
+                              //productList.add(client);
+                            });
+                          },
+                        ),
+                        new IconButton(
+                          iconSize: 30,
+                          icon: const Icon(
+                            Icons.delete_forever,
+                            color: const Color(0xFF167F67),
+                          ),
+                          onPressed: () async {
+                            // ProductCrud().deleteProduct(product);
+
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    title: Text("ha sido eliminado"),
+                                  );
+                                });
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              padding: const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0)),
+        );
+      }
+
+      if (client.t == 'misce') {
+        Miscellaneous clientMisce = Miscellaneous.fromSnapShot(res);
+        item = new Card(
+          child: new Container(
+              child: new Center(
+                child: new Row(
+                  children: <Widget>[
+                    new CircleAvatar(
+                      radius: 40.0,
+                      child: Image.asset("assets/images/giftbox.png"),
+                      backgroundColor: const Color(0xFF20283e),
+                    ),
+                    new Expanded(
+                      child: new Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: new Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            new Text(
+                              "- " + clientMisce.t,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 30.0, color: Colors.blue),
+                            ),
+                            new Text(
+                              "- " + clientMisce.bumperPost,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientMisce.guardRail,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientMisce.scissorGate,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
+                            ),
+                            new Text(
+                              "- " + clientMisce.windowGuard,
+                              // set some style to text
+                              style: new TextStyle(
+                                  fontSize: 15.0, color: Colors.red),
                             ),
                           ],
                         ),

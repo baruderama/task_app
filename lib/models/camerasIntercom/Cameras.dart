@@ -9,10 +9,11 @@ class Cameras {
   String _hdSize;
   String _numberCameras;
   String _sizeTv;
+  String _t;
   //String _topFinish;
 
   Cameras(this._id, this._lp, this._4k, this._hd, this._dvr, this._hdSize,
-      this._numberCameras, this._sizeTv);
+      this._numberCameras, this._sizeTv, this._t);
 
   Cameras.map(dynamic obj) {
     this._lp = obj['lp'];
@@ -22,6 +23,7 @@ class Cameras {
     this._hdSize = obj['hdSize'];
     this._numberCameras = obj['number_cameras'];
     this._sizeTv = obj['size_tv'];
+    this._t = obj['tipo'];
   }
 
   String get id => _id;
@@ -32,6 +34,7 @@ class Cameras {
   String get hdSize => _hdSize;
   String get numberCameras => _numberCameras;
   String get sizeTv => _sizeTv;
+  String get t => _t;
 
   Cameras.fromSnapShot(DataSnapshot snapshot) {
     _id = snapshot.key;
@@ -42,5 +45,6 @@ class Cameras {
     _hdSize = snapshot.value['hdSize'];
     _numberCameras = snapshot.value['number_cameras'];
     _sizeTv = snapshot.value['size_tv'];
+    _t = snapshot.value['tipo'];
   }
 }

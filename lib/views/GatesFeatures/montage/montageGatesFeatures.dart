@@ -128,7 +128,7 @@ class _finalFeatures extends State<MontageGatesFeatures> {
                   */
               MontageGates newGate = new MontageGates(
                   "",
-                  'montage',
+                  'montageG',
                   BringAnswerMontageGates1().send(),
                   BringAnswerMontageGates2().send(),
                   BringAnswerMontageGates4().send(),

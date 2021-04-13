@@ -100,7 +100,7 @@ class _feature1 extends State<WoodGatesFeature1> {
                   ),
                   Card(
                     child: ListTile(
-                      title: Text('iron Frame:'),
+                      title: Text('iron Frame'),
                       onTap: () {
                         showDialog(
                             context: context,

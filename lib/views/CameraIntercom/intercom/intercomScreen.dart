@@ -72,7 +72,7 @@ class _finalFeatures extends State<IntercomScreen> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Iron Fence Features",
+          "Intercom Features",
         ),
         backgroundColor: Colors.blue,
         actions: <Widget>[
@@ -117,7 +117,7 @@ class _finalFeatures extends State<IntercomScreen> {
                   new Cameras("1", "1", "1", "1", "1", "1", "1");
                   */
               Intercom newIntercom =
-                  new Intercom("", BringAnswerIntercom1().send());
+                  new Intercom("", 'intercom', BringAnswerIntercom1().send());
 
               /*
               Iron newIron = new Iron(newStyle);

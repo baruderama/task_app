@@ -61,9 +61,9 @@ class FenceCrud {
     var ironStyleTask = <String, dynamic>{
       'tipo': '' + woodFence.t,
       'heigth': '' + woodFence.heigth,
-      'type_fence': '' + woodFence.tapeFence,
-      'post_size': '' + woodFence.postSize,
-      'top_finish': '' + woodFence.topFinish,
+      'tapeFence': '' + woodFence.tapeFence,
+      'postSize': '' + woodFence.postSize,
+      'topFinish': '' + woodFence.topFinish,
       'composive': '' + woodFence.composive
     };
 
@@ -78,7 +78,7 @@ class FenceCrud {
   Future<String> addWoodTyGTask(WoodTyG woodTyG) async {
     var ironStyleTask = <String, dynamic>{
       'tipo': '' + woodTyG.t,
-      'iron_wood': '' + woodTyG.ironWood,
+      'ironWood': '' + woodTyG.ironWood,
       'vertical_horizontal': '' + woodTyG.verticalHorizontal,
     };
 
@@ -94,9 +94,9 @@ class FenceCrud {
     var vinylTask = <String, dynamic>{
       'tipo': '' + vinylFence.t,
       'heigth': '' + vinylFence.heigth,
-      'type_style': '' + vinylFence.style,
+      'style': '' + vinylFence.style,
       'postCaps': '' + vinylFence.postCaps,
-      'top_finish': '' + vinylFence.topFinish,
+      'topFinish': '' + vinylFence.topFinish,
       'color': '' + vinylFence.color,
     };
 

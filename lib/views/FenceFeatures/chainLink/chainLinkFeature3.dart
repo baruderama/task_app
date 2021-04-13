@@ -82,7 +82,7 @@ class _feature1 extends State<ChainLinkFeatures3> {
                   ),
                   Card(
                     child: ListTile(
-                      title: Text('Comercial:'),
+                      title: Text('Comercial'),
                       onTap: () {
                         Navigator.push(
                             context,
@@ -93,7 +93,7 @@ class _feature1 extends State<ChainLinkFeatures3> {
                   ),
                   Card(
                     child: ListTile(
-                      title: Text('Industrial:'),
+                      title: Text('Industrial'),
                       onTap: () {
                         Navigator.push(
                             context,

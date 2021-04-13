@@ -115,7 +115,7 @@ class _finalFeatures extends State<IronGatesFeatures> {
               */
               IronGates newGate = new IronGates(
                   "",
-                  'iron',
+                  'ironG',
                   BringAnswerIronGates1().send(),
                   BringAnswerIronGates2().send(),
                   BringAnswerIronGates3().send(),

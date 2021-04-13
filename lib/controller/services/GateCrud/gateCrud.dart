@@ -57,7 +57,7 @@ class GateCrud {
       'typeLocks': '' + woodGates.typeLocks,
       'typeHinges': '' + woodGates.typeHinges,
       'harbor': '' + woodGates.harbor,
-      'opening_end_swing': '' + woodGates.openingEndSwing,
+      'openingEndSwing': '' + woodGates.openingEndSwing,
       'ironFrame': '' + woodGates.ironFrame,
     };
 
@@ -74,7 +74,7 @@ class GateCrud {
       'tipo': '' + vinylGates.t,
       'typeLocks': '' + vinylGates.typeLocks,
       'typeHinges': '' + vinylGates.typeHinges,
-      'opening_end_swing': '' + vinylGates.openingEndSwing,
+      'openingEndSwing': '' + vinylGates.openingEndSwing,
     };
 
     var gateKey = taskReference.child('Gates').push();
