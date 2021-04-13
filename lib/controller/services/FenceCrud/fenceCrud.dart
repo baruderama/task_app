@@ -31,7 +31,7 @@ class FenceCrud {
       'tube': '' + ironFence.tube,
     };
 
-    var fenceKey = taskReference.child('Fence').push();
+    var fenceKey = taskReference.push();
 
     fenceKey.set(ironStyleTask);
 
@@ -49,7 +49,7 @@ class FenceCrud {
       'topFinish': '' + montageFence.topFinish,
     };
 
-    var fenceKey = taskReference.child('Fence').push();
+    var fenceKey = taskReference.push();
 
     fenceKey.set(montageFenceTask);
 
@@ -67,7 +67,7 @@ class FenceCrud {
       'composive': '' + woodFence.composive
     };
 
-    var fenceKey = taskReference.child('Fence').push();
+    var fenceKey = taskReference.push();
 
     fenceKey.set(ironStyleTask);
 
@@ -82,7 +82,7 @@ class FenceCrud {
       'vertical_horizontal': '' + woodTyG.verticalHorizontal,
     };
 
-    var fenceKey = taskReference.child('Fence').push();
+    var fenceKey = taskReference.push();
 
     fenceKey.set(ironStyleTask);
 
@@ -100,7 +100,7 @@ class FenceCrud {
       'color': '' + vinylFence.color,
     };
 
-    var fenceKey = taskReference.child('Fence').push();
+    var fenceKey = taskReference.push();
 
     fenceKey.set(vinylTask);
 
@@ -122,7 +122,7 @@ class FenceCrud {
       'top_rails': '' + chainLinkFence.topRails,
     };
 
-    var fenceKey = taskReference.child('Fence').push();
+    var fenceKey = taskReference.push();
 
     fenceKey.set(chainTask);
 
@@ -139,7 +139,7 @@ class FenceCrud {
       'style': '' + railingFence.style
     };
 
-    var fenceKey = taskReference.child('Fence').push();
+    var fenceKey = taskReference.push();
 
     fenceKey.set(railingTask);
 

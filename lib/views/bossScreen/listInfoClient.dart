@@ -38,8 +38,7 @@ TextEditingController _nameFieldController = TextEditingController();
 TextEditingController _desControllerField = TextEditingController();
 TextEditingController _stockControllerField = TextEditingController();
 FirebaseDatabase db = new FirebaseDatabase();
-DatabaseReference taskReferenceFence =
-    db.reference().child('task').child('Fence');
+DatabaseReference taskReferenceFence = db.reference().child('task');
 var hey = "-MTHzJq-C2SkBvR-sY3V";
 //List<String> listTask = List<String>();
 //String lastkey;
@@ -73,6 +72,7 @@ class _ShopScreen extends State<ListInfoClient> {
     var item;
     bool confirm = false;
     for (var i in listTask) {
+      print(client.id.toString() + 'bruh');
       if (i == client.id) {
         confirm = true;
       }
@@ -613,6 +613,7 @@ class _ShopScreen extends State<ListInfoClient> {
         );
       }
       if (client.t == 'vinylF') {
+        print('entra vinyl');
         VinylFence clientVinyl = VinylFence.fromSnapShot(res);
         item = new Card(
           child: new Container(
@@ -1110,7 +1111,7 @@ class _ShopScreen extends State<ListInfoClient> {
         );
       }
 
-      if (client.t == 'IronG') {
+      if (client.t == 'ironG') {
         IronGates clientIron = IronGates.fromSnapShot(res);
         item = new Card(
           child: new Container(

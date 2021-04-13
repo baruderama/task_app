@@ -27,7 +27,7 @@ class MisceleniumCrud {
       'scissor_gate': '' + miscellaneous.scissorGate,
     };
 
-    var fenceKey = taskReference.child('Miscellaneous').push();
+    var fenceKey = taskReference.push();
 
     fenceKey.set(miscellaneousTask);
 

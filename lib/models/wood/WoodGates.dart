@@ -39,7 +39,7 @@ class WoodGates {
     _ironFrame = snapshot.value['ironFrame'];
     _typeLocks = snapshot.value['typeLocks'];
     _typeHinges = snapshot.value['typeHinges'];
-    _harbor = snapshot.value['mesh'];
+    _harbor = snapshot.value['harbor'];
     _woodGates = snapshot.value['WoodGates'];
     _openingEndSwing = snapshot.value['openingEndSwing'];
   }

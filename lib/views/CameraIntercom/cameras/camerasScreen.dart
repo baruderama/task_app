@@ -127,16 +127,15 @@ class _finalFeatures extends State<CameraScreen> {
               RailingFence newFenceRailing = new RailingFence("1", "1", "1");
               */
               Cameras newCamera = new Cameras(
-                "",
-                'camara',
-                BringAnswerLp().send(),
-                BringAnswerFourK().send(),
-                BringAnswerHD().send(),
-                BringAnswerDvr().send(),
-                BringAnswerHdSize().send(),
-                BringAnswerNumcameras().send(),
-                BringAnswerSizeTv().send(),
-              );
+                  "",
+                  BringAnswerLp().send(),
+                  BringAnswerFourK().send(),
+                  BringAnswerHD().send(),
+                  BringAnswerDvr().send(),
+                  BringAnswerHdSize().send(),
+                  BringAnswerNumcameras().send(),
+                  BringAnswerSizeTv().send(),
+                  'camara');
 
               /*
               Iron newIron = new Iron(newStyle);

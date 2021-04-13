@@ -100,7 +100,7 @@ class _feature1 extends State<WoodGatesFeatures3> {
                   ),
                   Card(
                     child: ListTile(
-                      title: Text('Outside:'),
+                      title: Text('Outside'),
                       onTap: () {
                         showDialog(
                             context: context,
@@ -137,7 +137,7 @@ class _feature1 extends State<WoodGatesFeatures3> {
                   ),
                   Card(
                     child: ListTile(
-                      title: Text('left:'),
+                      title: Text('left'),
                       onTap: () {
                         showDialog(
                             context: context,
@@ -174,7 +174,7 @@ class _feature1 extends State<WoodGatesFeatures3> {
                   ),
                   Card(
                     child: ListTile(
-                      title: Text('right:'),
+                      title: Text('right'),
                       onTap: () {
                         showDialog(
                             context: context,

@@ -29,7 +29,7 @@ class CamaraCrud {
       'size_tv': '' + camara.sizeTv,
     };
 
-    var fenceKey = taskReference.child('Camara').push();
+    var fenceKey = taskReference.push();
 
     fenceKey.set(camaraTask);
 

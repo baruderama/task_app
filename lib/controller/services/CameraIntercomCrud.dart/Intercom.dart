@@ -24,7 +24,7 @@ class IntercomCrud {
       'tipe': '' + intercom.tipe,
     };
 
-    var fenceKey = taskReference.child('Intercom').push();
+    var fenceKey = taskReference.push();
 
     fenceKey.set(intercomTask);
 

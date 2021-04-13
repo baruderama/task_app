@@ -24,7 +24,7 @@ class GateCrud {
       'swing': '' + ironGates.swing,
     };
 
-    var gateKey = taskReference.child('Gates').push();
+    var gateKey = taskReference.push();
 
     gateKey.set(ironGateTask);
 
@@ -42,7 +42,7 @@ class GateCrud {
       'openingEndSwing': '' + montageGates.openingEndSwing,
     };
 
-    var gateKey = taskReference.child('Gates').push();
+    var gateKey = taskReference.push();
 
     gateKey.set(montageGateTask);
 
@@ -61,7 +61,7 @@ class GateCrud {
       'ironFrame': '' + woodGates.ironFrame,
     };
 
-    var gateKey = taskReference.child('Gates').push();
+    var gateKey = taskReference.push();
 
     gateKey.set(woodGateTask);
 
@@ -77,7 +77,7 @@ class GateCrud {
       'openingEndSwing': '' + vinylGates.openingEndSwing,
     };
 
-    var gateKey = taskReference.child('Gates').push();
+    var gateKey = taskReference.push();
 
     gateKey.set(vinylGateTask);
 
@@ -95,7 +95,7 @@ class GateCrud {
       'swingOpening': '' + chainLinkGates.openingSwing,
     };
 
-    var gateKey = taskReference.child('Gates').push();
+    var gateKey = taskReference.push();
 
     gateKey.set(chainLinkGateTask);
 
@@ -112,7 +112,7 @@ class GateCrud {
       'size_post': '' + cantileverGates.sizePost,
     };
 
-    var gateKey = taskReference.child('Gates').push();
+    var gateKey = taskReference.push();
 
     gateKey.set(cantileverGateTask);
 

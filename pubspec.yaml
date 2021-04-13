@@ -87,6 +87,9 @@ flutter:
       - assets/images/gates/chainLink/singleDouble/
       - assets/images/gates/cantileverGates/accesories/
       - assets/images/gates/cantileverGates/typeMotors/
+      - assets/images/fences/chainLink/linePost/
+      - assets/images/fences/chainLink/topRails/
+      - assets/images/fences/chainLink/topFinish/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -117,7 +117,7 @@ class _finalFeatures extends State<IntercomScreen> {
                   new Cameras("1", "1", "1", "1", "1", "1", "1");
                   */
               Intercom newIntercom =
-                  new Intercom("", 'intercom', BringAnswerIntercom1().send());
+                  new Intercom("", BringAnswerIntercom1().send(), 'intercom');
 
               /*
               Iron newIron = new Iron(newStyle);

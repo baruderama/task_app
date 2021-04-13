@@ -34,7 +34,7 @@ class WoodFence {
     _t = snapshot.value['tipo'];
     _heigth = snapshot.value['heigth'];
     _postSize = snapshot.value['postSize'];
-    _tapeFence = snapshot.value['style'];
+    _tapeFence = snapshot.value['tapeFence'];
     _topFinish = snapshot.value['topFinish'];
     _composive = snapshot.value['composive'];
   }

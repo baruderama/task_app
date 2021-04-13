@@ -37,6 +37,6 @@ class ChainLinkGates {
     _typeLocks = snapshot.value['typeLocks'];
     _typeHinges = snapshot.value['typeHinges'];
     _sizePost = snapshot.value['size_post'];
-    _openingSwing = snapshot.value['opening_swing'];
+    _openingSwing = snapshot.value['swingOpening'];
   }
 }
